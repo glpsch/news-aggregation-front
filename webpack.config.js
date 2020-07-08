@@ -8,7 +8,7 @@ const isDev = process.env.NODE_ENV === 'development';
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-    entry: { main: './src/js/script.js' },
+    entry: { main: './src/js/index.js' },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[hash].js'
