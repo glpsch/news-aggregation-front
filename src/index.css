@@ -1,5 +1,13 @@
 @import url(./vendor/normalize.css);
 
-body {
-  background-color: rgb(255, 255, 255);
+.page {
+  background-color: #FFFFFF;
+
+}
+
+.link {
+  opacity: 1;
+  transition: opacity 1.5s ease;
+  text-decoration: none;
+  color: #FFFFFF;
 }

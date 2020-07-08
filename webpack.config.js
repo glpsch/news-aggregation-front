@@ -6,12 +6,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 const TerserPlugin = require('terser-webpack-plugin');
+const сopy = require('copy-webpack-plugin');
 
 module.exports = {
     entry: { main: './src/js/index.js' },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[hash].js'
+        // filename: '[name].[hash].js'
+        filename: '[name].js'
     },
     devServer: {
         hot: true,
@@ -52,7 +54,19 @@ module.exports = {
             {
                 test: /\.(eot|ttf|woff|woff2)$/,
                 loader: 'file-loader?name=./vendor/[name].[ext]'
-            }
+            },
+            {
+              test: /\.html$/,
+              use: [
+              {
+              //     // Передаем результат в bemdecl-to-fs-loader
+                  loader: 'bemdecl-to-fs-loader',
+              //     // Указываем уровни переопределения и расширения технологий
+                  options: { levels: ['blocks'], extensions: ['css', 'js'] }
+              },
+              // Для начала передаем файл в html2bemdecl-loader
+              { loader: 'html2bemdecl-loader' }
+              ] }
         ]
     },
     plugins: [
@@ -67,16 +81,23 @@ module.exports = {
             },
             canPrint: true
         }),
-        new HtmlWebpackPlugin({
+        // new HtmlWebpackPlugin({
             // inject: false,
-            template: './src/index.html',
-            filename: 'index.html'
-        }),
+            // template: './src/index.html',
+            // filename: 'index.html'
+        // }),
         new WebpackMd5Hash(),
         new webpack.DefinePlugin({
             'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new сopy({patterns:
+          [
+            // { from: path.resolve(__dirname, '..', 'news-aggregation-front', 'src', 'index.html'), to: path.resolve(__dirname, "dist") }
+            { from: path.resolve(__dirname, 'src', 'index.html'), to: path.resolve(__dirname, "dist") }
+          ]
+        }
+      )
     ]
     ,
     optimization: {
