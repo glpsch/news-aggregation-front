@@ -1,1 +1,0 @@
-document.getElementsByClassName('block')[0].innerHTML += " [This text is added by block.js!]"

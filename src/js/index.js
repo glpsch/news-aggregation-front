@@ -1,3 +1,4 @@
-// import '../index.css';
+import '../index.css';
 // require('../index.css');
-require('../index.html');
+// require('../index.html');
+import '../index.html';
