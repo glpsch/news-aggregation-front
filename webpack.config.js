@@ -43,6 +43,9 @@ module.exports = {
               { loader: 'html2bemdecl-loader' } // First, convert HTML to bem DECL format
             ] },
           { test: /\.css$/, loader: 'style-loader!css-loader' },
+
+
+
           //             {
 //                 test: /\.js$/,
 //                 exclude: /node_modules/,
@@ -50,15 +53,15 @@ module.exports = {
 //                     loader: "babel-loader"
 //                 }
 //             },
-//             // {
-//             //     test: /\.css$/i,
-//             //     use: [
-//             //         (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-//             //         'css-loader',
-//             //         'postcss-loader'
-//             //     ]
-//             // },
-//             { test: /\.css$/, loader: 'style-loader!css-loader' },
+            // {
+            //     test: /\.css$/i,
+            //     use: [
+            //         (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+            //         'css-loader',
+            //         'postcss-loader'
+            //     ]
+            // },
+
             {
               test: /\.(png|jp?g|gif|ico|svg)$/i,
               use: [
@@ -76,6 +79,10 @@ module.exports = {
       ]
   },
   plugins: [
+  //   new MiniCssExtractPlugin({
+  //     // filename: 'style.[contenthash].css'
+  //     filename: 'style.css'
+  // }),
       new Copy({patterns: [
           { from: path.resolve(__dirname, 'src', 'index.html'), to: path.resolve(__dirname, "dist") }
       ]})
