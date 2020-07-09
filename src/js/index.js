@@ -1,4 +1,7 @@
+// BEM CONFIG
 import '../index.css';
-// require('../index.css');
-// require('../index.html');
 import '../index.html';
+
+
+// // ORIGINAL CONFIG
+// import '../index.css';

@@ -1,14 +1,11 @@
 .search {
 
-    /* background-image: url(../../images/search.png); */
-    /* background-color: red; */
-    background-image: url(../../src/images/search.png);
+  /* background-image: url(../../images/search.png); */
 
-    width: 100%;
-    /* max-width: 1440px; */
+  background-image: url(../../src/images/search.png);
+  width: 100%;
+  /* max-width: 1440px; */
   height: 576px;
   background-size: cover;
-color: white;
-
-
+  color: white;
 }

@@ -1,16 +1,9 @@
 .header {
-  margin: 0;
-  padding: 0 104px;
-  color: #FFFFFF;
-  width: 1440px;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(196, 196, 196, 0.3);
   position: absolute;
   top: 0px;
   left: 0px;
   z-index: 2;
-  border-bottom: 1px solid rgba(196, 196, 196, 0.3);
 }
 

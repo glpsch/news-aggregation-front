@@ -9,6 +9,10 @@ const TerserPlugin = require('terser-webpack-plugin');
 const Copy = require('copy-webpack-plugin');
 
 
+
+// NEW BEM CONFIG
+//////////////////////////////
+//////////////////////////////
 module.exports = {
   entry: path.resolve(__dirname, "src", 'js', "index.js"),
   output: {
@@ -56,14 +60,14 @@ module.exports = {
 //             // },
 //             { test: /\.css$/, loader: 'style-loader!css-loader' },
             {
-                test: /\.(png|jp?g|gif|ico|svg)$/i,
-                use: [
-                    'file-loader?name=./images/[name].[ext]',
-                    {
-                        loader: 'image-webpack-loader',
-                        options: {}
-                    },
-                ]
+              test: /\.(png|jp?g|gif|ico|svg)$/i,
+              use: [
+                  'file-loader?name=./images/[name].[ext]',
+                  {
+                      loader: 'image-webpack-loader',
+                      options: {}
+                  },
+              ]
             },
             {
                 test: /\.(eot|ttf|woff|woff2)$/,
@@ -80,62 +84,9 @@ module.exports = {
 
 
 
-//     plugins: [
-//         new MiniCssExtractPlugin({
-//             // filename: 'style.[contenthash].css'
-//             filename: 'style.css'
-//         }),
-//         new OptimizeCssAssetsPlugin({
-//             assetNameRegExp: /\.css$/g,
-//             cssProcessor: require('cssnano'),
-//             cssProcessorPluginOptions: {
-//                 preset: ['default'],
-//             },
-//             canPrint: true
-//         }),
-//         // new HtmlWebpackPlugin({
-//             // inject: false,
-//             // template: './src/index.html',
-//             // filename: 'index.html'
-//         // }),
-//         new WebpackMd5Hash(),
-//         new webpack.DefinePlugin({
-//             'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-//         }),
-//         new webpack.HotModuleReplacementPlugin(),
-//         new сopy({patterns:
-//           [
-//             // { from: path.resolve(__dirname, '..', 'news-aggregation-front', 'src', 'index.html'), to: path.resolve(__dirname, "dist") }
-//             { from: path.resolve(__dirname, 'src', 'index.html'), to: path.resolve(__dirname, "dist") }
-//           ]
-//         }
-//       )
-//     ]
-//     ,
-//     optimization: {
-//         minimizer: [
-//             new TerserPlugin({
-//                 // sourceMap: true,
-//                 terserOptions: {
-//                     compress: {
-//                         drop_console: true,
-//                     },
-//                     output: {
-//                         comments: false,
-//                     }
-//                 },
-//             }),
-//         ],
-//     }
-// };
 
-
-
-
-
+// FIRST BEM CONFIG
 ////////////////////////////////////////////////////////////
-
-
 
 // const webpack = require('webpack');
 // const path = require('path');
@@ -167,3 +118,5 @@ module.exports = {
 //         ]})
 //     ]
 // }
+
+////////////////////////////////////////////////////////////
