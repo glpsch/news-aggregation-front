@@ -10,14 +10,15 @@
   <script src='./index.js'></script>
 </head>
 
-<body>
+<body class="body">
   <div class="page">
     <header class="header">
       <span class="logo header__logo">NewsExplorer</span>
       <div class="header__links">
-        <a href="#" class="link">Главная</a>
-        <a href="#" class="link">Авторизоваться</a>
+        <a href="#" class="link link_underlined">Главная</a>
+      <div class="button header__button"><a href="#" class="link">Авторизоваться</a> </div>
       </div>
+      <!-- <hr class="header__hr"> -->
     </header>
 
     <main class="content">
@@ -25,7 +26,14 @@
 
 
         <h1 class="search__title">Что в мире творится?</h1>
-
+        <h2 class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
+        </h2>
+        <div class="search__bar">
+          <span class="search__text">Введите тему новости</span>
+          <div class="button search__button">
+            <span>Искать</span>
+          </div>
+        </div>
 
       </section>
 

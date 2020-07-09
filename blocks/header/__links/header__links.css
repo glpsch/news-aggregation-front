@@ -2,4 +2,15 @@
   font-style: normal;
   font-family: 'Roboto';
   font-weight: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__links::after {
+  width: 568px;
+  height: 553px;
+  background-color: #000000;
+  top: 300px;
+  z-index: 2;
 }
