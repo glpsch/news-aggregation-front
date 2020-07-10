@@ -1,7 +1,7 @@
 // // ORIGINAL CONFIG
 // import '../index.css';
 
-// BEM CONFIG
+// // BEM CONFIG
 import '../index.css';
 import '../index.html';
 
@@ -12,5 +12,5 @@ import "../images/av.png"
 import "../images/fb.svg"
 import "../images/gh.svg"
 import "../images/not-found.svg"
-// import "../images/loading.svg"
+
 import "../images/loading.png"

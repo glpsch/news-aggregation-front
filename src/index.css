@@ -1,7 +1,10 @@
 /* @import url(./vendor/normalize.css);
 @import url(../blocks/about/__photo/about__photo.css);
 @import url(../blocks/header/header.css);
-@import url(../blocks/test/test111.css); */
+@import url(../blocks/test/test111.css);
+@import url(../blocks/search-results/_loading/search-results_loading.css); */
+
+/* @import url(../blocks/test/test111.css); */
 
 
 @font-face {
