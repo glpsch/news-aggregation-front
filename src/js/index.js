@@ -9,3 +9,5 @@ import '../index.html';
 //// img
 
 import "../images/av.png"
+import "../images/fb.svg"
+import "../images/gh.svg"

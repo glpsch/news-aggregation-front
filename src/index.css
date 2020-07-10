@@ -39,6 +39,8 @@
 }
 
 .link {
+  margin: 0;
+  padding: 0;
   opacity: 1;
   transition: opacity 1.5s ease;
   text-decoration: none;
