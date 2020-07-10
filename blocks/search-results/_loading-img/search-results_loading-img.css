@@ -1,0 +1,14 @@
+.search-results_loading-img {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  margin-left: -37px;
+  width: 74px;
+  height:74px;
+  /* background-image: url(./images/loading.svg); */
+  /* background-image: url(../../../src/images/loading.png); */
+  /* transform: rotate(-15deg); */
+  /* animation: rotation linear 20s infinite; */
+  animation:spin 4s linear infinite;
+}
+
