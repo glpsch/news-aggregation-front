@@ -11,3 +11,4 @@ import '../index.html';
 import "../images/av.png"
 import "../images/fb.svg"
 import "../images/gh.svg"
+import "../images/not-found.svg"
