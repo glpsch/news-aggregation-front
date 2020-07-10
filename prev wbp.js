@@ -61,7 +61,6 @@ module.exports = {
           canPrint: true
       }),
       new HtmlWebpackPlugin({
-          // inject: false,
           template: './src/index.html',
           filename: 'index.html'
       }),
@@ -75,7 +74,6 @@ module.exports = {
   optimization: {
       minimizer: [
           new TerserPlugin({
-              // sourceMap: true,
               terserOptions: {
                   compress: {
                       drop_console: true,

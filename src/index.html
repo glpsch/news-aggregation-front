@@ -8,13 +8,13 @@
   <title>News Explorer</title>
   <!-- <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>"> -->
   <script src='./index.js'></script>
- </head>
+</head>
 
 <body class="body">
   <div class="page">
     <header class="header">
       <div class="header__content">
-        <span class="logo header__logo">NewsExplorer</span>
+        <span class="logo">NewsExplorer</span>
         <div class="header__links">
           <a href="#" class="link link_underlined">Главная</a>
           <div class="button header__button"><a href="#" class="link">Авторизоваться</a> </div>
@@ -22,8 +22,9 @@
       </div>
     </header>
 
-    <main class="content">
+    <main>
       <section class="search">
+        <div>
         <h1 class="search__title">Что в мире творится?</h1>
         <h2 class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
         </h2>
@@ -33,9 +34,8 @@
             <span>Искать</span>
           </div>
         </div>
+      </div>
       </section>
-
-
       <section class="about">
         <div class="about__photo">
           <picture>
@@ -44,23 +44,21 @@
           </picture>
         </div>
         <div class="about__content">
-        <h2 class="about__title">Об авторе</h2>
-        <p class="about__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.
-          Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
-      </div>
-
+          <h2 class="about__title">Об авторе</h2>
+          <p class="about__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы
+            занимаетесь, какими технологиями разработки владеете.
+            <span class="br"> Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем
+              можете помочь потенциальным заказчикам. </span></p>
+        </div>
       </section>
-
     </main>
+
     <section class="footer">
       <div class="footer__link">
         <!-- <a href="https://yandex.ru/maps/" target="_blank" class="link">Карты</a>
-      <a href="https://yandex.ru/pogoda/" target="_blank" class="link">Погода</a>
-      <a href="https://rasp.yandex.ru/" target="_blank" class="link">Расписание</a>
-      <a href="https://calendar.yandex.ru/" target="_blank" class="link">Календарь</a>
-      <a href="https://travel.yandex.ru" target="_blank" class="link">Путешествия</a> -->
+    -->
       </div>
-      <!-- <p class="footer__copyright">&copy; Галина Пейсахович</p> -->
+      <!-- <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p> -->
     </section>
 
   </div>

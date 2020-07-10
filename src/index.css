@@ -31,7 +31,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
-  /* max-width: 1440px; */
+  max-width: 1600px;
   margin: 0 auto;
   font-family: 'Roboto', Arial, sans-serif;
   background-color: #FFFFFF;
@@ -58,4 +58,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.br {
+  display: block;
+  padding-top: 18px;
 }

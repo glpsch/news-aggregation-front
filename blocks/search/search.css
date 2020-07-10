@@ -3,9 +3,10 @@
   /* background-image: url(../../images/search.png); */
 
   background-image: url(../../src/images/search.png);
-  width: 100%;
-  /* max-width: 1440px; */
+  padding: 0 416px;
   height: 576px;
   background-size: cover;
   color: white;
+  display: flex;
+  justify-content: center;
 }
