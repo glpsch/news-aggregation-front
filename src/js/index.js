@@ -12,5 +12,10 @@ import "../images/av.png"
 import "../images/fb.svg"
 import "../images/gh.svg"
 import "../images/not-found.svg"
-
+// loading svg ?
 import "../images/loading.png"
+
+import "../images/card1.jpg"
+import "../images/card2.jpg"
+
+

@@ -1,0 +1,9 @@
+.card__bookmark {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 24px;
+  top: 24px;
+  background: #FFFFFF;
+  border-radius: 8px;
+}

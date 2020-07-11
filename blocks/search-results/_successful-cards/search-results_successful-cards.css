@@ -1,0 +1,5 @@
+.search-results_successful-cards {
+    display: flex;
+    /* justify-content: space-evenly; */
+    padding-bottom: 64px;
+}
