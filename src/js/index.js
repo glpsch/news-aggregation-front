@@ -14,6 +14,7 @@ import "../images/gh.svg"
 import "../images/not-found.svg"
 // loading svg ?
 import "../images/loading.png"
+import "../images/logout.svg"
 
 import "../images/card1.jpg"
 import "../images/card2.jpg"

@@ -1,0 +1,13 @@
+.header_unlogged span{
+  display: none;
+}
+
+.header_unlogged img{
+  display: none;
+}
+
+
+.header_unlogged::after {
+  content: 'Авторизоваться';
+}
+
