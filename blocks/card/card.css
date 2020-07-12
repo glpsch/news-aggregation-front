@@ -5,6 +5,6 @@
     border-radius: 16px;
     background-color: #FFFFFF;
     overflow: hidden;
-    margin-right: 16px;
+    /* margin-right: 16px; */
     cursor: pointer;
 }

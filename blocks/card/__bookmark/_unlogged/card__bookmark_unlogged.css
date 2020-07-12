@@ -1,0 +1,3 @@
+.card__bookmark_unlogged:hover  ~ .card__bookmark-alert {
+display: flex;
+}

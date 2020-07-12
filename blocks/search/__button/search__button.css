@@ -9,5 +9,14 @@
   box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
   border: none;
   align-self: flex-end;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
 
+.search__button:hover {
+  background: #347EFF;
+}
+
+.search__button:active {
+  background: #2A65CC;
 }

@@ -17,8 +17,8 @@
         <span class="logo">NewsExplorer</span>
         <div class="header__links">
           <a href="#" class="link link_underlined">Главная</a>
-          <!-- <div class="button header__button"><a href="#" class="link header_logout"><span>Грета</span> -->
-          <div class="button header__button header_unlogged"><a href="#" class="link"><span>Грета</span>
+          <div class="button header__button"><a href="#" class="link header_logout"><span>Грета</span>
+              <!-- <div class="button header__button header_unlogged"><a href="#" class="link"><span>Грета</span> -->
               <img src="./images/logout.svg" alt="Выйти из профайла">
             </a> </div>
         </div>
@@ -32,6 +32,7 @@
           <h2 class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
           </h2>
           <div class="search__bar">
+            <!-- <div class="search__bar search__bar_active"> -->
             <span class="search__text">Введите тему новости</span>
             <div class="button search__button">
               <span>Искать</span>
@@ -68,36 +69,52 @@
           </h3>
           <div class="search-results_successful-cards">
 
+
             <div class="card">
               <div class="card__image">
                 <!-- wbp -->
                 <img src="./images/card1.jpg" alt="Иллюстрация к новости">
-                <div class="card__bookmark">
-                  <div class="card__bookmark-flag"></div>
+                <div class="card__bookmark-section">
+                  <div class="card__bookmark">
+                    <div class="card__bookmark-flag"></div>
+                  </div>
+                  <div class="card__bookmark-alert">
+                    <span>Войдите, чтобы сохранять статьи</span>
+                  </div>
                 </div>
               </div>
               <div class=" card__content">
-                <span class="card__date">2 августа, 2019
-                </span>
-                <h3 class="card__title">
-                  Национальное достояние – парки
-                </h3>
-                <p class="card__text">
-                  В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система
-                  национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                </p>
+                <!-- flex wrap? TODO -->
+                <div>
+                  <span class="card__date">2 августа, 2019
+                  </span>
+                  <h3 class="card__title">
+                    Национальное достояние – парки
+                  </h3>
+                  <p class="card__text">
+                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система
+                    национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+                  </p>
+                </div>
                 <span class="card__source">
                   Лента.ру
                 </span>
               </div>
             </div>
 
+
             <div class="card">
               <div class="card__image">
                 <!-- wbp -->
                 <img src="./images/card2.jpg" alt="Иллюстрация к новости">
-                <div class="card__bookmark">
-                  <div class="card__bookmark-flag card__bookmark-flag_active"></div>
+                <div class="card__bookmark-section">
+                  <div class="card__bookmark">
+                    <div class="card__bookmark-flag card__bookmark-flag_saved"></div>
+                  </div>
+
+                  <div class="card__bookmark-alert">
+                    <span>Войдите, чтобы сохранять статьи</span>
+                  </div>
                 </div>
               </div>
               <div class=" card__content">
@@ -119,7 +136,43 @@
               </div>
             </div>
 
+            <div class="card">
+              <div class="card__image">
+                <!-- wbp -->
+                <img src="./images/card3.jpg" alt="Иллюстрация к новости">
+                <div class="card__bookmark-section">
+                  <div class="card__bookmark card__bookmark_unlogged">
+                    <div class="card__bookmark-flag"></div>
+                  </div>
+
+                  <div class="card__bookmark-alert">
+                    <span>Войдите, чтобы сохранять статьи</span>
+                  </div>
+                </div>
+              </div>
+              <div class=" card__content">
+                <div>
+                  <span class="card__date">2 августа, 2019
+                  </span>
+                  <h3 class="card__title">
+                    «Первозданная тайга»: новый фотопроект Игоря Шпиленка
+                  </h3>
+                  <p class="card__text">
+                    Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их
+                    сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...
+                  </p>
+                </div>
+                <span class="card__source">
+                  риа
+                </span>
+              </div>
+            </div>
+
           </div>
+<div class="button search-results_successful-more">
+  <span>Показать еще</span>
+</div>
+
         </div>
 
 

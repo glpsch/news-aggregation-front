@@ -2,5 +2,15 @@
   width: 176px;
   height: 48px;
   margin-left: 32px;
+  transition-property: background-color;
+}
 
+.header__button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transition-duration: 1.2s;
+}
+
+.header__button:active {
+  background: rgba(255, 255, 255, 0.5);
+  transition-duration: 0.5s;
 }

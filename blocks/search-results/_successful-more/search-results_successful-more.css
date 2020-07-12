@@ -1,0 +1,23 @@
+.search-results_successful-more {
+  background: #FFFFFF;
+  border-radius: 80px;
+  max-width: 288px;
+  height: 64px;
+  margin: 0 auto;
+  border: none;
+
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+.search-results_successful-more:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.search-results_successful-more:active {
+  background: rgba(255, 255, 255, 0.2);
+}

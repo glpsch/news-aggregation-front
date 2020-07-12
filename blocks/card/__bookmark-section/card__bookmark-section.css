@@ -1,0 +1,9 @@
+.card__bookmark-section {
+    position: absolute;
+    max-width: 400px;
+    height: 80px;
+    top: 0;
+    right: 0;
+    /* left: 0; */
+    /* display: flex; */
+}

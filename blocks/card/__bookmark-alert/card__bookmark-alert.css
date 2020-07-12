@@ -1,0 +1,22 @@
+.card__bookmark-alert {
+  position: absolute;
+  width: 182px;
+  height: 40px;
+  right: 69px;
+  top: 24px;
+  background: #FFFFFF;
+  border-radius: 8px;
+
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #000000;
+
+  display: none;
+}

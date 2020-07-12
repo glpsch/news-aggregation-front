@@ -8,3 +8,8 @@
     margin-left: -7px;
     background-image: url(../../../src/images/bookmark.svg);
 }
+
+
+.card__bookmark-flag:hover {
+  background-image: url(../../../src/images/bookmark_hover.svg);
+}

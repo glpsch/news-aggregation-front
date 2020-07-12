@@ -1,5 +1,5 @@
 .search-results_successful-cards {
     display: flex;
-    /* justify-content: space-evenly; */
+    /* justify-content: space-between; */
     padding-bottom: 64px;
 }
