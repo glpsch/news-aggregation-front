@@ -7,8 +7,12 @@
 @import url(../blocks/about/about.css);
 @import url(../blocks/footer/footer.css);
 
-@import url(../blocks/popup/popup.css);
 @import url(../blocks/card/card.css);
+@import url(../blocks/popup/popup.css);
+
+@import url(../blocks/popup/_registration/popup_registration.css);
+@import url(../blocks/popup/_success/popup_success.css);
+@import url(../blocks/popup/_login/popup_login.css);
 
 
 @font-face {

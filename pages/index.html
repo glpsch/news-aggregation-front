@@ -18,13 +18,13 @@
     <header class="header">
       <div class="header__content">
         <span class="logo">NewsExplorer</span>
-        <div class="header__links">
+        <nav class="header__links">
           <a href="#" class="link link_underlined">Главная</a>
           <div class="button header__button"><a href="#" class="link header_logout"><span>Грета</span>
               <!-- <div class="button header__button header_unlogged"><a href="#" class="link"><span>Грета</span> -->
               <img src="../src/images/logout.svg" alt="Выйти из профайла">
             </a> </div>
-        </div>
+        </nav>
       </div>
     </header>
 
@@ -200,17 +200,17 @@
       <div>
         <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
       </div>
-      <div>
-        <a href="https://news-exploring.ga/" class="link footer__link">Главная</a>
-        <a href="https://praktikum.yandex.ru/" target="_blank" class="link footer__link">Яндекс.Практикум</a>
+      <ul class="footer__links">
+        <li><a href="https://news-exploring.ga/" class="link footer__link">Главная</a></li>
+        <li><a href="https://praktikum.yandex.ru/" target="_blank" class="link footer__link">Яндекс.Практикум</a></li>
         <!-- <img src="<%=require('../src/images/gh.svg').default%>" alt="Github" class="footer__social-icon"> -->
-        <a href="https://github.com/glpsch" class="link" target="_blank">
+        <li><a href="https://github.com/glpsch" class="link" target="_blank">
           <img src="../src/images/gh.svg" alt="Github" class="footer__social-icon">
-        </a>
-        <a href="https://www.facebook.com/overpassover" class="link" target="_blank">
+        </a></li>
+        <li><a href="https://www.facebook.com/overpassover" class="link" target="_blank">
           <img src="../src/images/fb.svg" alt="Facebook" class="footer__social-icon">
-        </a>
-      </div>
+        </a></li>
+      </ul>
 
     </section>
 

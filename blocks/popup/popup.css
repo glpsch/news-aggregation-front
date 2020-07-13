@@ -1,17 +1,14 @@
+
 @import url(./__content/popup__content.css);
 @import url(./__close/popup__close.css);
 @import url(./__title/popup__title.css);
 @import url(./__form/popup__form.css);
 @import url(./__input/popup__input.css);
 @import url(./__button/popup__button.css);
-
 @import url(./__input-container/popup__input-container.css);
 @import url(./__input-error/popup__input-error.css);
 @import url(./__input-error/_main/popup__input-error_main.css);
 @import url(./__link/popup__link.css);
-@import url(./_login/popup_login.css);
-@import url(./_registration/popup_registration.css);
-@import url(./_success/popup_success.css);
 @import url(./_success-link/popup_success-link.css);
 
 .popup {
