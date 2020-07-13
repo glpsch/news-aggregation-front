@@ -1,0 +1,5 @@
+.popup__input-error_main {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3px;
+}

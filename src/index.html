@@ -36,7 +36,7 @@
           </h2>
           <div class="search__bar">
             <input type="text" class="input search__input" placeholder="Введите тему новости"></input>
-            <div class="button search__button">
+            <div class="button search__button button_main">
               <span>Искать</span>
             </div>
           </div>
@@ -222,14 +222,12 @@
     <div class="popup__content">
       <img src="./images/close.svg" alt="" class="popup__close">
       <h3 class="popup__title">Регистрация</h3>
-
       <form class="popup__form" novalidate>
         <div class="popup__input-container">
           <span class="popup__input-title" >Email</span>
           <input type="email"
             class="input popup__input" placeholder="Введите email">
-          <span class="popup__input-error" ></span>
-
+          <span class="popup__input-error"></span>
         </div>
         <div class="popup__input-container">
           <span class="popup__input-title" >Пароль</span>
@@ -237,27 +235,61 @@
             class="input popup__input" placeholder="Введите пароль">
           <span class="popup__input-error"></span>
         </div>
-
         <div class="popup__input-container">
           <span class="popup__input-title" >Имя</span>
           <input type="text" required minlength="2" maxlength="30"
             class="input popup__input" placeholder="Введите своё имя">
-          <span class="popup__input-error" id="error-title"></span>
-
+          <span class="popup__input-error"></span>
         </div>
-
-        <button type class="button popup__button popup__button_inactive" disabled>Зарегистрироваться</button>
+        <span class="popup__input-error popup__input-error_main">Такой пользователь уже есть</span>
+        <button type class="button popup__button button_main">Зарегистрироваться</button>
+        <!-- <button type class="button popup__button popup__button_inactive" disabled>Зарегистрироваться</button> -->
       </form>
-
       <div class="popup__link" >
-        или <span class="link">Войти</span>
+        или  <a href="#" class="link">Войти</a>
       </div>
-
     </div>
   </div>
 
 
 
+  <div class="popup popup_login">
+    <div class="popup__content">
+      <img src="./images/close.svg" alt="" class="popup__close">
+      <h3 class="popup__title">Вход</h3>
+      <form class="popup__form" novalidate>
+        <div class="popup__input-container">
+          <span class="popup__input-title" >Email</span>
+          <input type="email"
+            class="input popup__input" placeholder="Введите email">
+          <span class="popup__input-error">Неправильный формат email</span>
+        </div>
+        <div class="popup__input-container">
+          <span class="popup__input-title" >Пароль</span>
+          <input type="password" required minlength="6"
+            class="input popup__input" placeholder="Введите пароль">
+          <span class="popup__input-error"></span>
+        </div>
+        <span class="popup__input-error popup__input-error_main"></span>
+        <!-- <button type class="button popup__button button_main">Войти</button> -->
+        <button type class="button popup__button popup__button_inactive" disabled>Войти</button>
+      </form>
+      <div class="popup__link" >
+        или  <a href="#" class="link">Зарегистрироваться</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup popup_success">
+    <div class="popup__content">
+      <img src="./images/close.svg" alt="" class="popup__close">
+      <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
+
+      <div class="popup__link popup_success-link" >
+          <a href="#" class="link">Выполнить вход</a>
+      </div>
+    </div>
+  </div>
 
 </section>
 

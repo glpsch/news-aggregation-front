@@ -14,8 +14,7 @@
   color: #000000;
 }
 
-.popup__link span{
-
-padding: 1px 0 0 6px;
-color: #2F71E5;
+.popup__link a{
+  padding: 2px 0 0 6px;
+  color: #2F71E5;
 }

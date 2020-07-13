@@ -1,16 +1,11 @@
 .popup__input-error {
-/* todo */
-
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
-  line-height: 15px;
   color: #FF0000;
-  /* margin-top: 4px; */
 
   transition: .3s;
 
-
-    /* display: none; */
+  /* display: none; */
 }

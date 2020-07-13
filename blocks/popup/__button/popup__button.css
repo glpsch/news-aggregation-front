@@ -2,22 +2,15 @@
 .popup__button {
   width: 360px;
   height: 64px;
-  /* border: 1px solid rgba(0, 0, 0, .2); */
-  /* background-color: black; */
-  margin-top: 39px;
-
 
   font-style: normal;
-font-weight: bold;
-font-size: 18px;
-line-height: 24px;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
 }
 
-
-
-
 .popup__button_inactive {
-  /* color: rgba(0, 0, 0, .2); */
   background-color: #E6E8EB;
   color: #B6BCBF;
 }
