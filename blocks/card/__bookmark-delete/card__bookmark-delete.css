@@ -1,0 +1,28 @@
+.card__bookmark-delete {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin-top: 4px;
+  margin-left: 6px;
+
+  background-image: url(../../../src/images/trash.svg);
+  background-size: contain;
+
+}
+
+
+/* todo position size */
+
+.card__bookmark-delete:hover {
+  background-image: url(../../../src/images/trash_black.svg);
+  background-size: contain;
+  margin-top: 7px;
+  margin-left: 9px;
+
+  width: 23px;
+  height: 23px;
+}
+
+
+
+

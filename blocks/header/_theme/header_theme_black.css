@@ -1,0 +1,13 @@
+.header_theme_black {
+    color: #1A1B22;
+    font-weight: 500;
+
+}
+
+.header_theme_black a {
+  border-color:  #1A1B22;
+}
+
+.header_theme_black .button {
+  border-color:  #1A1B22;
+}

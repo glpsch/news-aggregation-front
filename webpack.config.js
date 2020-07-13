@@ -6,8 +6,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 const TerserPlugin = require('terser-webpack-plugin');
-// const Copy = require('copy-webpack-plugin');
-
 
 module.exports = {
   entry: { main: './src/js/index.js' },
@@ -75,6 +73,10 @@ module.exports = {
           template: './pages/index.html',
           filename: 'index.html'
       }),
+      new HtmlWebpackPlugin({
+        template: './pages/articles.html',
+        filename: 'articles.html'
+    }),
       new WebpackMd5Hash(),
       new webpack.DefinePlugin({
           'NODE_ENV': JSON.stringify(process.env.NODE_ENV)

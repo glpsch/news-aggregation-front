@@ -20,7 +20,7 @@
 
   .link_underlined {
     border-bottom: 3px solid #FFFFFF;
-    line-height: 5;
+    line-height: 4.5;
   }
 
 
@@ -74,4 +74,14 @@
 
   .input::placeholder {
     color: #B6BCBF;
+  }
+
+  .span_bold {
+    font-weight: 500;
+  }
+
+  .title {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto Slab;
   }

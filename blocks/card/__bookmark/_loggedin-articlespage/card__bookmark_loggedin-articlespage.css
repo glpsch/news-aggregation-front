@@ -1,0 +1,3 @@
+.card__bookmark_loggedin-articlespage:hover  ~ .card__bookmark-delete-caption {
+  display: flex;
+  }

@@ -1,0 +1,17 @@
+@import url(./__title/articles-caption__title.css);
+@import url(./__main/articles-caption__main.css);
+@import url(./__keywords/articles-caption__keywords.css);
+
+
+.articles-caption {
+
+  margin: 0;
+  padding: 120px 104px 0;
+
+
+  font-style: normal;
+  font-weight: normal;
+  max-width: 1440px;
+  height: 294px;
+  color: #1A1B22;
+}

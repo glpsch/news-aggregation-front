@@ -1,0 +1,21 @@
+.card_articlescard {
+
+/* условие в js для замены и добавления классов
+
+<div class="card__bookmark-section">
+<div class="card__bookmark">
+  <!-- <div class="card__bookmark-flag"></div> -->
+  <div class="card__bookmark-delete"></div>
+</div>
+<!-- <div class="card__bookmark-alert">
+  <span>Войдите, чтобы сохранять статьи</span>
+</div> -->
+<div class="card__bookmark-delete-caption">
+  <span>Убрать из сохранённых</span>
+</div>
+<div class="card__bookmark-category">
+  <span>Природа</span>
+</div>
+</div> */
+
+}

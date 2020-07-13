@@ -1,24 +1,38 @@
 @import url(../src/vendor/normalize.css);
 @import url(../blocks/essentials/essentials.css);
 @import url(../blocks/header/header.css);
-/* @import url(../blocks/logo/logo.css);
-@import url(../blocks/search/search.css);
-@import url(../blocks/search-results/search-results.css);
-@import url(../blocks/about/about.css); */
+@import url(../blocks/logo/logo.css);
+/* @import url(../blocks/search/search.css); */
+/* @import url(../blocks/search-results/search-results.css); */
+@import url(../blocks/about/about.css);
 @import url(../blocks/footer/footer.css);
 
 @import url(../blocks/card/card.css);
-/* @import url(../blocks/popup/popup.css);
 
-@import url(../blocks/popup/_registration/popup_registration.css);
-@import url(../blocks/popup/_success/popup_success.css);
-@import url(../blocks/popup/_login/popup_login.css); */
+/* /////////////////////// */
+
+@import url(../blocks/header/_theme/header_theme_black.css);
+@import url(../blocks/articles-caption/articles-caption.css);
+@import url(../blocks/articles-cards/articles-cards.css);
+
+@import url(../blocks/card/__bookmark-category/card__bookmark-category.css);
+@import url(../blocks/card/__bookmark-delete/card__bookmark-delete.css);
+@import url(../blocks/card/__bookmark-delete-caption/card__bookmark-delete-caption.css);
+@import url(../blocks/card/__bookmark/_loggedin-articlespage/card__bookmark_loggedin-articlespage.css);
+
 
 
 @font-face {
   src: url('../src/fonts/robotoslab-regular.woff') format('woff');
   /* url('../fonts/Inter/Inter-Regular.woff2') format('woff2'); */
   font-family: 'Roboto Slab';
+}
+
+@font-face {
+  src: url('../src/fonts/roboto-slab-bold.woff') format('woff');
+  /* url('../fonts/Inter/Inter-Regular.woff2') format('woff2'); */
+  font-family: 'Roboto Slab';
+  font-weight: bold;
 }
 
 @font-face {
@@ -32,6 +46,13 @@
   font-family: 'Roboto';
   font-weight: bold;
 }
+
+@font-face {
+  src: url('../src/fonts/roboto-medium.woff') format('woff');
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+
 
 @font-face {
   src: url('../src/fonts/sourcesanspro-regular.woff') format('woff');
@@ -64,3 +85,11 @@
   overflow: hidden;
 }
 
+/* todo */
+
+/* .page_flex {
+display: flex;
+height: 100vh;
+flex-direction: column;
+justify-content: space-between;
+} */

@@ -1,0 +1,10 @@
+.articles-caption__keywords {
+  font-size: 18px;
+  line-height: 24px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.articles-caption__keywords a {
+  color: #1A1B22;
+}

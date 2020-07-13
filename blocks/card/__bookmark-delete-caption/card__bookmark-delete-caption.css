@@ -1,6 +1,6 @@
-.card__bookmark-alert {
+.card__bookmark-delete-caption {
   position: absolute;
-  width: 182px;
+  width: 159px;
   height: 40px;
   right: 69px;
   top: 24px;
@@ -18,5 +18,5 @@
 
   color: #000000;
 
-  /* display: none; */
+  display: none;
 }
