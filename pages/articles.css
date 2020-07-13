@@ -1,18 +1,19 @@
 @import url(../src/vendor/normalize.css);
 @import url(../blocks/essentials/essentials.css);
 @import url(../blocks/header/header.css);
-@import url(../blocks/logo/logo.css);
+/* @import url(../blocks/logo/logo.css);
 @import url(../blocks/search/search.css);
 @import url(../blocks/search-results/search-results.css);
-@import url(../blocks/about/about.css);
+@import url(../blocks/about/about.css); */
 @import url(../blocks/footer/footer.css);
 
 @import url(../blocks/card/card.css);
-@import url(../blocks/popup/popup.css);
+/* @import url(../blocks/popup/popup.css);
 
 @import url(../blocks/popup/_registration/popup_registration.css);
 @import url(../blocks/popup/_success/popup_success.css);
-@import url(../blocks/popup/_login/popup_login.css);
+@import url(../blocks/popup/_login/popup_login.css); */
+
 
 @font-face {
   src: url('../src/fonts/robotoslab-regular.woff') format('woff');
@@ -38,11 +39,11 @@
   font-family: 'Source Sans';
 }
 
-@font-face {
+/* @font-face {
   src: url('../src/fonts/inter-regular.woff') format('woff');
-  /* url('../fonts/Inter/Inter-Regular.woff2') format('woff2'); */
+
   font-family: 'Inter';
-}
+} */
 
 .body {
   margin: 0;

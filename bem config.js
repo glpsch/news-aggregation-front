@@ -155,3 +155,11 @@ const Copy = require('copy-webpack-plugin');
 // import "../images/favicon.svg"
 
 // import "../images/close.svg"
+
+
+
+
+
+
+
+////  <!-- <script src='./index.js'></script> -->
