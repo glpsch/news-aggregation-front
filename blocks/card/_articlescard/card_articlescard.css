@@ -1,5 +1,12 @@
 .card_articlescard {
 
+margin-bottom: 16px;
+
+}
+
+/* todo nthoftype */
+
+
 /* условие в js для замены и добавления классов
 
 <div class="card__bookmark-section">
@@ -17,5 +24,3 @@
   <span>Природа</span>
 </div>
 </div> */
-
-}

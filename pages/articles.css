@@ -19,7 +19,7 @@
 @import url(../blocks/card/__bookmark-delete/card__bookmark-delete.css);
 @import url(../blocks/card/__bookmark-delete-caption/card__bookmark-delete-caption.css);
 @import url(../blocks/card/__bookmark/_loggedin-articlespage/card__bookmark_loggedin-articlespage.css);
-
+@import url(../blocks/card/_articlescard/card_articlescard.css);
 
 
 @font-face {
