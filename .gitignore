@@ -1,5 +1,6 @@
 /node_modules
 /dist
+/additional configs
 
 # Logs
 logs
