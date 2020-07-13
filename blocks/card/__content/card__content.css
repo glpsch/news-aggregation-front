@@ -1,6 +1,6 @@
 .card__content {
     position: relative;
-    padding: 20px 24px 24px;
+    margin: 20px 24px 24px;
     height: 260px;
     max-width: 352px;
     overflow: hidden;

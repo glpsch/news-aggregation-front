@@ -1,0 +1,62 @@
+@import url(../src/vendor/normalize.css);
+@import url(../blocks/essentials/essentials.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/logo/logo.css);
+@import url(../blocks/search/search.css);
+@import url(../blocks/search-results/search-results.css);
+@import url(../blocks/about/about.css);
+@import url(../blocks/footer/footer.css);
+
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/card/card.css);
+
+
+@font-face {
+  src: url('../src/fonts/robotoslab-regular.woff') format('woff');
+  /* url('../fonts/Inter/Inter-Regular.woff2') format('woff2'); */
+  font-family: 'Roboto Slab';
+}
+
+@font-face {
+  src: url('../src/fonts/roboto-regular.woff') format('woff');
+  /* url('../fonts/Inter/Inter-Regular.woff2') format('woff2'); */
+  font-family: 'Roboto';
+}
+
+@font-face {
+  src: url('../src/fonts/roboto-black.woff') format('woff');
+  font-family: 'Roboto';
+  font-weight: bold;
+}
+
+@font-face {
+  src: url('../src/fonts/sourcesanspro-regular.woff') format('woff');
+  /* url('../fonts/Inter/Inter-Regular.woff2') format('woff2'); */
+  font-family: 'Source Sans';
+}
+
+@font-face {
+  src: url('../src/fonts/inter-regular.woff') format('woff');
+  /* url('../fonts/Inter/Inter-Regular.woff2') format('woff2'); */
+  font-family: 'Inter';
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  /* max-width: 1600px; */
+  max-width: 1440px;
+  margin: 0 auto;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+

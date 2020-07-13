@@ -1,7 +1,10 @@
+@import url(./__bar/search__bar.css);
+@import url(./__button/search__button.css);
+@import url(./__input/search__input.css);
+@import url(./__subtitle/search__subtitle.css);
+@import url(./__title/search__title.css);
+
 .search {
-
-  /* background-image: url(../../images/search.png); */
-
   background-image: url(../../src/images/search.png);
   padding: 0 416px;
   height: 576px;

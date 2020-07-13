@@ -7,10 +7,10 @@
   <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
   <meta name="author" content="GalinaPsch">
   <meta name="description" content="News aggregation">
-  <link rel="icon" type="image/svg" href="./images/favicon.svg"/>
+  <link rel="icon" type="image/svg" href="../src/images/favicon.svg"/>
   <title>News Explorer</title>
-  <!-- <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>"> -->
-  <script src='./index.js'></script>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
+  <!-- <script src='./index.js'></script> -->
 </head>
 
 <body class="body">
@@ -22,7 +22,7 @@
           <a href="#" class="link link_underlined">Главная</a>
           <div class="button header__button"><a href="#" class="link header_logout"><span>Грета</span>
               <!-- <div class="button header__button header_unlogged"><a href="#" class="link"><span>Грета</span> -->
-              <img src="./images/logout.svg" alt="Выйти из профайла">
+              <img src="../src/images/logout.svg" alt="Выйти из профайла">
             </a> </div>
         </div>
       </div>
@@ -47,7 +47,7 @@
         <div class="search-results_nothing-found">
           <div class="search-results_nothing-found-img">
             <!-- wbp -->
-            <img src="./images/not-found.svg" alt=":(">
+            <img src="../src/images/not-found.svg" alt=":(">
           </div>
           <h3 class="search-results_nothing-found-title">Ничего не найдено
           </h3>
@@ -58,8 +58,8 @@
 
         <div class="search-results_loading">
           <div>
-            <img src="./images/loading.png" alt="Загрузка" class="search-results_loading-img">
-            <!-- <img src="<%=require('./images/loading.png').default%>" alt="Загрузка" class="search-results_loading-img"> -->
+            <img src="../src/images/loading.png" alt="Загрузка" class="search-results_loading-img">
+            <!-- <img src="<%=require('../src/images/loading.png').default%>" alt="Загрузка" class="search-results_loading-img"> -->
           </div>
           <p class="search-results_loading-text">
             Идет поиск новостей...
@@ -75,7 +75,7 @@
             <div class="card">
               <div class="card__image">
                 <!-- wbp -->
-                <img src="./images/card1.jpg" alt="Иллюстрация к новости">
+                <img src="../src/images/card1.jpg" alt="Иллюстрация к новости">
                 <div class="card__bookmark-section">
                   <div class="card__bookmark">
                     <div class="card__bookmark-flag"></div>
@@ -86,8 +86,7 @@
                 </div>
               </div>
               <div class=" card__content">
-                <!-- flex wrap? TODO -->
-                <div>
+                <div card__content-wrap>
                   <span class="card__date">2 августа, 2019
                   </span>
                   <h3 class="card__title">
@@ -108,7 +107,7 @@
             <div class="card">
               <div class="card__image">
                 <!-- wbp -->
-                <img src="./images/card2.jpg" alt="Иллюстрация к новости">
+                <img src="../src/images/card2.jpg" alt="Иллюстрация к новости">
                 <div class="card__bookmark-section">
                   <div class="card__bookmark">
                     <div class="card__bookmark-flag card__bookmark-flag_saved"></div>
@@ -120,7 +119,7 @@
                 </div>
               </div>
               <div class=" card__content">
-                <div>
+                <div card__content-wrap>
                   <span class="card__date">2 августа, 2019
                   </span>
                   <h3 class="card__title">
@@ -141,7 +140,7 @@
             <div class="card">
               <div class="card__image">
                 <!-- wbp -->
-                <img src="./images/card3.jpg" alt="Иллюстрация к новости">
+                <img src="../src/images/card3.jpg" alt="Иллюстрация к новости">
                 <div class="card__bookmark-section">
                   <div class="card__bookmark card__bookmark_unlogged">
                     <div class="card__bookmark-flag"></div>
@@ -153,7 +152,7 @@
                 </div>
               </div>
               <div class=" card__content">
-                <div>
+                <!-- <div card__content-wrap> -->
                   <span class="card__date">2 августа, 2019
                   </span>
                   <h3 class="card__title">
@@ -163,7 +162,7 @@
                     Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их
                     сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...
                   </p>
-                </div>
+                <!-- </div>          -->
                 <span class="card__source">
                   риа
                 </span>
@@ -183,8 +182,8 @@
       <section class="about">
         <div class="about__photo">
           <picture>
-            <!-- <img src="<%=require('./images/av.png').default%>" alt="Фото автора" class="about__photo"> -->
-            <img src="./images/av.png" alt="Фото автора" class="about__photo">
+            <!-- <img src="<%=require('../src/images/av.png').default%>" alt="Фото автора" class="about__photo"> -->
+            <img src="../src/images/av.png" alt="Фото автора" class="about__photo">
           </picture>
         </div>
         <div class="about__content">
@@ -204,12 +203,12 @@
       <div>
         <a href="https://news-exploring.ga/" class="link footer__link">Главная</a>
         <a href="https://praktikum.yandex.ru/" target="_blank" class="link footer__link">Яндекс.Практикум</a>
-        <!-- <img src="<%=require('./images/gh.svg').default%>" alt="Github" class="footer__social-icon"> -->
+        <!-- <img src="<%=require('../src/images/gh.svg').default%>" alt="Github" class="footer__social-icon"> -->
         <a href="https://github.com/glpsch" class="link" target="_blank">
-          <img src="./images/gh.svg" alt="Github" class="footer__social-icon">
+          <img src="../src/images/gh.svg" alt="Github" class="footer__social-icon">
         </a>
         <a href="https://www.facebook.com/overpassover" class="link" target="_blank">
-          <img src="./images/fb.svg" alt="Facebook" class="footer__social-icon">
+          <img src="../src/images/fb.svg" alt="Facebook" class="footer__social-icon">
         </a>
       </div>
 
@@ -220,7 +219,7 @@
 
   <div class="popup popup_registration">
     <div class="popup__content">
-      <img src="./images/close.svg" alt="" class="popup__close">
+      <img src="../src/images/close.svg" alt="" class="popup__close">
       <h3 class="popup__title">Регистрация</h3>
       <form class="popup__form" novalidate>
         <div class="popup__input-container">
@@ -255,7 +254,7 @@
 
   <div class="popup popup_login">
     <div class="popup__content">
-      <img src="./images/close.svg" alt="" class="popup__close">
+      <img src="../src/images/close.svg" alt="" class="popup__close">
       <h3 class="popup__title">Вход</h3>
       <form class="popup__form" novalidate>
         <div class="popup__input-container">
@@ -282,7 +281,7 @@
 
   <div class="popup popup_success">
     <div class="popup__content">
-      <img src="./images/close.svg" alt="" class="popup__close">
+      <img src="../src/images/close.svg" alt="" class="popup__close">
       <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
 
       <div class="popup__link popup_success-link" >
