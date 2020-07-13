@@ -31,6 +31,12 @@
   font-family: 'Source Sans';
 }
 
+@font-face {
+  src: url('./fonts/inter-regular.woff') format('woff');
+  /* url('../fonts/Inter/Inter-Regular.woff2') format('woff2'); */
+  font-family: 'Inter';
+}
+
 .body {
   margin: 0;
   padding: 0;
@@ -87,4 +93,20 @@
 .br {
   display: block;
   padding-top: 18px;
+}
+
+.input {
+  margin: 0;
+  padding: 0;
+  width:100%;
+  /* todo ? */
+  border: none;
+}
+
+.input:focus{
+  outline: none;
+}
+
+.input::placeholder {
+  color: #B6BCBF;
 }

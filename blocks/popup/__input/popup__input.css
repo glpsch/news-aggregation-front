@@ -1,0 +1,24 @@
+.popup__input {
+  width: 100%;
+  height: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  font-size: 14px;
+  line-height: 17px;
+  box-sizing: border-box;
+  padding: 5px 0 0;
+
+  color: #000000;
+}
+
+/* .popup__input:invalid {
+  color: red;
+} */
+
+
+/* todo */
+
+.input-container_invalid .popup__input-error {
+  padding: 4px;
+  display: block;
+}
+

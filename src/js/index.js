@@ -19,5 +19,7 @@ import "../images/logout.svg"
 import "../images/card1.jpg"
 import "../images/card2.jpg"
 import "../images/card3.jpg"
+import "../images/favicon.svg"
 
+import "../images/close.svg"
 

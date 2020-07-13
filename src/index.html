@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+  <meta name="author" content="GalinaPsch">
+  <meta name="description" content="News aggregation">
+  <link rel="icon" type="image/svg" href="./images/favicon.svg"/>
   <title>News Explorer</title>
   <!-- <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>"> -->
   <script src='./index.js'></script>
@@ -32,8 +35,7 @@
           <h2 class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
           </h2>
           <div class="search__bar">
-            <!-- <div class="search__bar search__bar_active"> -->
-            <span class="search__text">Введите тему новости</span>
+            <input type="text" class="input search__input" placeholder="Введите тему новости"></input>
             <div class="button search__button">
               <span>Искать</span>
             </div>
@@ -213,7 +215,54 @@
 
     </section>
 
+
+<section class="popup">
+
+  <div class="popup popup_registration">
+    <div class="popup__content">
+      <img src="./images/close.svg" alt="" class="popup__close">
+      <h3 class="popup__title">Регистрация</h3>
+
+      <form class="popup__form" novalidate>
+        <div class="popup__input-container">
+          <span class="popup__input-title" >Email</span>
+          <input type="email"
+            class="input popup__input" placeholder="Введите email">
+          <span class="popup__input-error" ></span>
+
+        </div>
+        <div class="popup__input-container">
+          <span class="popup__input-title" >Пароль</span>
+          <input type="password" required minlength="6"
+            class="input popup__input" placeholder="Введите пароль">
+          <span class="popup__input-error"></span>
+        </div>
+
+        <div class="popup__input-container">
+          <span class="popup__input-title" >Имя</span>
+          <input type="text" required minlength="2" maxlength="30"
+            class="input popup__input" placeholder="Введите своё имя">
+          <span class="popup__input-error" id="error-title"></span>
+
+        </div>
+
+        <button type class="button popup__button popup__button_inactive" disabled>Зарегистрироваться</button>
+      </form>
+
+      <div class="popup__link" >
+        или <span class="link">Войти</span>
+      </div>
+
+    </div>
   </div>
+
+
+
+
+</section>
+
+
+</div>
 </body>
 
 </html>
