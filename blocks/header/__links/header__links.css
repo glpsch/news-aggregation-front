@@ -13,3 +13,28 @@
 .header__links a:nth-child(2){
   margin-left: 32px;
 }
+
+@media screen and (max-width: 860px) {
+  .header__links {
+    font-size: 16px;
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .header__links a:nth-child(2){
+       margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .header__links {
+    font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+  .header__links a:nth-child(2){
+      max-width: 100px;
+  }
+}

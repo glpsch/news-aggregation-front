@@ -13,3 +13,15 @@
   display: flex;
   justify-content: center;
 }
+
+@media screen and (max-width: 960px) {
+  .search {
+    padding: 0 280px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search {
+    padding: 0 163px;
+  }
+}

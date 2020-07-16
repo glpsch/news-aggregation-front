@@ -7,3 +7,22 @@
   justify-content: space-between;
   align-items: center;
   }
+
+
+  @media screen and (max-width: 910px) {
+    .header__content {
+      padding: 0 80px;
+    }
+  }
+
+  @media screen and (max-width: 860px) {
+    .header__content {
+      padding: 0 60px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .header__content {
+      padding: 0 40px;
+    }
+  }
