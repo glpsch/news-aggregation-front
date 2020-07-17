@@ -7,7 +7,7 @@
 .search {
   background-image: url(../../src/images/search.png);
   padding: 0 416px;
-  height: 576px;
+  max-height: 576px;
   background-size: cover;
   color: white;
   display: flex;

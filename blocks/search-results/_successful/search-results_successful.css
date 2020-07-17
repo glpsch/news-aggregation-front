@@ -3,3 +3,16 @@
 
   /* display: none; */
 }
+
+
+@media screen and (max-width: 860px) {
+  .search-results_successful {
+    padding: 0 60px 60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search-results_successful {
+    padding: 0 40px 40px;
+  }
+}

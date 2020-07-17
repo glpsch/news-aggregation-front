@@ -1,5 +1,18 @@
 .search-results_successful-cards {
     display: flex;
+    /* todo */
     /* justify-content: space-between; */
     padding-bottom: 64px;
+}
+
+@media screen and (max-width: 860px) {
+  .search-results_successful-cards {
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search-results_successful-cards {
+    padding-bottom: 22px;
+  }
 }

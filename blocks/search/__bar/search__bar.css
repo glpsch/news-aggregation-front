@@ -2,7 +2,7 @@
   max-width: 608px;
   min-width: 370px;
   height: 64px;
-  margin-top: 64px;
+  margin: 64px 0 80px 0;
 
   background: #FFFFFF;
 
@@ -21,4 +21,16 @@
   justify-content: space-between;
   align-items: center;
 
+}
+
+
+@media screen and (max-width: 768px) {
+  .search__bar {
+    margin: 48px 0 48px 0;
+    height: 56px;
+  }
+}
+
+.search__bar:hover  {
+  border: 1px solid #2F71E5;
 }

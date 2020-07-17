@@ -14,15 +14,20 @@
 @import url(./__content-wrap/card__content-wrap.css);
 
 
-
-
 .card {
     max-width: 400px;
-    height: 576px;
+    max-height: 576px;
     position: relative;
     border-radius: 16px;
     background-color: #FFFFFF;
     overflow: hidden;
     margin-right: 16px;
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+  .card {
+    max-width: 224px;
+  }
 }

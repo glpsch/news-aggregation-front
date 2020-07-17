@@ -6,3 +6,13 @@
   line-height: 46px;
   color: #1A1B22;
 }
+
+
+
+@media screen and (max-width: 768px) {
+  .search-results_successful-title {
+    padding: 40px 0 32px;
+    font-weight: normal;
+    font-size: 30px;
+  }
+}

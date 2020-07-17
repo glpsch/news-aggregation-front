@@ -1,7 +1,6 @@
 .card__content-wrap {
-/* todo */
 
     overflow: hidden;
-    /* text-overflow: ellipsis; */
-
+    margin-bottom: 8px;
+    position: relative;
 }
