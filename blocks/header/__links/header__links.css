@@ -30,11 +30,27 @@
 @media screen and (max-width: 700px) {
   .header__links {
     font-size: 15px;
+    margin-left: 50px;
     }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 700px) {
   .header__links a:nth-child(2){
       max-width: 100px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .header__links {
+    margin-left: 30px;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+  .header__links a:nth-child(2){
+    margin-left: 14px;
+  }
+}
+
+

@@ -6,3 +6,10 @@
   color: #1A1B22;
 }
 
+@media screen and (max-width: 700px) {
+  .about__text {
+    font-size: 16px;
+    line-height: 20px;
+    max-width: 380px;
+  }
+}

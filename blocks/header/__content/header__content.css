@@ -27,3 +27,16 @@
       height: 70px;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .header__content {
+      padding: 0 30px;
+    }
+  }
+
+/* mobile */
+  @media screen and (max-width: 530px) {
+    .header__content {
+      /* padding: 0 20px; */
+    }
+  }

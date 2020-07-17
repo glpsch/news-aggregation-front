@@ -1,8 +1,9 @@
 .header__button {
-  width: 176px;
+  max-width: 176px;
   height: 48px;
   margin-left: 32px;
   transition-property: background-color;
+  padding: 0 20px;
 }
 
 .header__button:hover {
@@ -18,13 +19,20 @@
 @media screen and (max-width: 860px) {
   .header__button {
     margin-left: 22px;
-    /* margin-right: 22px; */
+    padding: 0 18px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .header__button {
     margin-left: 18px;
-    /* margin-right: 22px; */
+    padding: 0 14px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .header__button {
+    margin-left: 10px;
+    padding: 0 10px;
   }
 }

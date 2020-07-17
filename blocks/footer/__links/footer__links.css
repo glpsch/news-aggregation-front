@@ -6,15 +6,15 @@
 }
 
 
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) {
   .footer__links {
     padding: 0;
     margin: 0;
   }
-}
+} */
 
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 700px) {
   .footer__links {
     /* display: block; */
     padding: 20px 0 0;
