@@ -14,6 +14,8 @@
 @import url(./__content-wrap/card__content-wrap.css);
 
 
+/* todo сдвинуть флаги к краю */
+
 .card {
     max-width: 400px;
     max-height: 576px;
@@ -25,9 +27,13 @@
     cursor: pointer;
 }
 
-
 @media screen and (max-width: 768px) {
   .card {
     max-width: 224px;
+    margin-right: 8px;
   }
+}
+
+.card:last-of-type {
+  margin: 0;
 }

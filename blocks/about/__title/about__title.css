@@ -5,3 +5,16 @@
   line-height: 46px;
   color: #1A1B22;
 }
+
+@media screen and (max-width: 980px) {
+  .about__title {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about__title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}

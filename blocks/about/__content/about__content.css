@@ -6,3 +6,20 @@
   margin-left: 56px;
   margin-top: 131px;
 }
+
+
+@media screen and (max-width: 980px) {
+  .about__content {
+    max-width: 500px;
+    margin-left: 44px;
+    margin-top: 90px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about__content {
+    max-width: 424px;
+    margin-left: 32px;
+    margin-top: 40px;
+  }
+}

@@ -7,11 +7,43 @@
   margin: 0 auto;
   padding: 0 104px;
   max-width: 1440px;
-  min-width: 700px;
+
+/* todo */
+  min-width: 636px;
+
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #B6BCBF;
   font-size: 16px;
   line-height: 22px;
+}
+
+
+@media screen and (max-width: 980px) {
+  .footer {
+    padding: 0 80px;
+
+  }
+}
+
+
+@media screen and (max-width: 860px) {
+  .footer {
+    padding: 0 60px;
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .footer {
+    padding: 0 30px;
+  }
 }
