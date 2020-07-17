@@ -11,3 +11,17 @@
     padding: 0 6px;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .footer__link {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* @media screen and (max-width: 680px) {
+  .footer__link:nth-of-type(2) {
+
+    margin-right: 200px;
+  }
+} */

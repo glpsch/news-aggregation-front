@@ -2,15 +2,13 @@
 @import url(./__links/footer__links.css);
 @import url(./__link/footer__link.css);
 @import url(./__social-icon/footer__social-icon.css);
+@import url(./__social-icons/footer__social-icons.css);
 
 .footer {
+  position: relative;
   margin: 0 auto;
   padding: 0 104px;
   max-width: 1440px;
-
-/* todo */
-  min-width: 636px;
-
 
   display: flex;
   justify-content: space-between;
@@ -45,5 +43,13 @@
 @media screen and (max-width: 720px) {
   .footer {
     padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .footer {
+    display: block;
+    padding: 0 40px 60px;
+    /* padding-bottom: 60px; */
   }
 }
