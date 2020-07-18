@@ -76,7 +76,7 @@
     line-height: 30px;
     font-size: 18px;
     width: 100%;
-
+    z-index: 10;
 
     display: none;
   }

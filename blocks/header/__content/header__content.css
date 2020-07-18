@@ -41,23 +41,5 @@
       padding: 0;
       height: 56px;
     }
-    .header__content::after {
-      z-index: 1;
-      content: '';
-      width: 24px;
-      height: 24px;
-      background-image: url(../../../src/images/menu.svg);
-      position: absolute;
-      right: 16px;
-      top: 16px;
-    }
-
-    .header__content:hover:after {
-      opacity: 0.7;
-      transition: opacity 0.7s;
-    }
-
-    .header__content:active:after .header__links{
-display: block;
-    }
+   
   }
