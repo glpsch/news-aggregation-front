@@ -75,9 +75,10 @@
     font-size: 18px;
     line-height: 30px;
     font-size: 18px;
-
-/* display: none; */
     width: 100%;
+
+
+    display: none;
   }
 
   .header__links::before {
@@ -88,6 +89,7 @@
     position: absolute;
     left: 0;
     top:0;
+
   }
 
   .header__links::after {
@@ -106,7 +108,7 @@
   .header__links a {
       display: block;
 
-      }
+   }
 
 
   .header__links a:nth-child(2){

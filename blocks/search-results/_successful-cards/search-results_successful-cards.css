@@ -1,7 +1,5 @@
 .search-results_successful-cards {
     display: flex;
-    /* todo */
-    /* justify-content: space-between; */
     padding-bottom: 64px;
 }
 
