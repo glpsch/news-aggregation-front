@@ -11,7 +11,7 @@
     height: 24px;
     background-image: url(../../../src/images/menu.svg);
     position: absolute;
-    right: 16px;
+    right: 30px;
     top: 16px;
   }
 
@@ -56,4 +56,11 @@
     top: 0;
   } */
 
+}
+
+
+@media screen and (max-width: 400px) {
+  .header__mobile-menu {
+    right: 16px;
+  }
 }

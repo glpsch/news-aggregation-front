@@ -1,26 +1,18 @@
 .search__bar {
   margin: 64px 0 80px 0;
 
-
   max-width: 608px;
   height: 64px;
-
   background: #FFFFFF;
-
   border: 1px solid #D1D2D6;
   box-sizing: border-box;
   backdrop-filter: blur(8px);
-
   border-radius: 100px;
-
-
 
   position: relative;
   display: flex;
-  /* justify-content: center; */
   justify-content: space-between;
   align-items: center;
-
 }
 
 .search__bar:hover  {
@@ -55,8 +47,6 @@
     backdrop-filter: none;
 
     border-radius: 0;
-
-
   }
 
   .search__bar:hover  {

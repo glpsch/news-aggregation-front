@@ -31,6 +31,14 @@
 /* mobile */
 @media screen and (max-width: 530px) {
   .search {
+    padding: 0 30px;
+  }
+
+}
+
+
+@media screen and (max-width: 400px) {
+  .search {
     padding: 0 16px;
   }
 
