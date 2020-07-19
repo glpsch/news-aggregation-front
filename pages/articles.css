@@ -28,12 +28,11 @@
   font-family: 'Roboto Slab';
 }
 
-@font-face {
+/* @font-face {
   src: url('../src/fonts/roboto-slab-bold.woff') format('woff');
-  /* url('../fonts/Inter/Inter-Regular.woff2') format('woff2'); */
   font-family: 'Roboto Slab';
   font-weight: bold;
-}
+} */
 
 @font-face {
   src: url('../src/fonts/roboto-regular.woff') format('woff');

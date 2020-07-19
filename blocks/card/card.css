@@ -27,6 +27,12 @@
     cursor: pointer;
 }
 
+.card:last-of-type {
+  margin: 0;
+}
+
+
+
 @media screen and (max-width: 768px) {
   .card {
     max-width: 224px;
@@ -34,6 +40,15 @@
   }
 }
 
-.card:last-of-type {
-  margin: 0;
+
+/* mobile */
+@media screen and (max-width: 530px) {
+  .card {
+    /* align-self: center; */
+    max-width: 400px;
+    /* max-width: 380px; */
+    margin: 0;
+    padding: 0;
+    margin-bottom: 9px;
+  }
 }

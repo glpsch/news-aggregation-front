@@ -27,6 +27,19 @@
 /* mobile */
 @media screen and (max-width: 530px) {
   .search-results_successful {
-    /* padding: 0 30px 40px; */
+    padding: 0 62px 38px;
+    /* margin: 0 auto; */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-results_successful {
+    padding: 0 40px 38px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .search-results_successful {
+    padding: 0 16px 32px;
   }
 }

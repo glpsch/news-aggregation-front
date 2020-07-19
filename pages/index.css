@@ -23,8 +23,8 @@
 @font-face {
   src: url('../src/fonts/RobotoSlab-Bold-webfont.woff') format('woff');
   /* url('../fonts/Inter/Inter-Regular.woff2') format('woff2'); */
-  font-family: 'Roboto Slab';
-  font-weight: bold;
+  font-family: 'RobotoSlab for logo';
+  /* font-weight: bold; */
 }
 
 @font-face {
