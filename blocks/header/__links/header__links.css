@@ -114,9 +114,9 @@
   }
 
   .header__links .button {
-    max-width: calc(100vw - 32px);
+    max-width: calc(100vw - 60px);
     margin: 26px 0 0 0;
-    padding: 0 16px;
+    padding: 0 30px;
 
     font-style: normal;
     font-weight: normal;
@@ -130,4 +130,10 @@
   .header__links {
     padding: 0 16px;
   }
+
+  .header__links .button {
+    max-width: calc(100vw - 32px);
+    padding: 0 16px;
+  }
+
 }
