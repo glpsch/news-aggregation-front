@@ -23,3 +23,10 @@
     padding: 0 30px 40px;
   }
 }
+
+/* mobile */
+@media screen and (max-width: 530px) {
+  .search-results_successful {
+    /* padding: 0 30px 40px; */
+  }
+}

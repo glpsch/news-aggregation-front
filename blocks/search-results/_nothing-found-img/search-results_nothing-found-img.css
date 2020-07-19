@@ -1,3 +1,10 @@
 .search-results_nothing-found-img {
     padding-top: 84px;
 }
+
+
+@media screen and (max-width: 768px) {
+  .search-results_nothing-found-img {
+    padding-top: 40px;
+  }
+}
