@@ -39,7 +39,9 @@
           <h2 class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
           </h2>
           <div class="search__bar">
-            <input type="text" class="input search__input" placeholder="Введите тему новости">
+            <div class="search__input-container">
+              <input type="text" class="input search__input" placeholder="Введите тему новости">
+            </div>
             <div class="button search__button button_main">
               <span>Искать</span>
             </div>
@@ -175,7 +177,7 @@
 
 
       <section class="about">
-        <div >
+        <div>
           <!-- <div class="about__photo"></div> -->
           <picture>
             <img src="<%=require('../src/images/av.png').default%>" alt="Фото автора" class="about__photo">
@@ -192,18 +194,18 @@
     </main>
 
     <section class="footer">
-        <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
+      <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
       <ul class="footer__links">
 
         <li><a href="https://news-exploring.ga/" class="link footer__link">Главная</a></li>
         <li><a href="https://praktikum.yandex.ru/" target="_blank" class="link footer__link">Яндекс.Практикум</a></li>
-    <div class="footer__social-icons">
-        <li><a href="https://github.com/glpsch" class="link" target="_blank">
-            <img src="<%=require('../src/images/gh.svg').default%>" alt="Github" class="footer__social-icon">
-          </a></li>
-        <li><a href="https://www.facebook.com/overpassover" class="link" target="_blank">
-            <img src="<%=require('../src/images/fb.svg').default%>" alt="Facebook" class="footer__social-icon">
-          </a></li>
+        <div class="footer__social-icons">
+          <li><a href="https://github.com/glpsch" class="link" target="_blank">
+              <img src="<%=require('../src/images/gh.svg').default%>" alt="Github" class="footer__social-icon">
+            </a></li>
+          <li><a href="https://www.facebook.com/overpassover" class="link" target="_blank">
+              <img src="<%=require('../src/images/fb.svg').default%>" alt="Facebook" class="footer__social-icon">
+            </a></li>
         </div>
 
       </ul>

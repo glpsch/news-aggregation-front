@@ -1,5 +1,6 @@
 .search__button {
   position: relative;
+
   width: 168px;
   height: 64px;
   top: 1px;
@@ -11,4 +12,15 @@
   .search__button {
     height: 56px;
   }
+}
+
+@media screen and (max-width: 530px) {
+  .search__button {
+  width: 100%;
+  margin-top: 16px;
+  /* padding: 0; */
+  position: static;
+  height: 56px;
+}
+
 }

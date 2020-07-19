@@ -100,6 +100,7 @@
     position: absolute;
     display: inline-block;
     width: 100%;
+    /* max-width: 530px; */
     height: 286px;
     z-index: -1;
       }
@@ -120,19 +121,17 @@
 
   .header__links .link_underlined {
     border-bottom: none;
-}
+  }
 
-.header__links .button {
-  max-width: calc(100vw - 32px);
-  margin: 26px 0 0 0;
-  padding: 0 16px;
+  .header__links .button {
+    max-width: calc(100vw - 32px);
+    margin: 26px 0 0 0;
+    padding: 0 16px;
 
-  font-style: normal;
-  font-weight: normal;
+    font-style: normal;
+    font-weight: normal;
 
-}
-
-
+  }
 
 
 }

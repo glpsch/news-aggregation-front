@@ -3,10 +3,11 @@
 @import url(./__input/search__input.css);
 @import url(./__subtitle/search__subtitle.css);
 @import url(./__title/search__title.css);
+@import url(./__input-container/search__input-container.css);
 
 .search {
   background-image: url(../../src/images/search.png);
-  padding: 0 416px;
+  padding: 0 280px;
   max-height: 576px;
   background-size: cover;
   color: white;
@@ -16,12 +17,21 @@
 
 @media screen and (max-width: 960px) {
   .search {
-    padding: 0 280px;
+    padding: 0 163px;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 720px) {
   .search {
-    padding: 0 163px;
+    padding: 0 100px;
   }
+}
+
+
+/* mobile */
+@media screen and (max-width: 530px) {
+  .search {
+    padding: 0 16px;
+  }
+
 }

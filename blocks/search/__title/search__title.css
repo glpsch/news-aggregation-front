@@ -25,3 +25,11 @@
     line-height: 110%;
   }
 }
+
+
+/* mobile */
+@media screen and (max-width: 530px) {
+  .search__title {
+    padding: 86px 0 0 0;
+  }
+}

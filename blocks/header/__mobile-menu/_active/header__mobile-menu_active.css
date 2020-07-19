@@ -21,6 +21,17 @@
     z-index: 1;
   }
 
+  /* .header__mobile-menu_active::before {
+    display: block;
+    z-index: 100;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url(../../../../src/images/menu.svg);
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  } */
 
 }
 
