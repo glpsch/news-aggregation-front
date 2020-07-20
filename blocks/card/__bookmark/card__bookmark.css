@@ -9,3 +9,16 @@
 }
 
 
+@media screen and (max-width: 860px) {
+  .card__bookmark {
+    right: 8px;
+    top: 8px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .card__bookmark {
+    right: 24px;
+    top: 24px;
+  }
+}
