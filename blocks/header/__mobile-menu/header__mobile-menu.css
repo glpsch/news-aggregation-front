@@ -5,7 +5,7 @@
 @media screen and (max-width: 530px) {
   .header__mobile-menu {
     display: block;
-    z-index: 1;
+    z-index: 11;
     content: '';
     width: 24px;
     height: 24px;
@@ -21,41 +21,9 @@
   }
 
 
-  /* .header__mobile-menu:active {
+  .header__mobile-menu:active {
     opacity: 0;
-  } */
-
-  /* todo - remove, keep open with js */
-
-  .header__mobile-menu:active + .header__links {
-    display: block;
   }
-
-  .header__mobile-menu:active:before {
-    position: fixed;
-    top: 0;
-    left: 0;
-    content: "";
-    width: 100%;
-    /* max-width: 530px; */
-    height: 100%;
-    background-color: rgba(0, 0, 0, .5);
-    z-index: -1;
-  }
-
-
-    /* .header__mobile-menu::after {
-    display: block;
-    z-index: 99;
-    content: '';
-    width: 24px;
-    height: 24px;
-    background-image: url(../../../src/images/menu.svg);
-    position: absolute;
-    right: 0;
-    top: 0;
-  } */
-
 }
 
 

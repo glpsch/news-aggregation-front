@@ -5,6 +5,7 @@
 @import url(./_unlogged/header_unlogged.css);
 @import url(./__mobile-menu/header__mobile-menu.css);
 @import url(./__mobile-menu/_active/header__mobile-menu_active.css);
+@import url(../backdrop/backdrop.css);
 
 .header {
   margin: 0 auto;

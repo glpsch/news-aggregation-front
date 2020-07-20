@@ -16,7 +16,7 @@
     height: 64px;
 
     background: #FFFFFF;
-    border: 1px solid #D1D2D6;
+    /* border: 1px solid #D1D2D6; */
     backdrop-filter: blur(8px);
     border-radius: 100px;
 
@@ -27,8 +27,12 @@
     }
 
 
-    .search__input-container:hover  {
+    /* .search__input-container:hover  {
       border: 1px solid #2F71E5;
-    }
+    } */
+
+    /* .search__input-container:focus  {
+      border: 1px solid red;
+    } */
 
   }
