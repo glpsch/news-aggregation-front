@@ -3,8 +3,6 @@
 
   max-width: 608px;
   height: 64px;
-  background: #FFFFFF;
-  border: 1px solid #D1D2D6;
   box-sizing: border-box;
   backdrop-filter: blur(8px);
   border-radius: 100px;
@@ -15,9 +13,7 @@
   align-items: center;
 }
 
-.search__bar:hover  {
-  border: 1px solid #2F71E5;
-}
+
 
 
 @media screen and (max-width: 768px) {
@@ -33,7 +29,7 @@
     max-width: 530px;
     margin: 122px 0 32px 0;
     padding: 0;
-    /* height: 536px; */
+
     height: auto;
 
     display: flex;

@@ -1,9 +1,8 @@
 .search__button {
-  position: relative;
+  position: absolute;
 
   width: 168px;
   height: 64px;
-  top: 1px;
   right: -1px;
   align-self: flex-end;
 }
@@ -18,7 +17,6 @@
   .search__button {
   width: 100%;
   margin-top: 16px;
-  /* padding: 0; */
   position: static;
 }
 

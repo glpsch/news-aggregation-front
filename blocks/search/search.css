@@ -3,7 +3,6 @@
 @import url(./__input/search__input.css);
 @import url(./__subtitle/search__subtitle.css);
 @import url(./__title/search__title.css);
-@import url(./__input-container/search__input-container.css);
 
 .search {
   background-image: url(../../src/images/search.png);
@@ -33,7 +32,6 @@
   .search {
     padding: 0 30px;
   }
-
 }
 
 
@@ -41,5 +39,4 @@
   .search {
     padding: 0 16px;
   }
-
 }
