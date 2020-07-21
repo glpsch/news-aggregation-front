@@ -12,6 +12,7 @@
 /* /////////////////////// */
 
 @import url(../blocks/header/_theme/header_theme_black.css);
+@import url(../blocks/header/__mobile-menu/_theme/header__mobile-menu_theme_black.css);
 @import url(../blocks/articles-caption/articles-caption.css);
 @import url(../blocks/articles-cards/articles-cards.css);
 

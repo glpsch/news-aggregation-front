@@ -15,3 +15,39 @@
   height: 294px;
   color: #1A1B22;
 }
+
+
+@media screen and (max-width: 860px) {
+  .articles-caption {
+    padding: 90px  60px 0;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .articles-caption {
+    padding: 90px 40px 0;
+  }
+}
+
+ @media screen and (max-width: 700px) {
+  .articles-caption {
+    padding: 90px 30px 0;
+  }
+}
+
+/*
+@media screen and (max-width: 530px) {
+  .articles-caption {
+    flex-direction: column;
+    padding: 0 40px;
+
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .articles-caption {
+    padding: 0 16px;
+    margin-bottom: 80px;
+  }
+} */

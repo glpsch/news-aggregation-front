@@ -1,5 +1,4 @@
 .search-results_successful-title {
-
   padding: 80px 0 64px;
   font-weight: normal;
   font-size: 40px;
@@ -8,6 +7,11 @@
 }
 
 
+@media screen and (max-width: 900px) {
+  .search-results_successful-title {
+    padding: 60px 0 40px;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .search-results_successful-title {

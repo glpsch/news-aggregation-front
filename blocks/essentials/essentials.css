@@ -19,9 +19,30 @@
 
 
   .link_underlined {
+
     border-bottom: 3px solid #FFFFFF;
-    line-height: 4.5;
+
+    /* text-decoration: underline;
+ text-underline-position: under; */
+
+
+
+    /* line-height: 4.6; */
+
   }
+
+  /* .link_underlined:after {
+    content: '';
+
+    width: 60px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+
+    border-width: 0 0 1px;
+    border-style: solid;
+} */
+
 
 
   .button {

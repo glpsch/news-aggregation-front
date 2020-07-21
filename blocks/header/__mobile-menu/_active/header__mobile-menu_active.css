@@ -1,6 +1,5 @@
 
 
-
 @media screen and (max-width: 530px) {
   .header__mobile-menu_active ~ .header__links {
     display: block;

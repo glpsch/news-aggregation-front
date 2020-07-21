@@ -15,6 +15,28 @@
   margin-left: 32px;
 }
 
+
+
+.header__links  .link_underlined {
+
+  /* align-items: baseline; */
+  color: red;
+  padding-bottom: 30px;
+position: relative;
+margin-bottom: -26px;
+/* position: absolute;
+padding-bottom: 20px;
+right: 200px;
+bottom: -12px; */
+}
+
+
+
+
+
+
+
+
 @media screen and (max-width: 860px) {
   .header__links {
     font-size: 16px;
@@ -101,23 +123,25 @@
 
   .header__links a {
       display: block;
+      padding: 20px 0;
   }
 
 
   .header__links a:nth-child(2){
       max-width: 100%;
       margin: 0;
-      padding: 0;
+      padding: 20px 0;
 
   }
 
   .header__links .link_underlined {
     border-bottom: none;
+    line-height: 30px;
   }
 
   .header__links .button {
     max-width: calc(100vw - 60px);
-    margin: 26px 0 0 0;
+    margin: 12px 0 0 0;
     padding: 0 30px;
 
     font-style: normal;

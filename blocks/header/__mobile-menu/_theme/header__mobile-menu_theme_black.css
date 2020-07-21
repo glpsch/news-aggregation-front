@@ -1,0 +1,16 @@
+.header__mobile-menu_theme_black {
+  background-image: url(../../../../src/images/menu_black.svg);
+}
+
+
+@media screen and (max-width: 530px) {
+.header__mobile-menu_theme_black ~ .header__links::after {
+  background: white;
+}
+
+/* todo WHY?? */
+.header__mobile-menu_theme_black ~ .header__links{
+  line-height: 20px;
+}
+
+}
