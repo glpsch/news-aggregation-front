@@ -18,31 +18,15 @@
   }
 
 
-  .link_underlined {
-
-    border-bottom: 3px solid #FFFFFF;
-
-    /* text-decoration: underline;
- text-underline-position: under; */
-
-
-
-    /* line-height: 4.6; */
-
-  }
-
-  /* .link_underlined:after {
+  .link_underlined:after {
     content: '';
-
-    width: 60px;
+    width: 100%;
+    background: #FFFFFF;
     position: absolute;
-    left: 0;
-    bottom: 1px;
-
-    border-width: 0 0 1px;
-    border-style: solid;
-} */
-
+    bottom: -16px;
+    height: 3px;
+    display: block;
+  }
 
 
   .button {
@@ -54,8 +38,6 @@
     align-items: center;
     cursor: pointer;
   }
-
-
 
 
   .button_main {

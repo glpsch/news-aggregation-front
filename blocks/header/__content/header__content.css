@@ -25,14 +25,8 @@
 
   @media screen and (max-width: 768px) {
     .header__content {
-      padding: 0 40px;
-      height: 66px;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    .header__content {
       padding: 0 30px;
+      height: 66px;
     }
   }
 
