@@ -19,3 +19,9 @@
   }
 }
 
+
+@media screen and (max-width: 400px) {
+  .footer__link {
+    padding-bottom: 20px;
+  }
+}
