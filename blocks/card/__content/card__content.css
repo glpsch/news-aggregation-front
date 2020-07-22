@@ -1,7 +1,6 @@
 .card__content {
     position: relative;
     margin: 20px 24px 24px;
-    /* height: 260px; */
     height: 268px;
     max-width: 352px;
     overflow: hidden;
@@ -21,7 +20,7 @@
   .card__content {
     margin: 16px;
     height: calc(280px - 32px + 8px);
-    max-width: 192px;
+    /* max-width: 192px; */
   }
 }
 

@@ -1,18 +1,45 @@
 .card_articlescard {
-margin-bottom: 16px;
- flex: 1 0 25%;
+  margin-bottom: 16px;
+  flex-basis: 300px;
+  flex-grow: 1;
+}
 
-
+.card_articlescard:last-of-type {
+  margin-right: 16px;
 }
 
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1200px) {
   .card_articlescard {
-    flex: 1 0 50%;
+    flex-basis: 250px;
+   }
+  }
+
+
+@media screen and (max-width: 768px) {
+    .card_articlescard {
+      max-width: 224px;
+      margin-right: 8px;
+
+      flex-basis: 190px;
+      }
+    }
+
+
+@media screen and (max-width: 680px) {
+    .card_articlescard {
+      max-width: 330px;
+      }
+    }
+
+
+
+@media screen and (max-width: 530px) {
+  .card_articlescard {
+    max-width: 400px;
+    flex-basis: auto;
   }
 }
-
-
 
 /* todo nthoftype */
 

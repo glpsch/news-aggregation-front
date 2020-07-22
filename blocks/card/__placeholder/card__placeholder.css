@@ -1,0 +1,49 @@
+.card__placeholder {
+
+  max-width: 400px;
+  max-height: 576px;
+  margin-right: 16px;
+  background-color: transparent;
+
+  flex-basis: 300px;
+  flex-grow: 1;
+
+}
+
+@media screen and (max-width: 1200px) {
+  .card__placeholder {
+
+    flex-basis: 250px;
+    max-height: 507px;
+  }
+  }
+
+
+  @media screen and (max-width: 768px) {
+  .card__placeholder {
+    max-width: 224px;
+    margin-right: 8px;
+
+    flex-basis: 190px;
+    max-height: 430px;
+  }
+  }
+
+  @media screen and (max-width: 680px) {
+    .card__placeholder {
+      max-width: 330px;
+      }
+    }
+
+
+  @media screen and (max-width: 530px) {
+  .card__placeholder {
+    max-width: 400px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 16px;
+
+    flex-basis: auto;
+  }
+  }
+

@@ -19,29 +19,30 @@
   color: #000000;
 
   display: none;
+  z-index: 10;
 }
 
 
-/* @media screen and (max-width: 860px) {
-  .card__bookmark-alert  {
+@media screen and (max-width: 860px) {
+.card__bookmark-delete-caption  {
     right: 53px;
     top: 8px;
 
     width: 77px;
     padding: 0 10px;
 
-    font-weight: normal;
+
   }
 }
 
 
 @media screen and (max-width: 530px) {
-  .card__bookmark-alert  {
+.card__bookmark-delete-caption  {
     right: 69px;
     top: 24px;
 
     width: 90px;
 
-    font-weight: bold;
+
   }
-} */
+}
