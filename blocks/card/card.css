@@ -14,8 +14,6 @@
 @import url(./__content-wrap/card__content-wrap.css);
 
 
-/* todo сдвинуть флаги к краю */
-
 .card {
     max-width: 400px;
     max-height: 576px;
@@ -25,6 +23,8 @@
     overflow: hidden;
     margin-right: 16px;
     cursor: pointer;
+
+
 }
 
 .card:last-of-type {
@@ -39,6 +39,11 @@
     margin-right: 8px;
   }
 }
+
+
+
+
+
 
 
 /* mobile */

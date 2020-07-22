@@ -43,18 +43,11 @@
   }
 }
 
-/*
+
 @media screen and (max-width: 530px) {
   .articles-caption {
-    flex-direction: column;
-    padding: 0 40px;
+    padding: 70px 16px 0;
 
   }
 }
 
-@media screen and (max-width: 400px) {
-  .articles-caption {
-    padding: 0 16px;
-    margin-bottom: 80px;
-  }
-} */

@@ -1,8 +1,18 @@
 .card_articlescard {
-
 margin-bottom: 16px;
+ flex: 1 0 25%;
+
 
 }
+
+
+@media screen and (max-width: 720px) {
+  .card_articlescard {
+    flex: 1 0 50%;
+  }
+}
+
+
 
 /* todo nthoftype */
 
