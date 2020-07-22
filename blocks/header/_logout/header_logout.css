@@ -1,7 +1,6 @@
 .header_logout {
-display: flex;
-align-items: center;
-
+  display: flex;
+  align-items: center;
 }
 
 .header_logout img {

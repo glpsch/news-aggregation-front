@@ -21,7 +21,8 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* mobile */
+
+
 @media screen and (max-width: 768px) {
   .search-results_successful-more {
     width: 240px;

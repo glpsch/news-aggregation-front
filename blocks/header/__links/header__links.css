@@ -1,7 +1,6 @@
 .header__links {
   position: relative;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   margin-left: 80px;
 

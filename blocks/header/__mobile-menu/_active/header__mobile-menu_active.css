@@ -8,6 +8,4 @@
   .header__mobile-menu_active ~ .backdrop {
     display: block;
 }
-
-
 }
