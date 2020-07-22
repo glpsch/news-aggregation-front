@@ -1,6 +1,7 @@
 .search-results_successful {
   padding: 0 104px 80px;
-
+/* display: flex;
+flex-direction: column; */
   /* display: none; */
 }
 

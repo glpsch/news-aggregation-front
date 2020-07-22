@@ -1,7 +1,8 @@
 .search-results_successful-more {
   background: #FFFFFF;
   border-radius: 80px;
-  max-width: 288px;
+  width: 288px;
+  /* min-width: 240px; */
   height: 64px;
   margin: 0 auto;
   border: none;
@@ -10,8 +11,6 @@
   font-size: 18px;
   line-height: 24px;
 
-  transition-property: background-color;
-  transition-duration: 0.5s;
 }
 
 .search-results_successful-more:hover {
@@ -20,4 +19,21 @@
 
 .search-results_successful-more:active {
   background: rgba(255, 255, 255, 0.2);
+}
+
+/* mobile */
+@media screen and (max-width: 768px) {
+  .search-results_successful-more {
+    width: 240px;
+    height: 56px;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 530px) {
+  .search-results_successful-more {
+  width: 100%;
+  max-width: 400px;
+  }
+
 }

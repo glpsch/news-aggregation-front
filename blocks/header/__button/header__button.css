@@ -4,16 +4,18 @@
   margin-left: 32px;
   transition-property: background-color;
   padding: 0 20px;
+  background-color: transparent;
+  color: #ffffff;
 }
 
 .header__button:hover {
   background: rgba(255, 255, 255, 0.15);
-  transition-duration: 1.2s;
+  /* transition-duration: 1.2s; */
 }
 
 .header__button:active {
   background: rgba(255, 255, 255, 0.5);
-  transition-duration: 0.5s;
+  /* transition-duration: 0.5s; */
 }
 
 @media screen and (max-width: 860px) {

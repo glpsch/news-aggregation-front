@@ -9,7 +9,6 @@
   <link rel="icon" type="image/svg" href="../src/images/favicon.svg" />
   <title>News Explorer</title>
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
-
 </head>
 
 <body class="body">
@@ -17,24 +16,20 @@
     <header class="header">
       <div class="header__content header_theme_black">
         <span class="logo">NewsExplorer</span>
-        <nav class="header__mobile-menu header__mobile-menu_theme_black"></nav>
-        <!-- <nav class="header__mobile-menu header__mobile-menu_active header__mobile-menu_theme_black"></nav> -->
+        <!-- <nav class="header__mobile-menu header__mobile-menu_theme_black"></nav> -->
+        <nav class="header__mobile-menu header__mobile-menu_active header__mobile-menu_theme_black"></nav>
         <div class="backdrop"></div>
-
         <nav class="header__links header_theme_black">
           <a href="https://glpsch.github.io/news-aggregation-front/" class="link header_theme_black">Главная</a>
-          <a href="https://glpsch.github.io/news-aggregation-front/articles" class="link link_underlined header_theme_black">Сохранённые статьи</a>
-          <div class="button header__button"><a href="#"
+          <a href="https://glpsch.github.io/news-aggregation-front/articles"
+            class="link link_underlined header_theme_black">Сохранённые статьи</a>
+          <button class="button header__button"><a href="#"
               class="link header_logout header_theme_black"><span>Грета</span>
               <img src="<%=require('../src/images/logout_black.svg').default%>" alt="Выйти из профайла">
-            </a> </div>
+            </a> </button>
         </nav>
       </div>
     </header>
-
-
-
-
 
     <main>
       <section class="articles-caption">
@@ -46,26 +41,24 @@
             href="#" class="link span_bold">Тайга</a> и <a href="#" class="link span_bold">2 другим</a>
         </h5>
       </section>
+
+
       <section class="articles-cards">
-
-
         <div class="card card_articlescard">
-          <div class="card__image">
-            <img src="<%=require('../src/images/card_a1.jpg').default%>" alt="Иллюстрация к новости">
-            <div class="card__bookmark-section">
-              <div class="card__bookmark card__bookmark_loggedin-articlespage">
-                <div class="card__bookmark-delete"></div>
-              </div>
-              <div class="card__bookmark-delete-caption">
-                <span>Убрать из сохранённых</span>
-              </div>
-              <div class="card__bookmark-category">
-                <span>Природа</span>
-              </div>
+          <img src="<%=require('../src/images/card_a1.jpg').default%>" alt="Иллюстрация к новости" class="card__image">
+          <div class="card__bookmark-section">
+            <div class="card__bookmark card__bookmark_loggedin-articlespage">
+              <div class="card__bookmark-delete"></div>
+            </div>
+            <div class="card__bookmark-delete-caption">
+              <span>Убрать из сохранённых</span>
+            </div>
+            <div class="card__bookmark-category">
+              <span>Природа</span>
             </div>
           </div>
-          <div class=" card__content">
-            <div card__content-wrap>
+          <div class="card__content">
+            <div class="card__content-wrap">
               <span class="card__date">2 августа, 2019
               </span>
               <h3 class="title card__title">
@@ -83,22 +76,20 @@
         </div>
 
         <div class="card card_articlescard">
-          <div class="card__image">
-            <img src="<%=require('../src/images/card_a2.jpg').default%>" alt="Иллюстрация к новости">
-            <div class="card__bookmark-section">
-              <div class="card__bookmark card__bookmark_loggedin-articlespage">
-                <div class="card__bookmark-delete"></div>
-              </div>
-              <div class="card__bookmark-delete-caption">
-                <span>Убрать из сохранённых</span>
-              </div>
-              <div class="card__bookmark-category">
-                <span>Природа</span>
-              </div>
+          <img src="<%=require('../src/images/card_a2.jpg').default%>" alt="Иллюстрация к новости" class="card__image">
+          <div class="card__bookmark-section">
+            <div class="card__bookmark card__bookmark_loggedin-articlespage">
+              <div class="card__bookmark-delete"></div>
+            </div>
+            <div class="card__bookmark-delete-caption">
+              <span>Убрать из сохранённых</span>
+            </div>
+            <div class="card__bookmark-category">
+              <span>Природа</span>
             </div>
           </div>
           <div class=" card__content">
-            <div card__content-wrap>
+            <div class="card__content-wrap">
               <span class="card__date">2 августа, 2019
               </span>
               <h3 class="title card__title">
@@ -117,24 +108,21 @@
         </div>
 
 
-
         <div class="card card_articlescard">
-          <div class="card__image">
-            <img src="<%=require('../src/images/card_a3.jpg').default%>" alt="Иллюстрация к новости">
-            <div class="card__bookmark-section">
-              <div class="card__bookmark card__bookmark_loggedin-articlespage">
-                <div class="card__bookmark-delete"></div>
-              </div>
-              <div class="card__bookmark-delete-caption">
-                <span>Убрать из сохранённых</span>
-              </div>
-              <div class="card__bookmark-category">
-                <span>Природа</span>
-              </div>
+          <img src="<%=require('../src/images/card_a3.jpg').default%>" alt="Иллюстрация к новости" class="card__image">
+          <div class="card__bookmark-section">
+            <div class="card__bookmark card__bookmark_loggedin-articlespage">
+              <div class="card__bookmark-delete"></div>
+            </div>
+            <div class="card__bookmark-delete-caption">
+              <span>Убрать из сохранённых</span>
+            </div>
+            <div class="card__bookmark-category">
+              <span>Природа</span>
             </div>
           </div>
           <div class=" card__content">
-            <div card__content-wrap>
+            <div class="card__content-wrap">
               <span class="card__date">2 августа, 2019
               </span>
               <h3 class="title card__title">
@@ -154,22 +142,20 @@
 
 
         <div class="card card_articlescard">
-          <div class="card__image">
-            <img src="<%=require('../src/images/card_a1.jpg').default%>" alt="Иллюстрация к новости">
-            <div class="card__bookmark-section">
-              <div class="card__bookmark card__bookmark_loggedin-articlespage">
-                <div class="card__bookmark-delete"></div>
-              </div>
-              <div class="card__bookmark-delete-caption">
-                <span>Убрать из сохранённых</span>
-              </div>
-              <div class="card__bookmark-category">
-                <span>Природа</span>
-              </div>
+          <img src="<%=require('../src/images/card_a1.jpg').default%>" alt="Иллюстрация к новости" class="card__image">
+          <div class="card__bookmark-section">
+            <div class="card__bookmark card__bookmark_loggedin-articlespage">
+              <div class="card__bookmark-delete"></div>
+            </div>
+            <div class="card__bookmark-delete-caption">
+              <span>Убрать из сохранённых</span>
+            </div>
+            <div class="card__bookmark-category">
+              <span>Природа</span>
             </div>
           </div>
           <div class=" card__content">
-            <div card__content-wrap>
+            <div class="card__content-wrap">
               <span class="card__date">2 августа, 2019
               </span>
               <h3 class="title card__title">
@@ -189,22 +175,20 @@
 
 
         <div class="card card_articlescard">
-          <div class="card__image">
-            <img src="<%=require('../src/images/card_a2.jpg').default%>" alt="Иллюстрация к новости">
-            <div class="card__bookmark-section">
-              <div class="card__bookmark card__bookmark_loggedin-articlespage">
-                <div class="card__bookmark-delete"></div>
-              </div>
-              <div class="card__bookmark-delete-caption">
-                <span>Убрать из сохранённых</span>
-              </div>
-              <div class="card__bookmark-category">
-                <span>Природа</span>
-              </div>
+          <img src="<%=require('../src/images/card_a2.jpg').default%>" alt="Иллюстрация к новости" class="card__image">
+          <div class="card__bookmark-section">
+            <div class="card__bookmark card__bookmark_loggedin-articlespage">
+              <div class="card__bookmark-delete"></div>
+            </div>
+            <div class="card__bookmark-delete-caption">
+              <span>Убрать из сохранённых</span>
+            </div>
+            <div class="card__bookmark-category">
+              <span>Природа</span>
             </div>
           </div>
           <div class=" card__content">
-            <div card__content-wrap>
+            <div class="card__content-wrap">
               <span class="card__date">2 августа, 2019
               </span>
               <h3 class="title card__title">
@@ -222,28 +206,24 @@
           </div>
         </div>
 
-
-
       </section>
-
-
-
-
     </main>
 
     <section class="footer">
-      <div>
-        <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
-      </div>
+      <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
       <ul class="footer__links">
+
         <li><a href="https://news-exploring.ga/" class="link footer__link">Главная</a></li>
         <li><a href="https://praktikum.yandex.ru/" target="_blank" class="link footer__link">Яндекс.Практикум</a></li>
-        <li><a href="https://github.com/glpsch" class="link" target="_blank">
-            <img src="<%=require('../src/images/gh.svg').default%>" alt="Github" class="footer__social-icon">
-          </a></li>
-        <li><a href="https://www.facebook.com/overpassover" class="link" target="_blank">
-            <img src="<%=require('../src/images/fb.svg').default%>" alt="Facebook" class="footer__social-icon">
-          </a></li>
+        <div class="footer__social-icons">
+          <li><a href="https://github.com/glpsch" class="link" target="_blank">
+              <img src="<%=require('../src/images/gh.svg').default%>" alt="Github" class="footer__social-icon">
+            </a></li>
+          <li><a href="https://www.facebook.com/overpassover" class="link" target="_blank">
+              <img src="<%=require('../src/images/fb.svg').default%>" alt="Facebook" class="footer__social-icon">
+            </a></li>
+        </div>
+
       </ul>
     </section>
 

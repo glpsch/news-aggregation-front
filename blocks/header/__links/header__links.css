@@ -92,7 +92,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
-    line-height: 30px;
+    line-height: 33px;
     font-size: 18px;
     width: 100%;
     z-index: 10;
@@ -126,7 +126,7 @@
 
   .header__links a {
       display: block;
-      padding: 20px 0;
+      padding: 20px 0 0;
   }
 
 
@@ -137,13 +137,15 @@
 
   }
 
-  .header__links .link_underlined {
-    border-bottom: none;
-    line-height: 30px;
+
+
+  .header__links .link_underlined::after {
+   display: none;
   }
 
   .header__links .button {
     max-width: calc(100vw - 60px);
+    width: 100%;
     margin: 12px 0 0 0;
     padding: 0 30px;
 

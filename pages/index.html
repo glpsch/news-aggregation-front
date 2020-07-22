@@ -18,17 +18,17 @@
       <div class="header__content">
         <span class="logo">NewsExplorer</span>
 
-        <nav class="header__mobile-menu"></nav>
-        <!-- <nav class="header__mobile-menu header__mobile-menu_active"></nav> -->
+        <!-- <nav class="header__mobile-menu"></nav> -->
+        <nav class="header__mobile-menu header__mobile-menu_active"></nav>
         <div class="backdrop"></div>
 
         <nav class="header__links">
           <a href="https://glpsch.github.io/news-aggregation-front/" class="link link_underlined">Главная</a>
           <a href="https://glpsch.github.io/news-aggregation-front/articles" class="link">Сохранённые статьи</a>
-          <!-- <div class="button header__button"><a href="#" class="link header_logout"><span>Грета</span> -->
-          <div class="button header__button header_unlogged"><a href="#" class="link"><span>Грета</span>
+          <!-- <button class="button header__button"><a href="#" class="link header_logout"><span>Грета</span> -->
+          <button class="button header__button header_unlogged"><a href="#" class="link"><span>Грета</span>
               <img src="<%=require('../src/images/logout.svg').default%>" alt="Выйти из профайла">
-            </a> </div>
+            </a> </button>
         </nav>
       </div>
     </header>
@@ -41,9 +41,9 @@
           </h2>
           <div class="search__bar">
               <input type="text" class="input search__input" placeholder="Введите тему новости">
-            <div class="button search__button button_main">
+            <button class="button search__button button_main">
               <span>Искать</span>
-            </div>
+            </button>
           </div>
         </div>
       </section>
@@ -168,9 +168,9 @@
 
           </div>
 
-          <div class="button search-results_successful-more">
+          <button class="button search-results_successful-more">
             <span>Показать еще</span>
-          </div>
+          </button>
         </div>
       </section>
 
@@ -235,8 +235,8 @@
               <span class="popup__input-error"></span>
             </div>
             <span class="popup__input-error popup__input-error_main">Такой пользователь уже есть</span>
-            <button type class="button popup__button button_main">Зарегистрироваться</button>
-            <!-- <button type class="button popup__button popup__button_inactive" disabled>Зарегистрироваться</button> -->
+            <button type="submit" class="button popup__button button_main">Зарегистрироваться</button>
+            <!-- <button type="submit" class="button popup__button popup__button_inactive" disabled>Зарегистрироваться</button> -->
           </form>
           <div class="popup__link">
             или <a href="#" class="link">Войти</a>
@@ -262,8 +262,8 @@
               <span class="popup__input-error"></span>
             </div>
             <span class="popup__input-error popup__input-error_main"></span>
-            <!-- <button type class="button popup__button button_main">Войти</button> -->
-            <button type class="button popup__button popup__button_inactive" disabled>Войти</button>
+            <!-- <button type="submit" class="button popup__button button_main">Войти</button> -->
+            <button type="submit" class="button popup__button popup__button_inactive" disabled>Войти</button>
           </form>
           <div class="popup__link">
             или <a href="#" class="link">Зарегистрироваться</a>

@@ -5,6 +5,7 @@
 
 .header_theme_black a {
   border-color:  #1A1B22;
+
 }
 
 .header_theme_black .button {
@@ -23,4 +24,8 @@
 
 .header_theme_black .link_underlined:after {
   background:  #1A1B22;
+}
+
+.header_theme_black.header_logout{
+ padding-top: 0;
 }
