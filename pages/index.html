@@ -9,7 +9,6 @@
   <link rel="icon" type="image/svg" href="../src/images/favicon.svg" />
   <title>News Explorer</title>
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
-
 </head>
 
 <body class="body">
@@ -17,11 +16,9 @@
     <header class="header">
       <div class="header__content">
         <span class="logo">NewsExplorer</span>
-
         <nav class="header__mobile-menu"></nav>
         <!-- <nav class="header__mobile-menu header__mobile-menu_active"></nav> -->
         <div class="backdrop"></div>
-
         <nav class="header__links">
           <a href="https://glpsch.github.io/news-aggregation-front/" class="link link_underlined">Главная</a>
           <a href="https://glpsch.github.io/news-aggregation-front/articles" class="link">Сохранённые статьи</a>
@@ -73,8 +70,8 @@
         <div class="search-results_successful">
           <h3 class="title search-results_successful-title">Результаты поиска
           </h3>
-          <div class="search-results_successful-cards">
 
+          <div class="search-results_successful-cards">
 
             <div class="card">
               <img src="<%=require('../src/images/card1.jpg').default%>" alt="Иллюстрация к новости"
@@ -104,7 +101,6 @@
                 </span>
               </div>
             </div>
-
 
             <div class="card">
               <img src="<%=require('../src/images/card2.jpg').default%>" alt="Иллюстрация к новости"
@@ -136,7 +132,6 @@
               </div>
             </div>
 
-
             <div class="card">
               <img src="<%=require('../src/images/card3.jpg').default%>" alt="Иллюстрация к новости"
                 class="card__image">
@@ -167,19 +162,18 @@
             </div>
 
           </div>
-
           <button class="button search-results_successful-more">
             <span>Показать еще</span>
           </button>
         </div>
       </section>
 
-
       <section class="about">
         <div>
           <!-- <div class="about__photo"></div> -->
           <picture>
-            <img src="<%=require('../src/images/av.png').default%>" alt="Фото автора" class="about__photo">
+            <source srcset="<%=require('../src/images/av_s.png').default%>" media="(min-width: 800px)">
+            <img src="<%=require('../src/images/av.png').default%>" alt="Фото автора" class="about__photo" />
           </picture>
         </div>
         <div class="about__content">
@@ -208,12 +202,11 @@
       </ul>
     </section>
 
-
     <section class="popup">
 
       <div class="popup popup_registration">
         <div class="popup__content">
-          <img src="<%=require('../src/images/close.svg').default%>" alt="" class="popup__close">
+          <img src="<%=require('../src/images/close.svg').default%>" alt="Закрыть" class="popup__close">
           <h3 class="popup__title">Регистрация</h3>
           <form class="popup__form" novalidate>
             <div class="popup__input-container">
@@ -242,11 +235,9 @@
         </div>
       </div>
 
-
-
       <div class="popup popup_login">
         <div class="popup__content">
-          <img src="<%=require('../src/images/close.svg').default%>" alt="" class="popup__close">
+          <img src="<%=require('../src/images/close.svg').default%>" alt="Закрыть" class="popup__close">
           <h3 class="popup__title">Вход</h3>
           <form class="popup__form" novalidate>
             <div class="popup__input-container">
@@ -271,7 +262,7 @@
 
       <div class="popup popup_success">
         <div class="popup__content">
-          <img src="<%=require('../src/images/close.svg').default%>" alt="" class="popup__close">
+          <img src="<%=require('../src/images/close.svg').default%>" alt="Закрыть" class="popup__close">
           <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
           <div class="popup__link popup_success-link">
             <a href="#" class="link">Выполнить вход</a>
@@ -280,9 +271,6 @@
       </div>
 
     </section>
-
-
   </div>
 </body>
-
 </html>
