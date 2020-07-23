@@ -38,6 +38,7 @@
   .card_articlescard {
     max-width: 400px;
     flex-basis: auto;
+    margin-right: 0;
   }
 }
 

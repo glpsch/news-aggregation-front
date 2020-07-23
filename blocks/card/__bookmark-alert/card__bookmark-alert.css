@@ -1,12 +1,12 @@
 .card__bookmark-alert {
   position: absolute;
-  width: 182px;
+  max-width: 182px;
+  padding: 0 10px;
   height: 40px;
   right: 69px;
   top: 24px;
   background: #FFFFFF;
   border-radius: 8px;
-
 
   font-style: normal;
   font-weight: bold;
@@ -19,6 +19,13 @@
   color: #000000;
 
   display: none;
+  z-index: 11;
+}
+
+@media screen and (max-width: 1000px) {
+  .card__bookmark-alert  {
+    max-width: 120px;
+  }
 }
 
 
