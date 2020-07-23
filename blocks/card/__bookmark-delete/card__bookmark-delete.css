@@ -10,9 +10,6 @@
 
 }
 
-
-/* todo position size */
-
 .card__bookmark-delete:hover {
   background-image: url(../../../src/images/trash_black.svg);
   background-size: contain;

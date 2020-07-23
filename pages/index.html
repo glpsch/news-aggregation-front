@@ -26,7 +26,7 @@
           <a href="https://glpsch.github.io/news-aggregation-front/" class="link link_underlined">Главная</a>
           <a href="https://glpsch.github.io/news-aggregation-front/articles" class="link">Сохранённые статьи</a>
           <!-- <button class="button header__button header_logout"><span>Грета</span> -->
-          <button class="button header__button header_unlogged"><span>Грета</span>
+          <button class="button header__button header__button_unlogged"><span>Грета</span>
             <img src="<%=require('../src/images/logout.svg').default%>" alt="Выйти из профайла">
           </button>
         </nav>
@@ -195,7 +195,7 @@
     <section class="footer">
       <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
       <ul class="footer__links">
-        <li><a href="https://news-exploring.ga/" class="link footer__link">Главная</a></li>
+        <li><a href="https://glpsch.github.io/news-aggregation-front/" class="link footer__link">Главная</a></li>
         <li><a href="https://praktikum.yandex.ru/" target="_blank" class="link footer__link">Яндекс.Практикум</a></li>
         <li class="footer__social-icons">
           <a href="https://github.com/glpsch" class="link" target="_blank">
@@ -218,7 +218,7 @@
           <form class="popup__form" novalidate>
             <div class="popup__input-container">
               <span class="popup__input-title">Email</span>
-              <input type="email" class="input popup__input" placeholder="Введите email">
+              <input type="email" required class="input popup__input" placeholder="Введите email">
               <span class="popup__input-error"></span>
             </div>
             <div class="popup__input-container">
@@ -251,7 +251,7 @@
           <form class="popup__form" novalidate>
             <div class="popup__input-container">
               <span class="popup__input-title">Email</span>
-              <input type="email" class="input popup__input" placeholder="Введите email">
+              <input type="email" required class="input popup__input" placeholder="Введите email">
               <span class="popup__input-error">Неправильный формат email</span>
             </div>
             <div class="popup__input-container">
