@@ -1,6 +1,6 @@
 {
   "name": "news-aggregation-front",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "Yandex Praktikum diploma project",
   "main": "src/index.js",
   "scripts": {
