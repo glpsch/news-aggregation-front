@@ -17,14 +17,12 @@
   justify-content: center;
 
   color: #000000;
-
   display: none;
-  z-index: 11;
 }
 
 @media screen and (max-width: 1000px) {
   .card__bookmark-alert  {
-    max-width: 120px;
+    width: 90px;
   }
 }
 
