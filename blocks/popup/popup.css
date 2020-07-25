@@ -10,6 +10,7 @@
 @import url(./__input-error/_main/popup__input-error_main.css);
 @import url(./__link/popup__link.css);
 @import url(./_success-link/popup_success-link.css);
+/* @import url(./_is-opened/popup_is-opened.css); */
 
 .popup {
   position: fixed;
