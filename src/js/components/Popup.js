@@ -1,7 +1,10 @@
 export default class Popup {
-  constructor(popup) {
-      this.popup = popup;
-      this.popup
+  constructor(popupContainer) {
+
+      this.isOpen = false;
+      this.popupContainer = popupContainer;
+
+      this.popupContainer
           .querySelector('.popup__close')
           .addEventListener('click', this.close.bind(this));
 
@@ -17,11 +20,34 @@ export default class Popup {
                   this.close();
               }
           });
+
   }
   open() {
-      this.popup.classList.add('popup_is-opened');
+    console.log('called open')
+      this.popupContainer.parentNode.classList.add('popup_is-opened');
   }
   close() {
-      this.popup.classList.remove('popup_is-opened');
+      this.popupContainer.parentNode.classList.remove('popup_is-opened');
+      this.isOpen = false;
+      // this.popupContainer.innerHTML = "";
   }
+
+  setContent(content){
+   if (!this.popupContainer
+    .querySelector('.popup__content')) {
+      this.content = content;
+      this.popupContainer.insertAdjacentHTML('beforeend', content.outerHTML);
+  }
+
+  }
+  // replaceContent(content){
+  //   this.content = content;
+  //   console.log('replace', {CLASS_list: this.popup.classList[1], CONTENT: content});
+  //   this.popup.classList.replace(this.popup.classList[1], content);
+
+  // }
+
+
+  // clearContent(popup){
+  // }
 }
