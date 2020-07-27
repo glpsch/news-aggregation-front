@@ -205,7 +205,7 @@
     <section class="popups">
 
       <div class="popup popup_registration">
-        <div class="popup__container">
+        <div class="popup__container popup_registration__content">
           <img src="<%=require('../src/images/close.svg').default%>" alt="Закрыть" class="popup__close">
           <h3 class="popup__title">Регистрация</h3>
           <form class="popup__form" novalidate>
@@ -236,36 +236,29 @@
       </div>
 
       <div class="popup popup_login">
-             <div class="popup__container">
+        <div class="popup__container popup_login__content">
 
-              <img src="<%=require('../src/images/close.svg').default%>" alt="Закрыть" class="popup__close">
-
-
-            <div class="popup__content popup_login__content">
-
-            <h3 class="popup__title">Вход</h3>
-            <form class="popup__form" novalidate>
-              <div class="popup__input-container">
-                <span class="popup__input-title">Email</span>
-                <input type="email" required class="input popup__input" placeholder="Введите email">
-                <span class="popup__input-error">Неправильный формат email</span>
-              </div>
-              <div class="popup__input-container">
-                <span class="popup__input-title">Пароль</span>
-                <input type="password" required minlength="6" class="input popup__input" placeholder="Введите пароль">
-                <span class="popup__input-error"></span>
-              </div>
-              <span class="popup__input-error popup__input-error_main"></span>
-              <!-- <button type="submit" class="button popup__button button_main">Войти</button> -->
-              <button type="submit" class="button popup__button popup__button_inactive" disabled>Войти</button>
-            </form>
-            <div class="popup__link popup__reg-link">
-              или <a class="link">Зарегистрироваться</a>
+          <img src="<%=require('../src/images/close.svg').default%>" alt="Закрыть" class="popup__close">
+          <h3 class="popup__title">Вход</h3>
+          <form class="popup__form" novalidate>
+            <div class="popup__input-container">
+              <span class="popup__input-title">Email</span>
+              <input type="email" required class="input popup__input" placeholder="Введите email">
+              <span class="popup__input-error">Неправильный формат email</span>
             </div>
+            <div class="popup__input-container">
+              <span class="popup__input-title">Пароль</span>
+              <input type="password" required minlength="6" class="input popup__input" placeholder="Введите пароль">
+              <span class="popup__input-error"></span>
+            </div>
+            <span class="popup__input-error popup__input-error_main"></span>
+            <!-- <button type="submit" class="button popup__button button_main">Войти</button> -->
+            <button type="submit" class="button popup__button popup__button_inactive" disabled>Войти</button>
+          </form>
+          <div class="popup__link">
+            или <a href="#" class="link popup__reg-link">Зарегистрироваться</a>
           </div>
-
         </div>
-
       </div>
 
       <div class="popup popup_success">
@@ -279,9 +272,6 @@
       </div>
 
       <div class="popup popup-template">
-        <div class="popup__container popup-template__container">
-        <img src="<%=require('../src/images/close.svg').default%>" alt="Закрыть" class="popup__close">
-      </div>
       </div>
 
     </section>

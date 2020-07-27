@@ -6,43 +6,49 @@ import '../pages/articles.css';
 import Popup from './js/components/Popup';
 
 
-// popup_registration
-
 (function () {
 
-const templateContainer = document.querySelector('.popup-template__container');
-
-
-const popupLoginElementContent = document.querySelector('.popup_login__content');
+const template = document.querySelector('.popup-template');
+const popupLoginContent = document.querySelector('.popup_login__content');
 const authBtn = document.querySelector('.header__button');
 
-// const popupLoginElement = document.querySelector('.popup_login');
-// const popupLogin = new Popup(popupLoginElement);
-// authBtn.addEventListener('click', popupLogin.open.bind(popupLogin));
-
-
-console.log('popupLoginElementContent', popupLoginElementContent);
-
-const popup = new Popup(templateContainer);
+const popup = new Popup(template);
 
 authBtn.addEventListener('click', function() {
-  console.log('got click')
+  // console.log('got click')
   if (!popup.isOpen){
-    popup.setContent(popupLoginElementContent);
+    popup.setContent(popupLoginContent);
     popup.open.bind(popup)();
     popup.isOpen = true;
+    console.log('still got regLinks', document.querySelectorAll('.popup__reg-link'));
   }
-
 }
 );
+//////////
+
+const popupRegContent = document.querySelector('.popup_registration__content');
 
 
-// console.log('popupLoginElementContent', popupLoginElementContent)
+  template.addEventListener('click', function (event) {
+    if (event.target.classList.contains('popup__reg-link')) {
+    popup.close.bind(popup)();
+      popup.setContent(popupRegContent);
+      popup.open.bind(popup)();
+      popup.isOpen = true;
+    }
+});
 
-// const popupReg = '.popup_registration';
-// const regLink = document.querySelector('.popup__reg-link');
+
+
+
+
 // regLink.addEventListener('click', function() {
-//   popup.replaceContent(popupReg);
+//   console.log('got click');
+//   popup.close.bind(popup)();
+//     popup.setContent(popupRegContent);
+//     popup.open.bind(popup)();
+//     popup.isOpen = true;
+
 // }
 // );
 
