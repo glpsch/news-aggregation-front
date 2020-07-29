@@ -47,14 +47,18 @@ import onError from "./js/utils/onError";
   const loginEmailInput = loginForm.querySelector('#login-email');
   const loginPasswordInput = loginForm.querySelector('#login-password');
 
-  loginForm.addEventListener('submit', (event) => {
+  template.addEventListener("click", function (event) {
+    if (event.target.classList.contains("login__submit")) {
     event.preventDefault();
     //onUpload
     // userPopup.onUpload('Загрузка..');
-    mainApi.login(loginEmailInput.value, loginPasswordInput.value)
+    console.log('login');
+    mainApi.signin(loginEmailInput.value, loginPasswordInput.value)
         .then((res) => {
+          console.log(res, 'res');
             // userRecord.setUserInfo(res.name, res.about);
             // userRecord.updateUserInfo();
+
             popup.close();
         })
         .catch(onError)
@@ -62,6 +66,7 @@ import onError from "./js/utils/onError";
         // .finally(function () {
         //   popup.onUpload('Сохранить')
         // });
+      }
 });
 
 
