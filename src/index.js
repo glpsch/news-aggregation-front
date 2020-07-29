@@ -43,38 +43,36 @@ import onError from "./js/utils/onError";
 
   const mainApi = new MainApi(serverUrl);
 
-  const loginForm = popupLoginContent.querySelector(".popup__form");
-  const loginEmailInput = loginForm.querySelector('#login-email');
-  const loginPasswordInput = loginForm.querySelector('#login-password');
-
   template.addEventListener("click", function (event) {
     if (event.target.classList.contains("login__submit")) {
-    event.preventDefault();
-    //onUpload
-    // userPopup.onUpload('Загрузка..');
-    console.log('login');
-    mainApi.signin(loginEmailInput.value, loginPasswordInput.value)
+      event.preventDefault();
+      //onUpload
+      // userPopup.onUpload('Загрузка..');
+
+      /////???
+      // const loginForm = template.querySelector(".popup__form");
+      const loginEmailInput = template.querySelector("#login-email");
+      const loginPasswordInput = template.querySelector("#login-password");
+
+      ////!!!!
+      console.log("login", loginEmailInput.value);
+
+      mainApi
+        .signin(loginEmailInput.value, loginPasswordInput.value)
         .then((res) => {
-          console.log(res, 'res');
-            // userRecord.setUserInfo(res.name, res.about);
-            // userRecord.updateUserInfo();
-
-            popup.close();
+          console.log("all is ok");
+          console.log(res, "res");
+          // userRecord.updateUserInfo();
+          popup.close();
         })
-        .catch(onError)
-        //onUpload
-        // .finally(function () {
-        //   popup.onUpload('Сохранить')
-        // });
-      }
-});
-
-
-
-
-
-
-
-
-
+        .catch((e) => {
+          console.error("all is NOT ok:", e);
+          onError(e);
+        });
+      //onUpload
+      // .finally(function () {
+      //   popup.onUpload('Сохранить')
+      // });
+    }
+  });
 })();
