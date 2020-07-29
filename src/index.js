@@ -4,31 +4,29 @@ import "../pages/index.css";
 import "../pages/articles.css";
 
 import Popup from "./js/components/Popup";
+import MainApi from "./js/api/MainApi";
+import onError from "./js/utils/onError";
 
 (function () {
+  //Const - popups
   const template = document.querySelector(".popup-template");
   const popupLoginContent = document.querySelector(".popup_login__content");
   const authBtn = document.querySelector(".header__button");
+  const popupRegContent = document.querySelector(
+    ".popup_registration__content"
+  );
 
+  // Class instances
   const popup = new Popup(template);
 
+  // Listeners
   authBtn.addEventListener("click", function () {
-    // console.log('got click')
     if (!popup.isOpen) {
       popup.setContent(popupLoginContent);
       popup.open.bind(popup)();
       popup.isOpen = true;
-      console.log(
-        "still got regLinks",
-        document.querySelectorAll(".popup__reg-link")
-      );
     }
   });
-  //////////
-
-  const popupRegContent = document.querySelector(
-    ".popup_registration__content"
-  );
 
   template.addEventListener("click", function (event) {
     if (event.target.classList.contains("popup__reg-link")) {
@@ -39,15 +37,39 @@ import Popup from "./js/components/Popup";
     }
   });
 
-  // regLink.addEventListener('click', function() {
-  //   console.log('got click');
-  //   popup.close.bind(popup)();
-  //     popup.setContent(popupRegContent);
-  //     popup.open.bind(popup)();
-  //     popup.isOpen = true;
+  /////////////////////////////////////////////////////////////////////
+  //API
+  const serverUrl = "http://api.news-exploring.ga/";
 
-  // }
-  // );
+  const mainApi = new MainApi(serverUrl);
 
-  // authBtn.addEventListener('click', function() {console.log('bubu')});
+  const loginForm = popupLoginContent.querySelector(".popup__form");
+  const loginEmailInput = loginForm.querySelector('#login-email');
+  const loginPasswordInput = loginForm.querySelector('#login-password');
+
+  loginForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    //onUpload
+    // userPopup.onUpload('Загрузка..');
+    mainApi.login(loginEmailInput.value, loginPasswordInput.value)
+        .then((res) => {
+            // userRecord.setUserInfo(res.name, res.about);
+            // userRecord.updateUserInfo();
+            popup.close();
+        })
+        .catch(onError)
+        //onUpload
+        // .finally(function () {
+        //   popup.onUpload('Сохранить')
+        // });
+});
+
+
+
+
+
+
+
+
+
 })();
