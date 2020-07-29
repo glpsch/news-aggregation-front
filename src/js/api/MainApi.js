@@ -56,7 +56,6 @@ export default class MainApi {
         return Promise.reject(`error: ${res.status}`);
       })
       .then((data) => {
-        // сохраняем токен
         localStorage.setItem("token", data.token);
       });
   }

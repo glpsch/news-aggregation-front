@@ -15,35 +15,46 @@ import onError from "./js/utils/onError";
   const popupRegContent = document.querySelector(
     ".popup_registration__content"
   );
+  const popupSuccessContent = document.querySelector(".popup_success__content");
+
+  //Const - API
+  const serverUrl = "https://api.news-exploring.ga/";
 
   // Class instances
   const popup = new Popup(template);
+  const mainApi = new MainApi(serverUrl);
 
   // Listeners
   authBtn.addEventListener("click", function () {
     if (!popup.isOpen) {
       popup.setContent(popupLoginContent);
-      popup.open.bind(popup)();
+      popup.open();
       popup.isOpen = true;
     }
   });
 
   template.addEventListener("click", function (event) {
     if (event.target.classList.contains("popup__reg-link")) {
-      popup.close.bind(popup)();
+      popup.close();
       popup.setContent(popupRegContent);
-      popup.open.bind(popup)();
+      popup.open();
       popup.isOpen = true;
     }
   });
 
+   // Listeners: SUCCESS-LOGIN / REG-LOGIN
+ template.addEventListener("click", function (event) {
+  if (event.target.classList.contains("success-link") || event.target.classList.contains("popup__reg-login")) {
+    popup.close();
+    popup.setContent(popupLoginContent);
+    popup.open();
+    popup.isOpen = true;
+  }
+});
+
   /////////////////////////////////////////////////////////////////////
   //API
 
-  //https?
-  const serverUrl = "https://api.news-exploring.ga/";
-
-  const mainApi = new MainApi(serverUrl);
 
 
   // LOGIN
@@ -63,7 +74,7 @@ import onError from "./js/utils/onError";
           console.log("login is ok");
           console.log(res, "res");
           // userRecord.updateUserInfo();
-          popup.close();
+          popup.close.bind(popup)();
         })
         .catch((e) => {
           console.error("login is NOT ok:", e);
@@ -87,7 +98,11 @@ import onError from "./js/utils/onError";
       const regPasswordInput = template.querySelector("#reg-password");
       const regNameInput = template.querySelector("#reg-name");
 
-      console.log(regEmailInput.value, regPasswordInput.value, regNameInput.value);
+      console.log(
+        regEmailInput.value,
+        regPasswordInput.value,
+        regNameInput.value
+      );
       ////
       mainApi
         .signup(regEmailInput.value, regPasswordInput.value, regNameInput.value)
@@ -96,6 +111,9 @@ import onError from "./js/utils/onError";
           console.log(res, "res");
           // userRecord.updateUserInfo();
           popup.close();
+          popup.setContent(popupSuccessContent);
+          popup.open();
+          popup.isOpen = true;
         })
         .catch((e) => {
           console.error("reg is NOT ok:", e);
@@ -107,7 +125,6 @@ import onError from "./js/utils/onError";
       // });
     }
   });
-
 
 
 
