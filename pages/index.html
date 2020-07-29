@@ -211,22 +211,22 @@
           <form class="popup__form" novalidate>
             <div class="popup__input-container">
               <span class="popup__input-title">Email</span>
-              <input type="email" required class="input popup__input" placeholder="Введите email">
+              <input type="email" required class="input popup__input" placeholder="Введите email" id="reg-email">
               <span class="popup__input-error"></span>
             </div>
             <div class="popup__input-container">
               <span class="popup__input-title">Пароль</span>
-              <input type="password" required minlength="6" class="input popup__input" placeholder="Введите пароль">
+              <input type="password" required minlength="6" class="input popup__input" placeholder="Введите пароль" id="reg-password">
               <span class="popup__input-error"></span>
             </div>
             <div class="popup__input-container">
               <span class="popup__input-title">Имя</span>
               <input type="text" required minlength="2" maxlength="30" class="input popup__input"
-                placeholder="Введите своё имя">
+                placeholder="Введите своё имя" id="reg-name">
               <span class="popup__input-error"></span>
             </div>
             <span class="popup__input-error popup__input-error_main">Такой пользователь уже есть</span>
-            <button type="submit" class="button popup__button button_main">Зарегистрироваться</button>
+            <button type="submit" class="button popup__button button_main reg__submit">Зарегистрироваться</button>
             <!-- <button type="submit" class="button popup__button popup__button_inactive" disabled>Зарегистрироваться</button> -->
           </form>
           <div class="popup__link">

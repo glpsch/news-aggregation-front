@@ -39,34 +39,34 @@ import onError from "./js/utils/onError";
 
   /////////////////////////////////////////////////////////////////////
   //API
-  const serverUrl = "http://api.news-exploring.ga/";
+
+  //https?
+  const serverUrl = "https://api.news-exploring.ga/";
 
   const mainApi = new MainApi(serverUrl);
 
+
+  // LOGIN
   template.addEventListener("click", function (event) {
     if (event.target.classList.contains("login__submit")) {
       event.preventDefault();
       //onUpload
       // userPopup.onUpload('Загрузка..');
 
-      /////???
-      // const loginForm = template.querySelector(".popup__form");
       const loginEmailInput = template.querySelector("#login-email");
       const loginPasswordInput = template.querySelector("#login-password");
-
-      ////!!!!
+      ////
       console.log("login", loginEmailInput.value);
-
       mainApi
         .signin(loginEmailInput.value, loginPasswordInput.value)
         .then((res) => {
-          console.log("all is ok");
+          console.log("login is ok");
           console.log(res, "res");
           // userRecord.updateUserInfo();
           popup.close();
         })
         .catch((e) => {
-          console.error("all is NOT ok:", e);
+          console.error("login is NOT ok:", e);
           onError(e);
         });
       //onUpload
@@ -75,4 +75,50 @@ import onError from "./js/utils/onError";
       // });
     }
   });
+
+  // REGISTRATION
+  template.addEventListener("click", function (event) {
+    if (event.target.classList.contains("reg__submit")) {
+      event.preventDefault();
+      //onUpload
+      // userPopup.onUpload('Загрузка..');
+
+      const regEmailInput = template.querySelector("#reg-email");
+      const regPasswordInput = template.querySelector("#reg-password");
+      const regNameInput = template.querySelector("#reg-name");
+
+      console.log(regEmailInput.value, regPasswordInput.value, regNameInput.value);
+      ////
+      mainApi
+        .signup(regEmailInput.value, regPasswordInput.value, regNameInput.value)
+        .then((res) => {
+          console.log("reg is ok");
+          console.log(res, "res");
+          // userRecord.updateUserInfo();
+          popup.close();
+        })
+        .catch((e) => {
+          console.error("reg is NOT ok:", e);
+          onError(e);
+        });
+      //onUpload
+      // .finally(function () {
+      //   popup.onUpload('Сохранить')
+      // });
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 })();
