@@ -6,6 +6,8 @@
   color: #FF0000;
 
   transition: .3s;
-
+  padding-top: 4px;
   display: none;
 }
+
+

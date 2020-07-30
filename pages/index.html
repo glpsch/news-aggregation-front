@@ -247,16 +247,16 @@
             <div class="popup__input-container">
               <span class="popup__input-title">Email</span>
               <input type="email" required class="input popup__input" placeholder="Введите email" id="login-email">
-              <span class="popup__input-error" id="error-login-email">Неправильный формат email</span>
+              <span class="popup__input-error " id="error-login-email"></span>
             </div>
             <div class="popup__input-container">
               <span class="popup__input-title">Пароль</span>
               <input type="password" required minlength="6" class="input popup__input" placeholder="Введите пароль" id="login-password">
-              <span class="popup__input-error" id="error-login-password"></span>
+              <span class="popup__input-error" id="error-login-password">Пароль должен быть не менее 6 символов</span>
             </div>
 
             <!-- no input for error here -->
-            
+
             <span class="popup__input-error popup__input-error_main" id="error-main"></span>
             <button type="submit" class="button popup__button button_main login__submit">Войти</button>
             <!-- <button type="submit" class="button popup__button popup__button_inactive" disabled>Войти</button> -->

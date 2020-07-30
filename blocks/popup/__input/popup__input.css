@@ -14,10 +14,6 @@
   color: red;
 } */
 
-/* .input-container_invalid .popup__input-error {
-  padding: 4px;
-  display: block;
-} */
 
 .popup__input:focus {
   border-bottom: 1px solid rgba(0, 0, .8);

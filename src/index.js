@@ -156,17 +156,13 @@ import onError from "./js/utils/onError";
     if (!popup.isOpen) {
       popup.setContent(popupLoginContent);
       const currentForm = template.querySelector(".popup__form");
-      const loginEmailInput = template.querySelector("#login-email");
-      const loginPasswordInput = template.querySelector("#login-password");
       ////
       console.log("login form", currentForm);
 
       const formToValidate = new Form(currentForm);
       formToValidate.setEventListeners(currentForm);
-
-
-
       popup.open();
+
       popup.isOpen = true;
     }
   });

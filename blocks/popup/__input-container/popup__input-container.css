@@ -1,3 +1,5 @@
+@import url(./_invalid/popup__input-container_invalid.css);
+
 .popup__input-container {
   padding-bottom: 31px;
 }
@@ -5,3 +7,4 @@
 .popup__input-container:last-of-type {
   padding-bottom: 39px;
 }
+
