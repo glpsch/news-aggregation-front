@@ -19,7 +19,11 @@ checkInputValidity(element) {
     // console.log('should show element error', errorElement)
       errorElement.textContent = 'Это обязательное поле';
       if (this.element.validity.tooShort || this.element.validity.tooLong) {
-          errorElement.textContent = 'Должно быть от 2 до 30 символов';
+        if (this.element.parentNode.querySelector("[id*='password']")) {
+          errorElement.textContent = 'Пароль должен быть не менее 6 символов';
+        } else {
+          errorElement.textContent = 'Должно быть не менее двух символов';
+        }
       }
       if (this.element.validity.typeMismatch) {
           errorElement.textContent = 'Неправильный формат email';
