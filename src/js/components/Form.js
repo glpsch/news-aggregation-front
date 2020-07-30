@@ -10,14 +10,13 @@ export default class Form {
 // _getInfo — вспомогательный метод, возвращает данные формы.
 
 checkInputValidity(element) {
-  console.log('checking input validity')
+  // console.log('checking input validity')
   this.element = element;
-  // const errorElement = document.querySelector(`#error-${this.element.id}`);
   const errorElement = this.form.querySelector(`#error-${this.element.id}`);
   console.log('error element:', {errorElement, element})
   if (!this.element.checkValidity()) {
     console.log('faied to check validity')
-    console.log('should show element error', errorElement)
+    // console.log('should show element error', errorElement)
       errorElement.textContent = 'Это обязательное поле';
       if (this.element.validity.tooShort || this.element.validity.tooLong) {
           errorElement.textContent = 'Должно быть от 2 до 30 символов';
@@ -40,9 +39,6 @@ checkInputValidity(element) {
 }
 setSubmitButtonState(form) {
   this.form = form;
-  ////
-  /// ?????
-  // const inputs = Array.from(this.form.elements);
   const inputs = this.form.querySelectorAll('.popup__input');
   const inputBtn = this.form.querySelector('.popup__button');
   let isValidForm = true;
@@ -59,7 +55,7 @@ setSubmitButtonState(form) {
   }
 }
 validateFormInputs(event) {
-  console.log('called handle validate form')
+  // console.log('called handle validate form')
   event.preventDefault();
   this.setSubmitButtonState(this.form);
 }

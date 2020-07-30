@@ -70,6 +70,10 @@
     outline: none;
   }
 
+  .button_main:disabled {
+    background: #E6E8EB;
+  }
+
   .br {
     display: block;
     padding-top: 18px;

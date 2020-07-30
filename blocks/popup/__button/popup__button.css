@@ -12,15 +12,13 @@
   color: #ffffff;
 }
 
+
+/* TODO MOVE */
 .popup__button_inactive {
   background-color: #E6E8EB;
   color: #B6BCBF;
 }
 
-.popup__button_inactive:active {
-  background: #E6E8EB;
-  outline: none;
-}
 
 @media screen and (max-width: 530px) {
   .popup__button {
