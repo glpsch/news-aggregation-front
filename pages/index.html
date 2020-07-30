@@ -212,20 +212,23 @@
             <div class="popup__input-container">
               <span class="popup__input-title">Email</span>
               <input type="email" required class="input popup__input" placeholder="Введите email" id="reg-email">
-              <span class="popup__input-error"></span>
+              <span class="popup__input-error" id="error-reg-email"></span>
             </div>
             <div class="popup__input-container">
               <span class="popup__input-title">Пароль</span>
               <input type="password" required minlength="6" class="input popup__input" placeholder="Введите пароль" id="reg-password">
-              <span class="popup__input-error"></span>
+              <span class="popup__input-error" id="error-reg-password"></span>
             </div>
             <div class="popup__input-container">
               <span class="popup__input-title">Имя</span>
               <input type="text" required minlength="2" maxlength="30" class="input popup__input"
                 placeholder="Введите своё имя" id="reg-name">
-              <span class="popup__input-error"></span>
+              <span class="popup__input-error" id="error-reg-name"></span>
             </div>
-            <span class="popup__input-error popup__input-error_main">Такой пользователь уже есть</span>
+
+            <!-- no input for error here -->
+
+            <span class="popup__input-error popup__input-error_main" id="error-main">Такой пользователь уже есть</span>
             <button type="submit" class="button popup__button button_main reg__submit">Зарегистрироваться</button>
             <!-- <button type="submit" class="button popup__button popup__button_inactive" disabled>Зарегистрироваться</button> -->
           </form>
@@ -244,14 +247,17 @@
             <div class="popup__input-container">
               <span class="popup__input-title">Email</span>
               <input type="email" required class="input popup__input" placeholder="Введите email" id="login-email">
-              <span class="popup__input-error">Неправильный формат email</span>
+              <span class="popup__input-error" id="error-login-email">Неправильный формат email</span>
             </div>
             <div class="popup__input-container">
               <span class="popup__input-title">Пароль</span>
               <input type="password" required minlength="6" class="input popup__input" placeholder="Введите пароль" id="login-password">
-              <span class="popup__input-error"></span>
+              <span class="popup__input-error" id="error-login-password"></span>
             </div>
-            <span class="popup__input-error popup__input-error_main"></span>
+
+            <!-- no input for error here -->
+            
+            <span class="popup__input-error popup__input-error_main" id="error-main"></span>
             <button type="submit" class="button popup__button button_main login__submit">Войти</button>
             <!-- <button type="submit" class="button popup__button popup__button_inactive" disabled>Войти</button> -->
           </form>

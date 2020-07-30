@@ -1,0 +1,23 @@
+.popup__input-container_invalid .popup__input_error {
+  /* padding: 4px; */
+  display: block;
+}
+
+
+/* // todo */
+
+/* .popup__input:invalid {
+  color: red;
+}
+
+
+.popup__input_error {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+  display: none;
+  transition: .3s;
+} */

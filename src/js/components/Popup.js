@@ -23,7 +23,13 @@ export default class Popup {
 
   }
   open() {
-    console.log('called open')
+           // disableSubmit
+           if (!this.popupContainer.classList.contains('popup_success__content')) {
+            const inputBtn = this.popupContainer.querySelector('.popup__button');
+            console.log('inputBtn', inputBtn);
+            inputBtn.setAttribute('disabled', true);
+            inputBtn.classList.add('popup__button_inactive');
+        }
       this.popupContainer.classList.add('popup_is-opened');
   }
   close() {
@@ -55,7 +61,7 @@ export default class Popup {
           });
 
   }
-  
+
   // replaceContent(content){
   //   this.content = content;
   //   console.log('replace', {CLASS_list: this.popup.classList[1], CONTENT: content});

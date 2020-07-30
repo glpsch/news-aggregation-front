@@ -5,6 +5,7 @@ import "../pages/articles.css";
 
 import Popup from "./js/components/Popup";
 import MainApi from "./js/api/MainApi";
+import Form from "./js/components/Form";
 import onError from "./js/utils/onError";
 
 (function () {
@@ -25,13 +26,13 @@ import onError from "./js/utils/onError";
   const mainApi = new MainApi(serverUrl);
 
   // Listeners
-  authBtn.addEventListener("click", function () {
-    if (!popup.isOpen) {
-      popup.setContent(popupLoginContent);
-      popup.open();
-      popup.isOpen = true;
-    }
-  });
+  // authBtn.addEventListener("click", function () {
+  //   if (!popup.isOpen) {
+  //     popup.setContent(popupLoginContent);
+  //     popup.open();
+  //     popup.isOpen = true;
+  //   }
+  // });
 
   template.addEventListener("click", function (event) {
     if (event.target.classList.contains("popup__reg-link")) {
@@ -54,62 +55,55 @@ import onError from "./js/utils/onError";
 
   /////////////////////////////////////////////////////////////////////
   //API
-
+  /////////////////////////////////////////////////////////////////////
 
 
   // LOGIN
-  template.addEventListener("click", function (event) {
-    if (event.target.classList.contains("login__submit")) {
-      event.preventDefault();
-      //onUpload
-      // userPopup.onUpload('Загрузка..');
+  // template.addEventListener("click", function (event) {
+  //   if (event.target.classList.contains("login__submit")) {
+  //     event.preventDefault();
 
-      const loginEmailInput = template.querySelector("#login-email");
-      const loginPasswordInput = template.querySelector("#login-password");
-      ////
-      console.log("login", loginEmailInput.value);
-      mainApi
-        .signin(loginEmailInput.value, loginPasswordInput.value)
-        .then((res) => {
-          console.log("login is ok");
-          console.log(res, "res");
-          // userRecord.updateUserInfo();
-          popup.close.bind(popup)();
-        })
-        .catch((e) => {
-          console.error("login is NOT ok:", e);
-          onError(e);
-        });
-      //onUpload
-      // .finally(function () {
-      //   popup.onUpload('Сохранить')
-      // });
-    }
-  });
+  //     const loginEmailInput = template.querySelector("#login-email");
+  //     const loginPasswordInput = template.querySelector("#login-password");
+  //     ////
+  //     console.log("login", loginEmailInput.value);
+  //     mainApi
+  //       .signin(loginEmailInput.value, loginPasswordInput.value)
+  //       .then((res) => {
+  //         ///
+  //         console.log("login is ok");
+  //         console.log(res, "res");
+
+  //         popup.close();
+  //       })
+  //       .catch((e) => {
+  //         console.error("login is NOT ok:", e);
+  //         onError(e);
+  //       });
+  //   }
+  // });
 
   // REGISTRATION
   template.addEventListener("click", function (event) {
     if (event.target.classList.contains("reg__submit")) {
       event.preventDefault();
-      //onUpload
-      // userPopup.onUpload('Загрузка..');
 
       const regEmailInput = template.querySelector("#reg-email");
       const regPasswordInput = template.querySelector("#reg-password");
       const regNameInput = template.querySelector("#reg-name");
-
+      ////
       console.log(
         regEmailInput.value,
         regPasswordInput.value,
         regNameInput.value
       );
-      ////
+
       mainApi
         .signup(regEmailInput.value, regPasswordInput.value, regNameInput.value)
         .then((res) => {
           console.log("reg is ok");
           console.log(res, "res");
-          // userRecord.updateUserInfo();
+
           popup.close();
           popup.setContent(popupSuccessContent);
           popup.open();
@@ -119,10 +113,6 @@ import onError from "./js/utils/onError";
           console.error("reg is NOT ok:", e);
           onError(e);
         });
-      //onUpload
-      // .finally(function () {
-      //   popup.onUpload('Сохранить')
-      // });
     }
   });
 
@@ -130,10 +120,56 @@ import onError from "./js/utils/onError";
 
 
 
+  // template.addEventListener("click", function (event) {
+  //   if (event.target.classList.contains("login__submit")) {
+  //     event.preventDefault();
+
+  //     // const currentForm = template.querySelector(".popup__form");
+  //     const loginEmailInput = template.querySelector("#login-email");
+  //     const loginPasswordInput = template.querySelector("#login-password");
+  //     ////
+  //     // console.log("login form", currentForm);
+
+  //     // const formToValidate = new Form(currentForm);
+  //     // formToValidate.setEventListeners(currentForm);
+
+
+  //     mainApi
+  //       .signin(loginEmailInput.value, loginPasswordInput.value)
+  //       .then((res) => {
+  //         ///
+  //         console.log("login is ok");
+  //         console.log(res, "res");
+
+  //         popup.close();
+  //       })
+  //       .catch((e) => {
+  //         console.error("login is NOT ok:", e);
+  //         onError(e);
+  //       });
+  //   }
+  // });
+
+
+  // LOGIN + validation
+  authBtn.addEventListener("click", function () {
+    if (!popup.isOpen) {
+      popup.setContent(popupLoginContent);
+      const currentForm = template.querySelector(".popup__form");
+      const loginEmailInput = template.querySelector("#login-email");
+      const loginPasswordInput = template.querySelector("#login-password");
+      ////
+      console.log("login form", currentForm);
+
+      const formToValidate = new Form(currentForm);
+      formToValidate.setEventListeners(currentForm);
 
 
 
-
+      popup.open();
+      popup.isOpen = true;
+    }
+  });
 
 
 
