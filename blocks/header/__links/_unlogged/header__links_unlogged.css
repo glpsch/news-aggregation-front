@@ -1,0 +1,15 @@
+/* .header__links_unlogged {
+
+} */
+
+
+@media screen and (max-width: 530px) {
+   .header__links.header__links_unlogged::after {
+  /* background:#0b21c9; */
+  height: 240px;
+}
+
+.header__links.header__links_unlogged {
+  padding-top: 20px;
+}
+}

@@ -7,13 +7,14 @@ import Popup from "./js/components/Popup";
 import MainApi from "./js/api/MainApi";
 import Form from "./js/components/Form";
 import onError from "./js/utils/onError";
+import Header from "./js/components/Header";
 
 (function () {
   //Const - popups
   const template = document.querySelector(".popup-template");
   const popupLoginContent = document.querySelector(".popup_login__content");
   const authBtn = document.querySelector(".header__button");
-  const authBtnMobile = document.querySelector(".header__mobile-menu");
+  const mobileMenuBtn = document.querySelector(".header__mobile-menu");
 
   const popupRegContent = document.querySelector(".popup_registration__content");
   const popupSuccessContent = document.querySelector(".popup_success__content");
@@ -24,6 +25,10 @@ import onError from "./js/utils/onError";
   // Class instances
   const popup = new Popup(template);
   const mainApi = new MainApi(serverUrl);
+
+  //////////?????
+  const header = new Header(false);
+
 
   // Additional functions
   function setForm() {
@@ -47,11 +52,7 @@ import onError from "./js/utils/onError";
     }
   });
 
-  authBtnMobile.addEventListener("click", function () {
-    if (!popup.isOpen) {
-      setPopup(popupLoginContent);
-    }
-  });
+
 
   // REG + validation
   template.addEventListener("click", function (event) {
@@ -87,10 +88,17 @@ import onError from "./js/utils/onError";
       // console.log("login", loginEmailInput.value);
       mainApi
         .signin(loginEmailInput.value, loginPasswordInput.value)
-        .then((res) => {
+        .then((data) => {
           ///
           console.log("login is ok");
-          console.log(res, "res");
+          console.log('name', data.name);
+
+          header.render(
+            {
+              isLoggedIn: true,
+              userName: data.name
+            }
+          )
 
           popup.close();
         })
@@ -129,4 +137,21 @@ import onError from "./js/utils/onError";
         });
     }
   });
+
+
+///////////////////////////////////////////////
+/// mobile
+///////////////////////////////////////////////
+
+mobileMenuBtn.addEventListener("click", function () {
+  const mobileLinks = document.querySelector(".header__links");
+  mobileLinks.style.display = 'block';
+  document.querySelector(".backdrop").style.display = 'block';
+});
+
+
+
+
+
+
 })();

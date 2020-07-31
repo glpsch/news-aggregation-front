@@ -9,6 +9,10 @@
 
 }
 
+.header__button span {
+  padding-right: 15px;
+}
+
 .header__button:hover {
   background: rgba(255, 255, 255, 0.15);
   /* transition-duration: 1.2s; */

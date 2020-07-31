@@ -54,6 +54,9 @@ export default class MainApi {
       .then(async(res) => {
         const data = await res.json();
         if (res.ok) {
+
+          // console.log('data', data.name)
+
           return data;
         }
         return Promise.reject({message: data.message});
@@ -61,6 +64,7 @@ export default class MainApi {
 
       .then((data) => {
         localStorage.setItem("token", data.token);
+        return data;
       })
 
 
