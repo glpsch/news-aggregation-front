@@ -211,7 +211,7 @@
           <form class="popup__form" novalidate>
             <div class="popup__input-container">
               <span class="popup__input-title">Email</span>
-              <input type="email" required class="input popup__input" placeholder="Введите email" id="reg-email">
+              <input type="email" required class="input popup__input" pattern="^(?:[\w-]+\.?)+@(?:[\w-]+\.?)+[\w-]\.[a-z]{2,}$" placeholder="Введите email" id="reg-email">
               <span class="popup__input-error" id="error-reg-email"></span>
             </div>
             <div class="popup__input-container">
@@ -230,7 +230,6 @@
 
             <span class="popup__input-error popup__input-error_main" id="error-main">Такой пользователь уже есть</span>
             <button type="submit" class="button popup__button button_main reg__submit">Зарегистрироваться</button>
-            <!-- <button type="submit" class="button popup__button popup__button_inactive" disabled>Зарегистрироваться</button> -->
           </form>
           <div class="popup__link">
             или <a href="#" class="link popup__reg-login">Войти</a>
@@ -246,7 +245,7 @@
           <form class="popup__form" novalidate>
             <div class="popup__input-container">
               <span class="popup__input-title">Email</span>
-              <input type="email" required class="input popup__input" placeholder="Введите email" id="login-email">
+              <input type="email" required class="input popup__input" pattern="^(?:[\w-]+\.?)+@(?:[\w-]+\.?)+[\w-]\.[a-z]{2,}$" placeholder="Введите email" id="login-email">
               <span class="popup__input-error " id="error-login-email"></span>
             </div>
             <div class="popup__input-container">

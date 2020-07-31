@@ -1,3 +1,7 @@
 export default function onError(err) {
-    console.log(`Something went wrong :( ${err}`);
+
+  const mainError = document.querySelector(".popup-template").querySelector(".popup__input-error_main");
+  mainError.textContent = err.message;
+  mainError.style.display = 'flex';
+
 }

@@ -17,7 +17,10 @@ checkInputValidity(element) {
   if (!this.element.checkValidity()) {
     console.log('faied to check validity')
     // console.log('should show element error', errorElement)
-      errorElement.textContent = 'Это обязательное поле';
+    
+      if(!this.element.value){
+        errorElement.textContent = 'Это обязательное поле';
+      }
       if (this.element.validity.tooShort || this.element.validity.tooLong) {
         if (this.element.parentNode.querySelector("[id*='password']")) {
           errorElement.textContent = 'Пароль должен быть не менее 6 символов';
@@ -28,7 +31,11 @@ checkInputValidity(element) {
       if (this.element.validity.typeMismatch) {
           errorElement.textContent = 'Неправильный формат email';
       }
-      // activateError(element);
+    //   if (this.element.parentNode.querySelector("[id*='email']")) {
+    //     const reg = /^(?:[\w-]+\.?)+@(?:[\w-]+\.?)+[\w-]\.[a-z]{2,}$;
+    //     errorElement.textContent = 'Неправильный формат email';
+    // }
+
       this.element.parentNode.classList.add('popup__input-container_invalid');
       errorElement.classList.add('popup__input-container_invalid');
       return false;
@@ -70,7 +77,6 @@ handleValidateForm(event) {
 }
 
 setEventListeners(form) {
-  // console.log('set evennt listener')
   this.form = form;
   this.form.addEventListener('input', this.validateFormInputs.bind(this));
   const inputs = this.form.querySelectorAll('input');

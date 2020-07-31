@@ -27,12 +27,14 @@ export default class MainApi {
         email: this.email,
         password: this.password,
       }),
-    }).then((res) => {
+    })
+    .then(async(res) => {
+      const data = await res.json();
       if (res.ok) {
-        return res.json();
+        return data;
       }
-      return Promise.reject(`error: ${res.status}`);
-    });
+      return Promise.reject({message: data.message});
+    })
   }
 
   signin(email, password) {
@@ -49,14 +51,38 @@ export default class MainApi {
         password: this.password,
       }),
     })
-      .then((res) => {
+      .then(async(res) => {
+        const data = await res.json();
         if (res.ok) {
-          return res.json();
+          return data;
         }
-        return Promise.reject(`error: ${res.status}`);
+        return Promise.reject({message: data.message});
       })
+
       .then((data) => {
         localStorage.setItem("token", data.token);
-      });
+      })
+
+
+      // .then((res) => {
+      //   return res.json().then((data)=>{
+      //     if (res.ok) {
+      //       return data;
+      //     }
+      //     return Promise.reject({message: data.message});
+      //   })
+      // })
+      // .then((res) => {
+      //   const data = await res.json();
+      //   if (res.ok) {
+      //     return data;
+      //   }
+      //   return Promise.reject({message: data.message});
+      // })
+      // .then((data) => {
+      //   localStorage.setItem("token", data.token);
+      // });
+
+
   }
 }

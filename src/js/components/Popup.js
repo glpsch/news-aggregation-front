@@ -24,9 +24,9 @@ export default class Popup {
   }
   open() {
            // disableSubmit
-           if (!this.popupContainer.classList.contains('popup_success__content')) {
+           console.log('open: this.popupContainer.classList', this.popupContainer.classList);
+           if (this.popupContainer.querySelector('.popup__button')) {
             const inputBtn = this.popupContainer.querySelector('.popup__button');
-            console.log('inputBtn', inputBtn);
             inputBtn.setAttribute('disabled', true);
             inputBtn.classList.add('popup__button_inactive');
         }
@@ -61,13 +61,6 @@ export default class Popup {
           });
 
   }
-
-  // replaceContent(content){
-  //   this.content = content;
-  //   console.log('replace', {CLASS_list: this.popup.classList[1], CONTENT: content});
-  //   this.popup.classList.replace(this.popup.classList[1], content);
-
-  // }
 
 
   // clearContent(popup){
