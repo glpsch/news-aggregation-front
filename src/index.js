@@ -13,9 +13,9 @@ import onError from "./js/utils/onError";
   const template = document.querySelector(".popup-template");
   const popupLoginContent = document.querySelector(".popup_login__content");
   const authBtn = document.querySelector(".header__button");
-  const popupRegContent = document.querySelector(
-    ".popup_registration__content"
-  );
+  const authBtnMobile = document.querySelector(".header__mobile-menu");
+
+  const popupRegContent = document.querySelector(".popup_registration__content");
   const popupSuccessContent = document.querySelector(".popup_success__content");
 
   //Const - API
@@ -32,25 +32,32 @@ import onError from "./js/utils/onError";
     formToValidate.setEventListeners(currentForm);
   }
 
+  function setPopup(content) {
+    popup.setContent(content);
+    setForm();
+    popup.open();
+    popup.isOpen = true;
+  }
+
   // Listeners
   // LOGIN + validation
   authBtn.addEventListener("click", function () {
     if (!popup.isOpen) {
-      popup.setContent(popupLoginContent);
-      setForm();
-      popup.open();
-      popup.isOpen = true;
+      setPopup(popupLoginContent);
     }
   });
 
-   // REG + validation
+  authBtnMobile.addEventListener("click", function () {
+    if (!popup.isOpen) {
+      setPopup(popupLoginContent);
+    }
+  });
+
+  // REG + validation
   template.addEventListener("click", function (event) {
     if (event.target.classList.contains("popup__reg-link")) {
       popup.close();
-      popup.setContent(popupRegContent);
-      setForm();
-      popup.open();
-      popup.isOpen = true;
+      setPopup(popupRegContent);
     }
   });
 
@@ -61,10 +68,7 @@ import onError from "./js/utils/onError";
       event.target.classList.contains("popup__reg-login")
     ) {
       popup.close();
-      popup.setContent(popupLoginContent);
-      setForm();
-      popup.open();
-      popup.isOpen = true;
+      setPopup(popupLoginContent);
     }
   });
 
@@ -91,7 +95,7 @@ import onError from "./js/utils/onError";
           popup.close();
         })
         .catch((e) => {
-          console.error("login is NOT ok:", {e});
+          console.error("login is NOT ok:", { e });
           onError(e);
         });
     }
@@ -106,11 +110,7 @@ import onError from "./js/utils/onError";
       const regPasswordInput = template.querySelector("#reg-password");
       const regNameInput = template.querySelector("#reg-name");
       ////
-      console.log(
-        regEmailInput.value,
-        regPasswordInput.value,
-        regNameInput.value
-      );
+      console.log(regEmailInput.value, regPasswordInput.value, regNameInput.value);
 
       mainApi
         .signup(regEmailInput.value, regPasswordInput.value, regNameInput.value)
@@ -129,7 +129,4 @@ import onError from "./js/utils/onError";
         });
     }
   });
-
-
-
 })();
