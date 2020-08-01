@@ -22,10 +22,14 @@
         <nav class="header__links header__links_unlogged">
           <a href="https://glpsch.github.io/news-aggregation-front/" class="link header__link link_underlined">Главная</a>
           <a href="https://glpsch.github.io/news-aggregation-front/articles" class="link header__link header__link_articles">Сохранённые статьи</a>
-          <!-- <button class="button header__button header_logout"><span>Грета</span> -->
-          <button class="button header__button header__button_unlogged"><span class="header__button-content">Грета</span>
+
+          <button class="button header__button header__button_unlogged"><span class="header__button-content"></span>
+          </button>
+
+          <button class="button header__button header__button_logged-in invisible"><span class="header__button-content"></span>
             <img src="<%=require('../src/images/logout.svg').default%>" alt="Выйти из профайла">
           </button>
+
         </nav>
       </div>
     </header>

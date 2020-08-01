@@ -6,14 +6,15 @@ export default class Header {
 
   render({ isLoggedIn, userName }) {
     const articles = document.querySelector(".header__link_articles");
-    const headerButton = document.querySelector(".header__button");
-    const headerButtonContent = document.querySelector(".header__button-content");
+    const ButtonUnlogged = document.querySelector(".header__button_unlogged");
+    const ButtonLoggedIn = document.querySelector(".header__button_logged-in");
     const headerLinks = document.querySelector(".header__links");
 
     if (isLoggedIn) {
       articles.style.display = 'flex';
-      headerButton.classList.remove('header__button_unlogged');
-      headerButtonContent.textContent = userName;
+      ButtonUnlogged.classList.add('invisible');
+      ButtonLoggedIn.classList.remove('invisible');
+      ButtonLoggedIn.querySelector(".header__button-content").textContent = userName;
       headerLinks.classList.remove("header__links_unlogged");
 
       this.loggedInState = true;
@@ -21,9 +22,9 @@ export default class Header {
 
     else {
       articles.style.display = 'none';
-      headerButton.classList.add('header__button_unlogged');
-      headerButtonContent.textContent = '';
       headerLinks.classList.add("header__links_unlogged");
+      ButtonUnlogged.classList.remove('invisible');
+      ButtonLoggedIn.classList.add('invisible');
 
       this.loggedInState = false;
     }

@@ -54,9 +54,6 @@ export default class MainApi {
       .then(async(res) => {
         const data = await res.json();
         if (res.ok) {
-
-          // console.log('data', data.name)
-
           return data;
         }
         return Promise.reject({message: data.message});
@@ -70,25 +67,6 @@ export default class MainApi {
 
     }
 
-      // .then((res) => {
-      //   return res.json().then((data)=>{
-      //     if (res.ok) {
-      //       return data;
-      //     }
-      //     return Promise.reject({message: data.message});
-      //   })
-      // })
-      // .then((res) => {
-      //   const data = await res.json();
-      //   if (res.ok) {
-      //     return data;
-      //   }
-      //   return Promise.reject({message: data.message});
-      // })
-      // .then((data) => {
-      //   localStorage.setItem("token", data.token);
-      // });
-
       checkStatus() {
         console.log('checking status of token:', JSON.stringify({token: localStorage.getItem('token')}));
         return fetch(this.server + "users/me", {
@@ -97,12 +75,10 @@ export default class MainApi {
             authorization: `Bearer ${localStorage.getItem('token')}`
         }})
         .then((res) => {
-          console.log('status return1', res)
           if (res.ok) {
-            console.log('status return2', res.json)
               return res.json();
           }
-          return Promise.reject({message: data.message});
+          return Promise.reject();
       })
 }
 

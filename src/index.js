@@ -13,8 +13,8 @@ import Header from "./js/components/Header";
   //Const - popups
   const template = document.querySelector(".popup-template");
   const popupLoginContent = document.querySelector(".popup_login__content");
-  const authBtnUnlogged = document.querySelector(".header__button_unlogged");
-  const authBtnLogged = document.querySelector(".header__button");
+  const authBtnLogIn = document.querySelector(".header__button_unlogged");
+  const authBtnLogOut = document.querySelector(".header__button_logged-in");
   const mobileMenuBtn = document.querySelector(".header__mobile-menu");
 
   const popupRegContent = document.querySelector(".popup_registration__content");
@@ -47,14 +47,14 @@ import Header from "./js/components/Header";
 
   // Listeners
   // LOGIN + validation
-  authBtnUnlogged.addEventListener("click", function () {
+  authBtnLogIn.addEventListener("click", function () {
     if (!popup.isOpen) {
       setPopup(popupLoginContent);
     }
   });
 
     // LOG OUT
-    authBtnLogged.addEventListener("click", function () {
+    authBtnLogOut.addEventListener("click", function () {
       console.log('removing token from local storage');
       localStorage.removeItem("token");
       header.render(
@@ -107,10 +107,9 @@ import Header from "./js/components/Header";
       }
     )
   })
-  .catch((e) => {
-    console.error("check status failed:", { e });
+  .catch(() => {
+    console.log("check status failed");
     localStorage.removeItem("token");
-    // onError(e);
   });
 
 

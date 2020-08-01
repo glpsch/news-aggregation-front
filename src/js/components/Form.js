@@ -10,14 +10,13 @@ export default class Form {
 // _getInfo — вспомогательный метод, возвращает данные формы.
 
 checkInputValidity(element) {
-  // console.log('checking input validity')
   this.element = element;
   const errorElement = this.form.querySelector(`#error-${this.element.id}`);
   console.log('error element:', {errorElement, element})
   if (!this.element.checkValidity()) {
     console.log('faied to check validity')
     // console.log('should show element error', errorElement)
-    
+
       if(!this.element.value){
         errorElement.textContent = 'Это обязательное поле';
       }
@@ -33,7 +32,6 @@ checkInputValidity(element) {
       }
     //   if (this.element.parentNode.querySelector("[id*='email']")) {
     //     const reg = /^(?:[\w-]+\.?)+@(?:[\w-]+\.?)+[\w-]\.[a-z]{2,}$;
-    //     errorElement.textContent = 'Неправильный формат email';
     // }
 
       this.element.parentNode.classList.add('popup__input-container_invalid');
@@ -66,7 +64,6 @@ setSubmitButtonState(form) {
   }
 }
 validateFormInputs(event) {
-  // console.log('called handle validate form')
   event.preventDefault();
   this.setSubmitButtonState(this.form);
 }
