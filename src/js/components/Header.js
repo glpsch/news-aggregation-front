@@ -12,7 +12,9 @@ export default class Header {
 
     if (isLoggedIn) {
       articles.style.display = 'flex';
+      if (ButtonUnlogged) {
       ButtonUnlogged.classList.add('invisible');
+      }
       ButtonLoggedIn.classList.remove('invisible');
       ButtonLoggedIn.querySelector(".header__button-content").textContent = userName;
       headerLinks.classList.remove("header__links_unlogged");
@@ -23,7 +25,9 @@ export default class Header {
     else {
       articles.style.display = 'none';
       headerLinks.classList.add("header__links_unlogged");
-      ButtonUnlogged.classList.remove('invisible');
+      if (ButtonUnlogged) {
+        ButtonUnlogged.classList.remove('invisible');
+        }
       ButtonLoggedIn.classList.add('invisible');
 
       this.loggedInState = false;

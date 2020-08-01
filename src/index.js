@@ -97,6 +97,7 @@ import Header from "./js/components/Header";
   //API
   /////////////////////////////////////////////////////////////////////
 
+  // check + redirect
   mainApi
     .checkStatus()
     .then((user) => {
