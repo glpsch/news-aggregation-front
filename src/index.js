@@ -10,6 +10,9 @@ import onError from "./js/utils/onError";
 import Header from "./js/components/Header";
 
 (function () {
+  // TODO change after deployment to "https://news-exploring.ga/"
+  // const mainUrl = "https://glpsch.github.io/news-aggregation-front/";
+  const mainUrl = "http://localhost:8080/";
   //Const - popups
   const template = document.querySelector(".popup-template");
   const popupLoginContent = document.querySelector(".popup_login__content");
@@ -26,10 +29,7 @@ import Header from "./js/components/Header";
   // Class instances
   const popup = new Popup(template);
   const mainApi = new MainApi(serverUrl);
-
-  //////////?????
   const header = new Header();
-
 
   // Additional functions
   function setForm() {
@@ -46,160 +46,146 @@ import Header from "./js/components/Header";
   }
 
   // Listeners
-  // LOGIN + validation
-  authBtnLogIn.addEventListener("click", function () {
-    if (!popup.isOpen) {
-      setPopup(popupLoginContent);
-    }
-  });
-
-    // LOG OUT
-    authBtnLogOut.addEventListener("click", function () {
-      console.log('removing token from local storage');
-      localStorage.removeItem("token");
-      header.render(
-        {
-          isLoggedIn: false,
-          userName: 'any'
-        })
+  // LOGIN popup
+  if (authBtnLogIn) {
+    authBtnLogIn.addEventListener("click", function () {
+      if (!popup.isOpen) {
+        setPopup(popupLoginContent);
+      }
     });
+  }
 
+  // LOG OUT
+  authBtnLogOut.addEventListener("click", function () {
+    console.log("removing token from local storage");
+    localStorage.removeItem("token");
 
-  // REG + validation
-  template.addEventListener("click", function (event) {
-    if (event.target.classList.contains("popup__reg-link")) {
-      popup.close();
-      setPopup(popupRegContent);
+    if (event.target.parentNode.classList.contains("header_theme_black")) {
+      window.location = mainUrl;
+    } else {
+      header.render({
+        isLoggedIn: false,
+        userName: "any",
+      });
     }
   });
 
-  // Listeners: SUCCESS-LOGIN / REG-LOGIN
-  template.addEventListener("click", function (event) {
-    if (
-      event.target.classList.contains("success-link") ||
-      event.target.classList.contains("popup__reg-login")
-    ) {
-      popup.close();
-      setPopup(popupLoginContent);
-    }
-  });
+  // REG popup
+  if (template) {
+    template.addEventListener("click", function (event) {
+      if (event.target.classList.contains("popup__reg-link")) {
+        popup.close();
+        setPopup(popupRegContent);
+      }
+    });
+  }
+
+  // Popup redirect: SUCCESS-LOGIN / REG-LOGIN
+  if (template) {
+    template.addEventListener("click", function (event) {
+      if (
+        event.target.classList.contains("success-link") ||
+        event.target.classList.contains("popup__reg-login")
+      ) {
+        popup.close();
+        setPopup(popupLoginContent);
+      }
+    });
+  }
 
   /////////////////////////////////////////////////////////////////////
   //API
   /////////////////////////////////////////////////////////////////////
 
-
-
-
-
-
   mainApi
-  .checkStatus()
-  .then((user) => {
-    ///
-    console.log("check status has completed");
-    console.log({user})
+    .checkStatus()
+    .then((user) => {
+      ///
+      console.log("check status has completed");
+      console.log({ user });
 
-    header.render(
-      {
+      header.render({
         isLoggedIn: true,
-        userName: user.name
-      }
-    )
-  })
-  .catch(() => {
-    console.log("check status failed");
-    localStorage.removeItem("token");
-  });
-
-
-
-
-
-
-
-
-
-
+        userName: user.name,
+      });
+    })
+    .catch(() => {
+      console.log("check status failed");
+      localStorage.removeItem("token");
+       if (window.location.pathname !== '/') {
+        window.location.pathname = '/';
+       };
+    });
 
 
 
 
 
   // LOGIN
-  template.addEventListener("click", function (event) {
-    if (event.target.classList.contains("login__submit")) {
-      event.preventDefault();
+  if (template) {
+    template.addEventListener("click", function (event) {
+      if (event.target.classList.contains("login__submit")) {
+        event.preventDefault();
 
-      const loginEmailInput = template.querySelector("#login-email");
-      const loginPasswordInput = template.querySelector("#login-password");
-      ////
-      // console.log("login", loginEmailInput.value);
-      mainApi
-        .signin(loginEmailInput.value, loginPasswordInput.value)
-        .then((data) => {
-          ///
-          console.log("login is ok");
-          // console.log('name', data.name);
+        const loginEmailInput = template.querySelector("#login-email");
+        const loginPasswordInput = template.querySelector("#login-password");
 
-          header.render(
-            {
+        mainApi
+          .signin(loginEmailInput.value, loginPasswordInput.value)
+          .then((data) => {
+            ///
+            console.log("login is ok");
+
+            header.render({
               isLoggedIn: true,
-              userName: data.user.name
-            }
-          )
+              userName: data.user.name,
+            });
 
-          popup.close();
-        })
-        .catch((e) => {
-          console.error("login is NOT ok:", { e });
-          onError(e);
-        });
-    }
-  });
+            popup.close();
+          })
+          .catch((e) => {
+            console.error("login is NOT ok:", { e });
+            onError(e);
+          });
+      }
+    });
+  }
 
   // REGISTRATION
-  template.addEventListener("click", function (event) {
-    if (event.target.classList.contains("reg__submit")) {
-      event.preventDefault();
+  if (template) {
+    template.addEventListener("click", function (event) {
+      if (event.target.classList.contains("reg__submit")) {
+        event.preventDefault();
 
-      const regEmailInput = template.querySelector("#reg-email");
-      const regPasswordInput = template.querySelector("#reg-password");
-      const regNameInput = template.querySelector("#reg-name");
-      ////
-      console.log(regEmailInput.value, regPasswordInput.value, regNameInput.value);
+        const regEmailInput = template.querySelector("#reg-email");
+        const regPasswordInput = template.querySelector("#reg-password");
+        const regNameInput = template.querySelector("#reg-name");
+        ////
+        mainApi
+          .signup(regEmailInput.value, regPasswordInput.value, regNameInput.value)
+          .then((res) => {
+            console.log("reg is ok");
+            console.log(res, "res");
 
-      mainApi
-        .signup(regEmailInput.value, regPasswordInput.value, regNameInput.value)
-        .then((res) => {
-          console.log("reg is ok");
-          console.log(res, "res");
+            popup.close();
+            popup.setContent(popupSuccessContent);
+            popup.open();
+            popup.isOpen = true;
+          })
+          .catch((e) => {
+            console.error("reg is NOT ok:", e);
+            onError(e);
+          });
+      }
+    });
+  }
 
-          popup.close();
-          popup.setContent(popupSuccessContent);
-          popup.open();
-          popup.isOpen = true;
-        })
-        .catch((e) => {
-          console.error("reg is NOT ok:", e);
-          onError(e);
-        });
-    }
+  ///////////////////////////////////////////////
+  /// mobile
+  ///////////////////////////////////////////////
+
+  mobileMenuBtn.addEventListener("click", function () {
+    document.querySelector(".header__links").classList.toggle("header__links_visible-on-mobile");
+    document.querySelector(".backdrop").classList.toggle("backdrop_active");
   });
-
-
-///////////////////////////////////////////////
-/// mobile
-///////////////////////////////////////////////
-
-mobileMenuBtn.addEventListener("click", function () {
-  document.querySelector(".header__links").classList.toggle("header__links_visible-on-mobile");
-  document.querySelector(".backdrop").classList.toggle("backdrop_active");
-});
-
-
-
-
-
-
 })();
