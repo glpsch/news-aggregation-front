@@ -5,14 +5,15 @@ import "../pages/articles.css";
 
 import Popup from "./js/components/Popup";
 import MainApi from "./js/api/MainApi";
+import NewsApi from "./js/api/NewsApi";
 import Form from "./js/components/Form";
 import onError from "./js/utils/onError";
 import Header from "./js/components/Header";
 
 (function () {
   // TODO change after deployment to "https://news-exploring.ga/"
-  // const mainUrl = "https://glpsch.github.io/news-aggregation-front/";
-  const mainUrl = "http://localhost:8080/";
+  const mainUrl = "https://glpsch.github.io/news-aggregation-front/";
+
   //Const - popups
   const template = document.querySelector(".popup-template");
   const popupLoginContent = document.querySelector(".popup_login__content");
@@ -71,27 +72,23 @@ import Header from "./js/components/Header";
   });
 
   // REG popup
-  if (template) {
-    template.addEventListener("click", function (event) {
-      if (event.target.classList.contains("popup__reg-link")) {
-        popup.close();
-        setPopup(popupRegContent);
-      }
-    });
-  }
+  template.addEventListener("click", function (event) {
+    if (event.target.classList.contains("popup__reg-link")) {
+      popup.close();
+      setPopup(popupRegContent);
+    }
+  });
 
   // Popup redirect: SUCCESS-LOGIN / REG-LOGIN
-  if (template) {
-    template.addEventListener("click", function (event) {
-      if (
-        event.target.classList.contains("success-link") ||
-        event.target.classList.contains("popup__reg-login")
-      ) {
-        popup.close();
-        setPopup(popupLoginContent);
-      }
-    });
-  }
+  template.addEventListener("click", function (event) {
+    if (
+      event.target.classList.contains("success-link") ||
+      event.target.classList.contains("popup__reg-login")
+    ) {
+      popup.close();
+      setPopup(popupLoginContent);
+    }
+  });
 
   /////////////////////////////////////////////////////////////////////
   //API
@@ -113,80 +110,100 @@ import Header from "./js/components/Header";
     .catch(() => {
       console.log("check status failed");
       localStorage.removeItem("token");
-       if (window.location.pathname !== '/') {
-        window.location.pathname = '/';
-       };
+      if (window.location.pathname !== "/") {
+        window.location.pathname = "/";
+      }
     });
-
-
-
-
 
   // LOGIN
-  if (template) {
-    template.addEventListener("click", function (event) {
-      if (event.target.classList.contains("login__submit")) {
-        event.preventDefault();
+  template.addEventListener("click", function (event) {
+    if (event.target.classList.contains("login__submit")) {
+      event.preventDefault();
 
-        const loginEmailInput = template.querySelector("#login-email");
-        const loginPasswordInput = template.querySelector("#login-password");
+      const loginEmailInput = template.querySelector("#login-email");
+      const loginPasswordInput = template.querySelector("#login-password");
 
-        mainApi
-          .signin(loginEmailInput.value, loginPasswordInput.value)
-          .then((data) => {
-            ///
-            console.log("login is ok");
+      mainApi
+        .signin(loginEmailInput.value, loginPasswordInput.value)
+        .then((data) => {
+          ///
+          console.log("login is ok");
 
-            header.render({
-              isLoggedIn: true,
-              userName: data.user.name,
-            });
-
-            popup.close();
-          })
-          .catch((e) => {
-            console.error("login is NOT ok:", { e });
-            onError(e);
+          header.render({
+            isLoggedIn: true,
+            userName: data.user.name,
           });
-      }
-    });
-  }
+
+          popup.close();
+        })
+        .catch((e) => {
+          console.error("login is NOT ok:", { e });
+          onError(e);
+        });
+    }
+  });
 
   // REGISTRATION
-  if (template) {
-    template.addEventListener("click", function (event) {
-      if (event.target.classList.contains("reg__submit")) {
-        event.preventDefault();
+  template.addEventListener("click", function (event) {
+    if (event.target.classList.contains("reg__submit")) {
+      event.preventDefault();
 
-        const regEmailInput = template.querySelector("#reg-email");
-        const regPasswordInput = template.querySelector("#reg-password");
-        const regNameInput = template.querySelector("#reg-name");
-        ////
-        mainApi
-          .signup(regEmailInput.value, regPasswordInput.value, regNameInput.value)
-          .then((res) => {
-            console.log("reg is ok");
-            console.log(res, "res");
+      const regEmailInput = template.querySelector("#reg-email");
+      const regPasswordInput = template.querySelector("#reg-password");
+      const regNameInput = template.querySelector("#reg-name");
+      ////
+      mainApi
+        .signup(regEmailInput.value, regPasswordInput.value, regNameInput.value)
+        .then((res) => {
+          console.log("reg is ok");
+          console.log(res, "res");
 
-            popup.close();
-            popup.setContent(popupSuccessContent);
-            popup.open();
-            popup.isOpen = true;
-          })
-          .catch((e) => {
-            console.error("reg is NOT ok:", e);
-            onError(e);
-          });
-      }
-    });
-  }
+          popup.close();
+          popup.setContent(popupSuccessContent);
+          popup.open();
+          popup.isOpen = true;
+        })
+        .catch((e) => {
+          console.error("reg is NOT ok:", e);
+          onError(e);
+        });
+    }
+  });
 
-  ///////////////////////////////////////////////
+  /////////////////////////////
   /// mobile
-  ///////////////////////////////////////////////
+  /////////////////////////////
 
   mobileMenuBtn.addEventListener("click", function () {
     document.querySelector(".header__links").classList.toggle("header__links_visible-on-mobile");
     document.querySelector(".backdrop").classList.toggle("backdrop_active");
   });
+
+  ///////////////////////////////////////////////
+  /// NEWS
+  ///////////////////////////////////////////////
+  let keyword;
+  // const apiURL='https://newsapi.org/v2/';
+  let proxiUrl = "https://praktikum.tk/news/v2/";
+  const apiKey = "f3d87446c54c4e3b9fe47f4c2993c14f";
+
+  // keyword = document.querySelector(".search__input").value;
+  keyword = "котики";
+
+  const newsUrl =
+    `${proxiUrl}everything?pageSize=100&` +
+    `q=${keyword}&` +
+    `apiKey=${apiKey}&` +
+    "sortBy=popularity&" +
+    "from=2020-07-31&" +
+    "to=2020-08-01&" +
+    "language=ru";
+
+  console.log({ newsUrl });
+  const newsApi = new NewsApi(newsUrl);
+  newsApi.getNews();
+
+
+
+
 })();
