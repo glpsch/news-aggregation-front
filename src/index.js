@@ -13,6 +13,7 @@ import Header from "./js/components/Header";
 (function () {
   // TODO change after deployment to "https://news-exploring.ga/"
   const mainUrl = "https://glpsch.github.io/news-aggregation-front/";
+  const serverUrl = "https://api.news-exploring.ga/";
 
   //Const - popups
   const template = document.querySelector(".popup-template");
@@ -24,8 +25,8 @@ import Header from "./js/components/Header";
   const popupRegContent = document.querySelector(".popup_registration__content");
   const popupSuccessContent = document.querySelector(".popup_success__content");
 
-  //Const - API
-  const serverUrl = "https://api.news-exploring.ga/";
+  //Const - search
+  const searchBtn = document.querySelector(".search__button");
 
   // Class instances
   const popup = new Popup(template);
@@ -48,13 +49,11 @@ import Header from "./js/components/Header";
 
   // Listeners
   // LOGIN popup
-  if (authBtnLogIn) {
-    authBtnLogIn.addEventListener("click", function () {
-      if (!popup.isOpen) {
-        setPopup(popupLoginContent);
-      }
-    });
-  }
+  authBtnLogIn.addEventListener("click", function () {
+    if (!popup.isOpen) {
+      setPopup(popupLoginContent);
+    }
+  });
 
   // LOG OUT
   authBtnLogOut.addEventListener("click", function () {
@@ -182,27 +181,44 @@ import Header from "./js/components/Header";
   ///////////////////////////////////////////////
   /// NEWS
   ///////////////////////////////////////////////
-  let keyword;
+
   // const apiURL='https://newsapi.org/v2/';
   let proxiUrl = "https://praktikum.tk/news/v2/";
   const apiKey = "f3d87446c54c4e3b9fe47f4c2993c14f";
 
-  // keyword = document.querySelector(".search__input").value;
-  keyword = "котики";
+  // keyword = "котики";
 
   const newsUrl =
     `${proxiUrl}everything?pageSize=100&` +
-    `q=${keyword}&` +
+    // `q=${keyword}&` +
     `apiKey=${apiKey}&` +
     "sortBy=popularity&" +
-    "from=2020-07-31&" +
-    "to=2020-08-01&" +
+    //TODO set dates
+    "from=2020-07-26&" +
+    "to=2020-08-02&" +
     "language=ru";
 
   console.log({ newsUrl });
-  const newsApi = new NewsApi(newsUrl);
-  newsApi.getNews();
+  const newsApi = new NewsApi();
 
+  //TODO on submit
+  searchBtn.addEventListener("click", function () {
+    console.log("search begin");
+    const keyword = document.querySelector(".search__input").value;
+    const searchUrl = newsUrl + `&q=${keyword}`;
+
+    if (!keyword) {
+      // TODO выводится ошибка «Нужно ввести ключевое слово»
+      console.log("Нужно ввести ключевое слово");
+    } else {
+      ////////////
+      newsApi.getNews(searchUrl)
+      .then((data) => {
+        console.log("articles", data.articles);
+        console.log("keyword", keyword);
+      });
+    }
+  });
 
 
 
