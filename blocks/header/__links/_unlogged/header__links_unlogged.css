@@ -6,10 +6,14 @@
 @media screen and (max-width: 530px) {
    .header__links.header__links_unlogged::after {
   /* background:#0b21c9; */
-  height: 240px;
+  height: 260px;
 }
 
 .header__links.header__links_unlogged {
-  padding-top: 20px;
+  padding-top: 10px;
+}
+
+.header__links_unlogged .header__button {
+  margin-top: 20px;
 }
 }

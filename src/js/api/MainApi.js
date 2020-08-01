@@ -63,10 +63,12 @@ export default class MainApi {
       })
 
       .then((data) => {
+        console.log('local storage: setting token:', JSON.stringify( {data} ) );
         localStorage.setItem("token", data.token);
         return data;
       })
 
+    }
 
       // .then((res) => {
       //   return res.json().then((data)=>{
@@ -87,6 +89,21 @@ export default class MainApi {
       //   localStorage.setItem("token", data.token);
       // });
 
+      checkStatus() {
+        console.log('checking status of token:', JSON.stringify({token: localStorage.getItem('token')}));
+        return fetch(this.server + "users/me", {
+          method: 'GET',
+          headers: {
+            authorization: `Bearer ${localStorage.getItem('token')}`
+        }})
+        .then((res) => {
+          console.log('status return1', res)
+          if (res.ok) {
+            console.log('status return2', res.json)
+              return res.json();
+          }
+          return Promise.reject({message: data.message});
+      })
+}
 
-  }
 }

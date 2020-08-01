@@ -1,21 +1,33 @@
 export default class Header {
-  constructor(loggedInState) {
-    this.loggedInState = loggedInState;
-// if (!loggedInState) {
-
-// }
+  constructor() {
+    // this.loggedInState = loggedInState;
+    this.loggedInState = false;
   }
 
   render({ isLoggedIn, userName }) {
+    const articles = document.querySelector(".header__link_articles");
+    const headerButton = document.querySelector(".header__button");
+    const headerButtonContent = document.querySelector(".header__button-content");
+    const headerLinks = document.querySelector(".header__links");
+
     if (isLoggedIn) {
-      const articles = document.querySelector(".header__link_articles");
       articles.style.display = 'flex';
-
-      const headerButton = document.querySelector(".header__button");
       headerButton.classList.remove('header__button_unlogged');
-      headerButton.querySelector(".header__button-content").textContent = userName;
+      headerButtonContent.textContent = userName;
+      headerLinks.classList.remove("header__links_unlogged");
 
-
+      this.loggedInState = true;
     }
+
+    else {
+      articles.style.display = 'none';
+      headerButton.classList.add('header__button_unlogged');
+      headerButtonContent.textContent = '';
+      headerLinks.classList.add("header__links_unlogged");
+
+      this.loggedInState = false;
+    }
+
+
   }
 }

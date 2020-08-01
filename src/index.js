@@ -13,7 +13,8 @@ import Header from "./js/components/Header";
   //Const - popups
   const template = document.querySelector(".popup-template");
   const popupLoginContent = document.querySelector(".popup_login__content");
-  const authBtn = document.querySelector(".header__button");
+  const authBtnUnlogged = document.querySelector(".header__button_unlogged");
+  const authBtnLogged = document.querySelector(".header__button");
   const mobileMenuBtn = document.querySelector(".header__mobile-menu");
 
   const popupRegContent = document.querySelector(".popup_registration__content");
@@ -27,7 +28,7 @@ import Header from "./js/components/Header";
   const mainApi = new MainApi(serverUrl);
 
   //////////?????
-  const header = new Header(false);
+  const header = new Header();
 
 
   // Additional functions
@@ -46,12 +47,22 @@ import Header from "./js/components/Header";
 
   // Listeners
   // LOGIN + validation
-  authBtn.addEventListener("click", function () {
+  authBtnUnlogged.addEventListener("click", function () {
     if (!popup.isOpen) {
       setPopup(popupLoginContent);
     }
   });
 
+    // LOG OUT
+    authBtnLogged.addEventListener("click", function () {
+      console.log('removing token from local storage');
+      localStorage.removeItem("token");
+      header.render(
+        {
+          isLoggedIn: false,
+          userName: 'any'
+        })
+    });
 
 
   // REG + validation
@@ -77,6 +88,45 @@ import Header from "./js/components/Header";
   //API
   /////////////////////////////////////////////////////////////////////
 
+
+
+
+
+
+  mainApi
+  .checkStatus()
+  .then((user) => {
+    ///
+    console.log("check status has completed");
+    console.log({user})
+
+    header.render(
+      {
+        isLoggedIn: true,
+        userName: user.name
+      }
+    )
+  })
+  .catch((e) => {
+    console.error("check status failed:", { e });
+    localStorage.removeItem("token");
+    // onError(e);
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // LOGIN
   template.addEventListener("click", function (event) {
     if (event.target.classList.contains("login__submit")) {
@@ -91,12 +141,12 @@ import Header from "./js/components/Header";
         .then((data) => {
           ///
           console.log("login is ok");
-          console.log('name', data.name);
+          // console.log('name', data.name);
 
           header.render(
             {
               isLoggedIn: true,
-              userName: data.name
+              userName: data.user.name
             }
           )
 
@@ -144,9 +194,8 @@ import Header from "./js/components/Header";
 ///////////////////////////////////////////////
 
 mobileMenuBtn.addEventListener("click", function () {
-  const mobileLinks = document.querySelector(".header__links");
-  mobileLinks.style.display = 'block';
-  document.querySelector(".backdrop").style.display = 'block';
+  document.querySelector(".header__links").classList.toggle("header__links_visible-on-mobile");
+  document.querySelector(".backdrop").classList.toggle("backdrop_active");
 });
 
 
