@@ -16,24 +16,37 @@ export default class NewsCardList {
     this.container.appendChild(newCard);
   }
 
-  renderResults() {
+  renderResults(from, to) {
     // this.cardArray.forEach((card) => {
     //   this.container.appendChild(card);
     // });
 
-    for (let n = 0; (n < 3) && ( n < this.cardArray.length) ; n++) {
-     this.container.appendChild( this.cardArray[n])
+    for(let currentIndex = from; currentIndex <= to; currentIndex++){
+      if (!this.cardArray[currentIndex]){
+        console.warn('requested to render an element outside of range');
+        return;
+      }
+      this.container.appendChild( this.cardArray[currentIndex])
     }
+
+    // for (let n = 0; (n < 3) && ( n < this.cardArray.length) ; n++) {
+    //  this.container.appendChild( this.cardArray[n])
+    // }
   }
   /////// TODO
-  setMoreBtn(button) {
+  setMoreBtn(button, increment, startIndex) {
+    let currentIndex = startIndex;
     this.button = button;
-    // this.button.addEventListener("click", function(){
-
-    //   this.cardArray.renderResults.bind(this);
-    //   console.log('showed more');
-    // })
-
-    this.button.addEventListener("click", this.renderResults.bind(this));
+    const maxIndex = this.cardArray.length - 1;
+    console.log('got MaxIndex as:', maxIndex)
+    button.addEventListener('click', ()=>{
+      console.log('calling to render stuff')
+      currentIndex += increment;
+      const renderToIndex = currentIndex + increment;
+      if (renderToIndex >= maxIndex){
+        console.log('remove button');
+      }
+      this.renderResults(currentIndex, renderToIndex);
+    });
   }
 }

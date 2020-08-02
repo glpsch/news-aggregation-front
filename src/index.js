@@ -205,7 +205,6 @@ import NewsCardList from "./js/components/NewsCardList";
   const searchResultsOK = document.querySelector(".search-results_successful");
   const cardTemplate = document.querySelector("#news-card-template").content.querySelector(".card");
   const list = document.querySelector(".search-results_successful-cards");
-  const moreBtn = document.querySelector(".search-results_successful-more");
   const searchForm = document.querySelector(".search__bar");
 
   ///on page reload
@@ -231,26 +230,40 @@ import NewsCardList from "./js/components/NewsCardList";
         //////////////
         // onload
         // //////////
+
+console.log('got atriclets, setting up buttons:', data.articles)
+
         if (data.articles.length == 0) {
           searchResultsNone.classList.add("search-results_enabled_flex");
-        } else {
-          searchResultsOK.classList.add("search-results_enabled");
-
-          const receivedCards = data.articles.map(function (articleData) {
-            return new NewsCard(
-              cardTemplate,
-              articleData.title,
-              articleData.description,
-              articleData.urlToImage,
-              articleData.source.name,
-              articleData.publishedAt
-            ).create();
-          });
-          const newsCardList = new NewsCardList(list, receivedCards, NewsCard);
-          newsCardList.renderResults();
-          /////
-          newsCardList.setMoreBtn(moreBtn);
+          return;
         }
+
+        searchResultsOK.classList.add("search-results_enabled");
+
+        const receivedCards = data.articles.map(function (articleData) {
+          return new NewsCard(
+            cardTemplate,
+            articleData.title,
+            articleData.description,
+            articleData.urlToImage,
+            articleData.source.name,
+            articleData.publishedAt
+          ).create();
+        });
+        const newsCardList = new NewsCardList(list, receivedCards, NewsCard);
+
+        let currentIndex = 0;
+        const increment = 3;
+        newsCardList.renderResults(currentIndex, 2);
+        currentIndex = currentIndex + increment;
+        /////
+
+        let moreBtn = document.querySelector(".search-results_successful-more");
+        let clone = moreBtn.cloneNode(true);
+        moreBtn.parentNode.replaceChild(clone, moreBtn);
+        moreBtn = document.querySelector(".search-results_successful-more");
+        newsCardList.setMoreBtn(moreBtn, increment, currentIndex);
+
       });
     }
   });
