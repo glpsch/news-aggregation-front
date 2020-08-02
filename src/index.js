@@ -238,12 +238,12 @@ const list = document.querySelector(".search-results_successful-cards");
         } else {
           searchResultsOK.classList.add("search-results_enabled");
 ///////////////
-let shortlist = data.articles.slice(Math.max( data.articles.length - 3, 0));
-const receivedCards = shortlist.map(function (articleData) {
+// let shortlist = data.articles.slice(Math.max( data.articles.length - 3, 0));
+const receivedCards = data.articles.map(function (articleData) {
   // console.log('------------ articleData', articleData.author)
 
   return (new NewsCard(cardTemplate, articleData.title, articleData.description,
-    articleData.urlToImage, articleData.source, articleData.publishedAt)).create();
+    articleData.urlToImage, articleData.source.name, articleData.publishedAt)).create();
 });
 // const newsCardList = new NewsCardList(list, receivedCards, popupAddCard, Card);
 const newsCardList = new NewsCardList(list, receivedCards, NewsCard);

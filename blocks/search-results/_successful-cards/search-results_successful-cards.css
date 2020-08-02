@@ -1,6 +1,8 @@
 .search-results_successful-cards {
     display: flex;
     padding-bottom: 64px;
+
+    flex-wrap: wrap;
 }
 
 @media screen and (max-width: 860px) {
