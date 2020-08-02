@@ -206,10 +206,8 @@ import NewsCardList from "./js/components/NewsCardList";
   searchResultsNone.classList.remove("search-results_enabled_flex");
   searchResultsOK.classList.remove("search-results_enabled");
 
-const cardTemplate = document.querySelector("#news-card-template").content.querySelector('.card');
-// const cardTemplate = document.querySelector(".card-template");
-
-const list = document.querySelector(".search-results_successful-cards");
+  const cardTemplate = document.querySelector("#news-card-template").content.querySelector(".card");
+  const list = document.querySelector(".search-results_successful-cards");
 
   //TODO on submit
   searchBtn.addEventListener("click", function () {
@@ -217,6 +215,9 @@ const list = document.querySelector(".search-results_successful-cards");
 
     searchResultsNone.classList.remove("search-results_enabled_flex");
     searchResultsOK.classList.remove("search-results_enabled");
+
+    // remove children
+    list.querySelectorAll("*").forEach((n) => n.remove());
 
     const keyword = document.querySelector(".search__input").value;
     const searchUrl = newsUrl + `&q=${keyword}`;
@@ -226,8 +227,7 @@ const list = document.querySelector(".search-results_successful-cards");
       console.log("Нужно ввести ключевое слово");
     } else {
       ////////////
-      newsApi.getNews(searchUrl)
-      .then((data) => {
+      newsApi.getNews(searchUrl).then((data) => {
         console.log("articles", data.articles);
         console.log("keyword", keyword);
         //////////////
@@ -237,28 +237,23 @@ const list = document.querySelector(".search-results_successful-cards");
           searchResultsNone.classList.add("search-results_enabled_flex");
         } else {
           searchResultsOK.classList.add("search-results_enabled");
-///////////////
-// let shortlist = data.articles.slice(Math.max( data.articles.length - 3, 0));
-const receivedCards = data.articles.map(function (articleData) {
-  // console.log('------------ articleData', articleData.author)
 
-  return (new NewsCard(cardTemplate, articleData.title, articleData.description,
-    articleData.urlToImage, articleData.source.name, articleData.publishedAt)).create();
-});
-// const newsCardList = new NewsCardList(list, receivedCards, popupAddCard, Card);
-const newsCardList = new NewsCardList(list, receivedCards, NewsCard);
-newsCardList.render();
-
-
-
+          const receivedCards = data.articles.map(function (articleData) {
+            return new NewsCard(
+              cardTemplate,
+              articleData.title,
+              articleData.description,
+              articleData.urlToImage,
+              articleData.source.name,
+              articleData.publishedAt
+            ).create();
+          });
+          const newsCardList = new NewsCardList(list, receivedCards, NewsCard);
+          newsCardList.render();
         }
       });
     }
   });
-
-
-
-
 
 
 })();

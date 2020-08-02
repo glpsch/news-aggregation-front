@@ -7,3 +7,11 @@
   max-width: 356px;
   text-align: center;
 }
+
+
+@media screen and (max-width: 860px) {
+ .search-results_nothing-found-text {
+
+  padding-bottom: 30px;
+
+  }}

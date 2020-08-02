@@ -3,6 +3,7 @@
     padding-bottom: 64px;
 
     flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 @media screen and (max-width: 860px) {
