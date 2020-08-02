@@ -18,10 +18,32 @@ export default class NewsCardList {
       this.container.appendChild(newCard);
    }
 
-  render() {
-      this.cardArray.forEach((card) => {
-          this.container.appendChild(card);
-      });
+   renderResults(button) {
+      // this.cardArray.forEach((card) => {
+      //     this.container.appendChild(card);
+      // });
+      this.button = button;
+      // this.cardArray = cardArray;
+
+      for (let n = 0; (n < 3) && ( n < this.cardArray.length) ; n++) {
+       this.container.appendChild( this.cardArray[n])
+      }
+
+
+
+
+       this.button.addEventListener("click", function () {
+        for (let n = 0; (n < 3) && ( n < this.cardArray.length) ; n++) {
+          this.container.appendChild( this.cardArray[n])
+         }
+       });
+
+      //  this.button.addEventListener("click", function () {
+      //   for (let n = 0; (n < 3) && ( n < this.cardArray.length.bind(this)) ; n++) {
+      //     this.container.bind(this).appendChild( this.cardArray[n].bind(this))
+      //    }
+      //  });
+
   }
 }
 

@@ -210,10 +210,13 @@ import NewsCardList from "./js/components/NewsCardList";
 
 
 
-  const cardTemplate = document.querySelector("#news-card-template").content.querySelector(".card");
-  const list = document.querySelector(".search-results_successful-cards");
+
   const searchResultsNone = document.querySelector(".search-results_nothing-found");
   const searchResultsOK = document.querySelector(".search-results_successful");
+  const cardTemplate = document.querySelector("#news-card-template").content.querySelector(".card");
+  const list = document.querySelector(".search-results_successful-cards");
+  const moreBtn = document.querySelector(".search-results_successful-more");
+
 
   ///on page reload
   searchCleanUp();
@@ -256,7 +259,7 @@ import NewsCardList from "./js/components/NewsCardList";
             ).create();
           });
           const newsCardList = new NewsCardList(list, receivedCards, NewsCard);
-          newsCardList.render();
+          newsCardList.renderResults(moreBtn);
         }
       });
     }

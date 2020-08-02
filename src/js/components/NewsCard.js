@@ -16,14 +16,6 @@ export default class Card {
         this.cardSource = cardSource;
         this.publishedAt = publishedAt;
     }
-// content: "Google, Apple, Amazon Facebook - , , - . : Mandel Ngan / EPA / TASS
-// description: "Американские власти наконец признали IT-гиганты новыми монополистами – трестами эпохи интернета. Что дальше?"
-// publishedAt: "2020-08-01T19:00:16Z"
-// source: {id: null, name: "Republic.ru"}
-// title: "«Слишком много власти». Как конгрессмены допрашивали руководство Google, Facebook, Apple и Amazon"
-// url: "https://republic.ru/posts/97378?utm_source=republic.ru&utm_medium=rss&utm_campaign=all"
-// urlToImage: "https://republic.ru/uploads/og-image/97378.png?t=1596307947"
-
 
     create() {
         let newCard = this.template.cloneNode(true);

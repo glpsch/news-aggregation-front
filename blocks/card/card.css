@@ -13,7 +13,7 @@
 @import url(./__source/card__source.css);
 @import url(./__content-wrap/card__content-wrap.css);
 @import url(./__placeholder/card__placeholder.css);
-/* //// */
+/* //todo rename, upd placeholders// */
 @import url(./_articlescard/card_articlescard.css);
 
 
@@ -40,7 +40,6 @@
     margin-right: 8px;
   }
 }
-
 
 
 /* mobile */
