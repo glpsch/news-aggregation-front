@@ -9,6 +9,8 @@
 @import url(./_successful-cards/search-results_successful-cards.css);
 @import url(./_successful-more/search-results_successful-more.css);
 @import url(./_successful-title/search-results_successful-title.css);
+@import url(./_enabled/search-results_enabled.css);
+@import url(./_enabled/search-results_enabled_flex.css);
 
 .search-results {
   /* max-width: 1600px;

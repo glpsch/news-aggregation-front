@@ -186,11 +186,8 @@ import Header from "./js/components/Header";
   let proxiUrl = "https://praktikum.tk/news/v2/";
   const apiKey = "f3d87446c54c4e3b9fe47f4c2993c14f";
 
-  // keyword = "котики";
-
   const newsUrl =
     `${proxiUrl}everything?pageSize=100&` +
-    // `q=${keyword}&` +
     `apiKey=${apiKey}&` +
     "sortBy=popularity&" +
     //TODO set dates
@@ -201,9 +198,19 @@ import Header from "./js/components/Header";
   console.log({ newsUrl });
   const newsApi = new NewsApi();
 
+  const searchResultsNone = document.querySelector(".search-results_nothing-found");
+  const searchResultsOK = document.querySelector(".search-results_successful");
+  ///on page reload
+  searchResultsNone.classList.remove("search-results_enabled_flex");
+  searchResultsOK.classList.remove("search-results_enabled");
+
   //TODO on submit
   searchBtn.addEventListener("click", function () {
     console.log("search begin");
+
+    searchResultsNone.classList.remove("search-results_enabled_flex");
+    searchResultsOK.classList.remove("search-results_enabled");
+
     const keyword = document.querySelector(".search__input").value;
     const searchUrl = newsUrl + `&q=${keyword}`;
 
@@ -212,13 +219,28 @@ import Header from "./js/components/Header";
       console.log("Нужно ввести ключевое слово");
     } else {
       ////////////
-      newsApi.getNews(searchUrl)
-      .then((data) => {
+      newsApi.getNews(searchUrl).then((data) => {
         console.log("articles", data.articles);
         console.log("keyword", keyword);
+        //////////////
+        // onload
+        // //////////
+        if (data.articles.length == 0) {
+          searchResultsNone.classList.add("search-results_enabled_flex");
+        } else {
+          searchResultsOK.classList.add("search-results_enabled");
+
+
+
+
+          
+        }
       });
     }
   });
+
+
+
 
 
 
