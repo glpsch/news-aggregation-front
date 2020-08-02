@@ -23,17 +23,17 @@ import NewsCardList from "./js/components/NewsCardList";
   const authBtnLogIn = document.querySelector(".header__button_unlogged");
   const authBtnLogOut = document.querySelector(".header__button_logged-in");
   const mobileMenuBtn = document.querySelector(".header__mobile-menu");
-
   const popupRegContent = document.querySelector(".popup_registration__content");
   const popupSuccessContent = document.querySelector(".popup_success__content");
-
   //Const - search
   const searchBtn = document.querySelector(".search__button");
+
 
   // Class instances
   const popup = new Popup(template);
   const mainApi = new MainApi(serverUrl);
   const header = new Header();
+  const newsApi = new NewsApi();
 
   // Additional functions
   function setForm() {
@@ -48,6 +48,14 @@ import NewsCardList from "./js/components/NewsCardList";
     popup.open();
     popup.isOpen = true;
   }
+
+  function searchCleanUp() {
+    searchResultsNone.classList.remove("search-results_enabled_flex");
+    searchResultsOK.classList.remove("search-results_enabled");
+  }
+
+
+
 
   // Listeners
   // LOGIN popup
@@ -91,6 +99,12 @@ import NewsCardList from "./js/components/NewsCardList";
     }
   });
 
+  //// mobile
+  mobileMenuBtn.addEventListener("click", function () {
+    document.querySelector(".header__links").classList.toggle("header__links_visible-on-mobile");
+    document.querySelector(".backdrop").classList.toggle("backdrop_active");
+  });
+
   /////////////////////////////////////////////////////////////////////
   //API
   /////////////////////////////////////////////////////////////////////
@@ -114,7 +128,7 @@ import NewsCardList from "./js/components/NewsCardList";
       // if (window.location.pathname !== "/") {
       //   window.location.pathname = "/";
       // }
-      
+
       // if (window.location.pathname !== mainUrl) {
       //   window.location.pathname = mainUrl;
       // }
@@ -175,20 +189,13 @@ import NewsCardList from "./js/components/NewsCardList";
     }
   });
 
-  /////////////////////////////
-  /// mobile
-  /////////////////////////////
 
-  mobileMenuBtn.addEventListener("click", function () {
-    document.querySelector(".header__links").classList.toggle("header__links_visible-on-mobile");
-    document.querySelector(".backdrop").classList.toggle("backdrop_active");
-  });
 
   ///////////////////////////////////////////////
   /// NEWS
   ///////////////////////////////////////////////
 
-  // const apiURL='https://newsapi.org/v2/';
+  // const apiURL = 'https://newsapi.org/v2/';
   let proxiUrl = "https://praktikum.tk/news/v2/";
   const apiKey = "f3d87446c54c4e3b9fe47f4c2993c14f";
 
@@ -201,26 +208,22 @@ import NewsCardList from "./js/components/NewsCardList";
     "to=2020-08-02&" +
     "language=ru";
 
-  console.log({ newsUrl });
-  const newsApi = new NewsApi();
 
-  const searchResultsNone = document.querySelector(".search-results_nothing-found");
-  const searchResultsOK = document.querySelector(".search-results_successful");
-  ///on page reload
-  searchResultsNone.classList.remove("search-results_enabled_flex");
-  searchResultsOK.classList.remove("search-results_enabled");
 
   const cardTemplate = document.querySelector("#news-card-template").content.querySelector(".card");
   const list = document.querySelector(".search-results_successful-cards");
+  const searchResultsNone = document.querySelector(".search-results_nothing-found");
+  const searchResultsOK = document.querySelector(".search-results_successful");
+
+  ///on page reload
+  searchCleanUp();
+
+
 
 
   //TODO on submit
   searchBtn.addEventListener("click", function () {
-    console.log("search begin");
-
-    searchResultsNone.classList.remove("search-results_enabled_flex");
-    searchResultsOK.classList.remove("search-results_enabled");
-
+    searchCleanUp();
     // remove children
     list.querySelectorAll("*").forEach((n) => n.remove());
 
@@ -231,7 +234,6 @@ import NewsCardList from "./js/components/NewsCardList";
       // TODO выводится ошибка «Нужно ввести ключевое слово»
       console.log("Нужно ввести ключевое слово");
     } else {
-      ////////////
       newsApi.getNews(searchUrl).then((data) => {
         console.log("articles", data.articles);
         console.log("keyword", keyword);
