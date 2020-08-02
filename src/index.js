@@ -111,9 +111,13 @@ import NewsCardList from "./js/components/NewsCardList";
     .catch(() => {
       console.log("check status failed");
       localStorage.removeItem("token");
-      if (window.location.pathname !== "/") {
-        window.location.pathname = "/";
-      }
+      // if (window.location.pathname !== "/") {
+      //   window.location.pathname = "/";
+      // }
+      
+      // if (window.location.pathname !== mainUrl) {
+      //   window.location.pathname = mainUrl;
+      // }
     });
 
   // LOGIN
@@ -208,6 +212,7 @@ import NewsCardList from "./js/components/NewsCardList";
 
   const cardTemplate = document.querySelector("#news-card-template").content.querySelector(".card");
   const list = document.querySelector(".search-results_successful-cards");
+
 
   //TODO on submit
   searchBtn.addEventListener("click", function () {
