@@ -9,6 +9,8 @@ import NewsApi from "./js/api/NewsApi";
 import Form from "./js/components/Form";
 import onError from "./js/utils/onError";
 import Header from "./js/components/Header";
+import NewsCard from "./js/components/NewsCard";
+import NewsCardList from "./js/components/NewsCardList";
 
 (function () {
   // TODO change after deployment to "https://news-exploring.ga/"
@@ -204,6 +206,11 @@ import Header from "./js/components/Header";
   searchResultsNone.classList.remove("search-results_enabled_flex");
   searchResultsOK.classList.remove("search-results_enabled");
 
+const cardTemplate = document.querySelector("#news-card-template").content.querySelector('.card');
+// const cardTemplate = document.querySelector(".card-template");
+
+const list = document.querySelector(".search-results_successful-cards");
+
   //TODO on submit
   searchBtn.addEventListener("click", function () {
     console.log("search begin");
@@ -219,7 +226,8 @@ import Header from "./js/components/Header";
       console.log("Нужно ввести ключевое слово");
     } else {
       ////////////
-      newsApi.getNews(searchUrl).then((data) => {
+      newsApi.getNews(searchUrl)
+      .then((data) => {
         console.log("articles", data.articles);
         console.log("keyword", keyword);
         //////////////
@@ -229,11 +237,20 @@ import Header from "./js/components/Header";
           searchResultsNone.classList.add("search-results_enabled_flex");
         } else {
           searchResultsOK.classList.add("search-results_enabled");
+///////////////
+let shortlist = data.articles.slice(Math.max( data.articles.length - 3, 0));
+const receivedCards = shortlist.map(function (articleData) {
+  // console.log('------------ articleData', articleData.author)
+
+  return (new NewsCard(cardTemplate, articleData.title, articleData.description,
+    articleData.urlToImage, articleData.source, articleData.publishedAt)).create();
+});
+// const newsCardList = new NewsCardList(list, receivedCards, popupAddCard, Card);
+const newsCardList = new NewsCardList(list, receivedCards, NewsCard);
+newsCardList.render();
 
 
 
-
-          
         }
       });
     }

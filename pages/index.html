@@ -75,7 +75,38 @@
           <h3 class="title search-results_successful-title">Результаты поиска
           </h3>
 
-          <div class="search-results_successful-cards">
+          <div class="search-results_successful-cards ">
+
+            <template id="news-card-template">
+            <div class="card card-template">
+              <img src="<%=require('../src/images/card1.jpg').default%>" alt="Иллюстрация к новости"
+                class="card__image">
+              <div class="card__bookmark-section">
+                <div class="card__bookmark">
+                  <div class="card__bookmark-flag"></div>
+                </div>
+                <div class="card__bookmark-alert">
+                  <span>Войдите, чтобы сохранять статьи</span>
+                </div>
+              </div>
+              <div class="card__content">
+                <div class="card__content-wrap">
+                  <span class="card__date">2 августа, 2019
+                  </span>
+                  <h3 class="title card__title">
+                    Национальное достояние – парки
+                  </h3>
+                  <p class="card__text">
+                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система
+                    национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+                  </p>
+                </div>
+                <span class="card__source">
+                  Лента.ру
+                </span>
+              </div>
+            </div>
+          </template>
 
             <div class="card">
               <img src="<%=require('../src/images/card1.jpg').default%>" alt="Иллюстрация к новости"
@@ -106,6 +137,7 @@
               </div>
             </div>
 
+ <!--
             <div class="card">
               <img src="<%=require('../src/images/card2.jpg').default%>" alt="Иллюстрация к новости"
                 class="card__image">
@@ -163,7 +195,7 @@
                   риа
                 </span>
               </div>
-            </div>
+            </div> -->
 
           </div>
           <button class="button search-results_successful-more">
