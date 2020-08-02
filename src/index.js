@@ -25,9 +25,6 @@ import NewsCardList from "./js/components/NewsCardList";
   const mobileMenuBtn = document.querySelector(".header__mobile-menu");
   const popupRegContent = document.querySelector(".popup_registration__content");
   const popupSuccessContent = document.querySelector(".popup_success__content");
-  //Const - search
-  const searchBtn = document.querySelector(".search__button");
-
 
   // Class instances
   const popup = new Popup(template);
@@ -53,9 +50,6 @@ import NewsCardList from "./js/components/NewsCardList";
     searchResultsNone.classList.remove("search-results_enabled_flex");
     searchResultsOK.classList.remove("search-results_enabled");
   }
-
-
-
 
   // Listeners
   // LOGIN popup
@@ -189,8 +183,6 @@ import NewsCardList from "./js/components/NewsCardList";
     }
   });
 
-
-
   ///////////////////////////////////////////////
   /// NEWS
   ///////////////////////////////////////////////
@@ -208,24 +200,20 @@ import NewsCardList from "./js/components/NewsCardList";
     "to=2020-08-02&" +
     "language=ru";
 
-
-
-
+  //Const - search
   const searchResultsNone = document.querySelector(".search-results_nothing-found");
   const searchResultsOK = document.querySelector(".search-results_successful");
   const cardTemplate = document.querySelector("#news-card-template").content.querySelector(".card");
   const list = document.querySelector(".search-results_successful-cards");
   const moreBtn = document.querySelector(".search-results_successful-more");
-
+  const searchForm = document.querySelector(".search__bar");
 
   ///on page reload
   searchCleanUp();
 
-
-
-
-  //TODO on submit
-  searchBtn.addEventListener("click", function () {
+  // SEARCH
+  searchForm.addEventListener("submit", function (event) {
+    event.preventDefault();
     searchCleanUp();
     // remove children
     list.querySelectorAll("*").forEach((n) => n.remove());
@@ -259,11 +247,11 @@ import NewsCardList from "./js/components/NewsCardList";
             ).create();
           });
           const newsCardList = new NewsCardList(list, receivedCards, NewsCard);
-          newsCardList.renderResults(moreBtn);
+          newsCardList.renderResults();
+          /////
+          newsCardList.setMoreBtn(moreBtn);
         }
       });
     }
   });
-
-
 })();
