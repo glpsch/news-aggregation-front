@@ -29,13 +29,15 @@ import NewsCardList from "../js/components/NewsCardList";
         };
       })
       .sort((a, b)=>{
-        return a.occurences - b.occurences;
+        return a.keyword.localeCompare(b.keyword, ['ru', 'en'], {numeric: true});
       })
       .sort((a, b)=>{
-        return a.keyword.localeCompare(b.keyword, undefined, {numeric: true});
+        return b.occurences - a.occurences;
       });
-
+      console.log('byKeywords:',byKeywords)
       const top_3 = byPolularity.slice(0,3).map((rec)=> rec.keyword);
+
+
     return {
       top_3,
       keywords_left: byPolularity.length - top_3.length
@@ -93,25 +95,47 @@ import NewsCardList from "../js/components/NewsCardList";
   }
   function setArticlesCount(number) {
     const articlesTitle = document.querySelector(".articles-caption__main_data");
-    // articlesTitle.textContent = `, у вас ${number} сохранённых статей`;
     articlesTitle.textContent = number;
   }
-  // setArticlesCount(666);
   // /// set keywords
+  function setKeywords( topKeywords ) {
+    const keywordsContainer = document.querySelector(".articles-caption__keywords");
+    const topWords = topKeywords.top_3.join(', ');
+    let keywordsLabel = `По ключевым словам: ${topWords}`;
+    if (topKeywords.keywords_left){
+      keywordsLabel = keywordsLabel + ` и ${topKeywords.keywords_left} другим`;
+    }
 
+    keywordsContainer.textContent = keywordsLabel;
+  }
   ////////////////////////////////////////////////////////////////////////////
+
   const savedCardTemplate = document
     .querySelector("#articles-card-template")
     .content.querySelector(".card");
   const savedList = document.querySelector(".articles-cards");
+
+
+  function setArticleCounter(){
+    return mainApi.getArticles().then((cards) => {
+      console.log(cards.data);
+      setArticlesCount(cards.data.length);
+      const top3 = calculateKeywords(cards.data);
+      setKeywords(top3);
+      console.log({top3});
+    });
+  }
 
   // initial cards
   mainApi.getArticles().then((cards) => {
     console.log(cards.data);
     setArticlesCount(cards.data.length);
     const top3 = calculateKeywords(cards.data);
-    console.log({top3})
-    //??
+    setKeywords(top3);
+    console.log({top3});
+
+
+
     const loggedInState = true;
 
     const receivedCards = cards.data.map(function (articleData) {
@@ -126,7 +150,8 @@ import NewsCardList from "../js/components/NewsCardList";
         articleData.link,
         loggedInState,
         mainApi,
-        articleData._id
+        articleData._id,
+        setArticleCounter
       ).createSaved();
     });
     const newsCardList = new NewsCardList(savedList, receivedCards, NewsCard);

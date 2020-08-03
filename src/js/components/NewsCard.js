@@ -2,6 +2,8 @@
 // renderIcon — отвечает за отрисовку иконки карточки. У этой иконки три состояния:
 // иконка незалогиненного пользователя, активная иконка залогиненного, неактивная иконка залогиненного.
 
+import { throws } from "assert";
+
 export default class Card {
   constructor(
     keyword,
@@ -14,7 +16,8 @@ export default class Card {
     cardLink,
     loggedInState,
     API,
-    id
+    id,
+    postDeleteCallback
   ) {
     this.keyword = keyword;
     this.template = template;
@@ -27,6 +30,7 @@ export default class Card {
     this.loggedInState = loggedInState;
     this.API = API;
     this.id = id;
+    this.postDeleteCallback = postDeleteCallback || function(){};
   }
 
   create() {
@@ -139,9 +143,9 @@ export default class Card {
       .then(()=>{
         let toDelete = a[3];
         event.target.parentElement.parentElement.parentElement.parentElement.removeChild(toDelete);
-        let domNumber = (parseInt(document.querySelector(".articles-caption__main_data").textContent,10) - 1) || 0;
-        document.querySelector(".articles-caption__main_data").textContent = domNumber;
-
+        // let domNumber = (parseInt(document.querySelector(".articles-caption__main_data").textContent,10) - 1) || 0;
+        // document.querySelector(".articles-caption__main_data").textContent = domNumber;
+        this.postDeleteCallback();
       })
       .catch((e) => {
         console.error("Article is NOT deleted:", { e });
