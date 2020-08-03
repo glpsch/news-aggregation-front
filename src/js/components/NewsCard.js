@@ -105,8 +105,6 @@ export default class Card {
           .catch((e) => {
             console.error("Article is NOT deleted:", { e });
           });
-
-
       }
     }
   }
@@ -143,8 +141,6 @@ export default class Card {
       .then(()=>{
         let toDelete = a[3];
         event.target.parentElement.parentElement.parentElement.parentElement.removeChild(toDelete);
-        // let domNumber = (parseInt(document.querySelector(".articles-caption__main_data").textContent,10) - 1) || 0;
-        // document.querySelector(".articles-caption__main_data").textContent = domNumber;
         this.postDeleteCallback();
       })
       .catch((e) => {

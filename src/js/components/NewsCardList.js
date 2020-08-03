@@ -51,10 +51,6 @@ export default class NewsCardList {
     });
 }
 
-
-
-
-
 }
 
 

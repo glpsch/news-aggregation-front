@@ -1,3 +1,5 @@
+@import url(./_nothing/articles-cards_nothing.css);
+
 .articles-cards {
   margin: 0;
   padding: 62px 104px  62px;
@@ -8,7 +10,7 @@
 
   box-sizing: border-box;
 
-  min-height: calc(100vh - (294px + 120px + 59px));
+  /* min-height: calc(100vh - (294px + 120px + 59px + 270px)); */
 }
 
 /* todo - no saved articles */

@@ -2,7 +2,9 @@
 @import url(./_loading-img/search-results_loading-img.css);
 @import url(./_loading-text/search-results_loading-text.css);
 @import url(./_nothing-found/search-results_nothing-found.css);
+@import url(./_nothing-found/search-results_nothing-found_saved.css);
 @import url(./_nothing-found-img/search-results_nothing-found-img.css);
+@import url(./_nothing-found-img/search-results_nothing-found-img_saved.css);
 @import url(./_nothing-found-text/search-results_nothing-found-text.css);
 @import url(./_nothing-found-title/search-results_nothing-found-title.css);
 @import url(./_successful/search-results_successful.css);
