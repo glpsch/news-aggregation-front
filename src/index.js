@@ -49,6 +49,7 @@ import NewsCardList from "./js/components/NewsCardList";
   function searchCleanUp() {
     searchResultsNone.classList.remove("search-results_enabled_flex");
     searchResultsOK.classList.remove("search-results_enabled");
+    moreBtn.classList.add('invisible');
   }
 
   // Listeners
@@ -206,6 +207,7 @@ import NewsCardList from "./js/components/NewsCardList";
   const cardTemplate = document.querySelector("#news-card-template").content.querySelector(".card");
   const list = document.querySelector(".search-results_successful-cards");
   const searchForm = document.querySelector(".search__bar");
+  let moreBtn = document.querySelector(".search-results_successful-more");
 
   ///on page reload
   searchCleanUp();
@@ -231,9 +233,9 @@ import NewsCardList from "./js/components/NewsCardList";
         // onload
         // //////////
 
-console.log('got atriclets, setting up buttons:', data.articles)
-
-        if (data.articles.length == 0) {
+        console.log("got atriclets, setting up buttons:", data.articles);
+        let arrayLength = data.articles.length;
+        if (arrayLength == 0) {
           searchResultsNone.classList.add("search-results_enabled_flex");
           return;
         }
@@ -254,16 +256,16 @@ console.log('got atriclets, setting up buttons:', data.articles)
 
         let currentIndex = 0;
         const increment = 3;
-        newsCardList.renderResults(currentIndex, 2);
-        currentIndex = currentIndex + increment;
-        /////
-
-        let moreBtn = document.querySelector(".search-results_successful-more");
-        let clone = moreBtn.cloneNode(true);
-        moreBtn.parentNode.replaceChild(clone, moreBtn);
-        moreBtn = document.querySelector(".search-results_successful-more");
-        newsCardList.setMoreBtn(moreBtn, increment, currentIndex);
-
+        // -1
+        newsCardList.renderResults(currentIndex, 2, arrayLength);
+        if (arrayLength > 3) {
+          currentIndex = currentIndex + increment;
+          moreBtn = document.querySelector(".search-results_successful-more");
+          let clone = moreBtn.cloneNode(true);
+          moreBtn.parentNode.replaceChild(clone, moreBtn);
+          moreBtn = document.querySelector(".search-results_successful-more");
+          newsCardList.setMoreBtn(moreBtn, increment, currentIndex);
+        }
       });
     }
   });
