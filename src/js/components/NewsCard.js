@@ -35,8 +35,8 @@ export default class Card {
     newCard.querySelector(".card__text").textContent = this.cardDescription;
     newCard.querySelector(".card__source").textContent = this.cardSource;
     newCard.querySelector(".card__date").textContent = this.publishedAt;
-    // newCard.querySelector(".card__link").href = this.cardLink;
-    newCard.querySelector(".card__link").href = "#";
+    newCard.querySelector(".card__link").href = this.cardLink;
+    // newCard.querySelector(".card__link").href = "#";
 
     this.renderIcon(newCard);
 
@@ -91,6 +91,29 @@ export default class Card {
       }
     }
   }
+
+
+  createSaved() {
+    let savedCard = this.template.cloneNode(true);
+
+    savedCard.querySelector(".card__image").style.backgroundImage = "url(" + this.cardImage + ")";
+    savedCard.querySelector(".card__title").textContent = this.cardTitle;
+    savedCard.querySelector(".card__text").textContent = this.cardDescription;
+    savedCard.querySelector(".card__source").textContent = this.cardSource;
+    savedCard.querySelector(".card__date").textContent = this.publishedAt;
+    savedCard.querySelector(".card__link").href = this.cardLink;
+    // newCard.querySelector(".card__link").href = "#";
+
+    // this.renderIcon(savedCard);
+
+    // savedCard.querySelector(".card__bookmark").addEventListener("click", this.bookmark.bind(this));
+
+    return savedCard;
+  }
+
+
+
+
 
   // remove(event) {
 

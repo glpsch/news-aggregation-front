@@ -48,4 +48,13 @@ export default class NewsCardList {
       this.renderResults(currentIndex, renderToIndex - 1, maxIndex);
     });
   }
+
+
+  renderSaved() {
+  this.cardArray.forEach((card) => {
+    this.container.appendChild(card);
+    });
 }
+}
+
+

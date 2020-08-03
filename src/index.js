@@ -1,7 +1,7 @@
 "use strict";
 
 import "../pages/index.css";
-import "../pages/articles.css";
+// import "../pages/articles.css";
 
 import Popup from "./js/components/Popup";
 import MainApi from "./js/api/MainApi";

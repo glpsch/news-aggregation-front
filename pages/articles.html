@@ -52,7 +52,7 @@
               <span>Убрать из сохранённых</span>
             </div>
             <div class="card__bookmark-category">
-              <span>Природа</span>
+              <span></span>
             </div>
           </div>
           <div class="card__content">
@@ -73,135 +73,40 @@
           </div>
         </div>
 
-        <div class="card card_articlescard">
-          <img src="<%=require('../src/images/card_a2.jpg').default%>" alt="Иллюстрация к новости" class="card__image">
-          <div class="card__bookmark-section">
-            <div class="card__bookmark card__bookmark_loggedin-articlespage">
-              <div class="card__bookmark-delete"></div>
+        <template id="articles-card-template">
+          <div class="card card_articlescard">
+            <a href="#" class="card__link" target="_blank">
+            <div class="card__image"></div>
+            <div class="card__bookmark-section">
+              <div class="card__bookmark card__bookmark_loggedin-articlespage">
+                <div class="card__bookmark-delete"></div>
+              </div>
+              <div class="card__bookmark-delete-caption">
+                <span>Убрать из сохранённых</span>
+              </div>
+              <div class="card__bookmark-category">
+                <span></span>
+              </div>
             </div>
-            <div class="card__bookmark-delete-caption">
-              <span>Убрать из сохранённых</span>
-            </div>
-            <div class="card__bookmark-category">
-              <span>Природа</span>
-            </div>
-          </div>
-          <div class=" card__content">
-            <div class="card__content-wrap">
-              <span class="card__date">2 августа, 2019
+            <div class="card__content">
+              <div class="card__content-wrap">
+                <span class="card__date">
+                </span>
+                <h3 class="title card__title">
+                </h3>
+                <p class="card__text">
+                </p>
+              </div>
+              <span class="card__source">
               </span>
-              <h3 class="title card__title">
-                Лесные огоньки: история одной фотографии
-              </h3>
-              <p class="card__text">
-                Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую
-                красоту одного
-                из местных чудес природы.
-              </p>
             </div>
-            <span class="card__source">
-              афиша
-            </span>
+          </a>
           </div>
-        </div>
+        </template>
 
 
-        <div class="card card_articlescard">
-          <img src="<%=require('../src/images/card_a3.jpg').default%>" alt="Иллюстрация к новости" class="card__image">
-          <div class="card__bookmark-section">
-            <div class="card__bookmark card__bookmark_loggedin-articlespage">
-              <div class="card__bookmark-delete"></div>
-            </div>
-            <div class="card__bookmark-delete-caption">
-              <span>Убрать из сохранённых</span>
-            </div>
-            <div class="card__bookmark-category">
-              <span>Природа</span>
-            </div>
-          </div>
-          <div class=" card__content">
-            <div class="card__content-wrap">
-              <span class="card__date">2 августа, 2019
-              </span>
-              <h3 class="title card__title">
-                «Первозданная тайга»: новый фотопроект Игоря Шпиленка
-              </h3>
-              <p class="card__text">
-                Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В
-                этот раз он отправился в Двинско-Пинежскую тайгу, где...
-              </p>
-            </div>
-            <span class="card__source">
-              медиазона
-            </span>
-          </div>
-        </div>
-
-        <div class="card card_articlescard">
-          <img src="<%=require('../src/images/card_a1.jpg').default%>" alt="Иллюстрация к новости" class="card__image">
-          <div class="card__bookmark-section">
-            <div class="card__bookmark card__bookmark_loggedin-articlespage">
-              <div class="card__bookmark-delete"></div>
-            </div>
-            <div class="card__bookmark-delete-caption">
-              <span>Убрать из сохранённых</span>
-            </div>
-            <div class="card__bookmark-category">
-              <span>Природа</span>
-            </div>
-          </div>
-          <div class=" card__content">
-            <div class="card__content-wrap">
-              <span class="card__date">2 августа, 2019
-              </span>
-              <h3 class="title card__title">
-                Национальное достояние – парки
-              </h3>
-              <p class="card__text">
-                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система
-                национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-            </div>
-            <span class="card__source">
-              дзен
-            </span>
-          </div>
-        </div>
-
-        <div class="card card_articlescard">
-          <img src="<%=require('../src/images/card_a2.jpg').default%>" alt="Иллюстрация к новости" class="card__image">
-          <div class="card__bookmark-section">
-            <div class="card__bookmark card__bookmark_loggedin-articlespage">
-              <div class="card__bookmark-delete"></div>
-            </div>
-            <div class="card__bookmark-delete-caption">
-              <span>Убрать из сохранённых</span>
-            </div>
-            <div class="card__bookmark-category">
-              <span>Природа</span>
-            </div>
-          </div>
-          <div class=" card__content">
-            <div class="card__content-wrap">
-              <span class="card__date">2 августа, 2019
-              </span>
-              <h3 class="title card__title">
-                Лесные огоньки: история одной фотографии
-              </h3>
-              <p class="card__text">
-                Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую
-                красоту одного
-                из местных чудес природы.
-              </p>
-            </div>
-            <span class="card__source">
-              афиша
-            </span>
-          </div>
-        </div>
-
-        <div class="card__placeholder"></div>
-        <div class="card__placeholder"></div>
+        <!-- <div class="card__placeholder"></div>
+        <div class="card__placeholder"></div> -->
       </section>
     </main>
 
