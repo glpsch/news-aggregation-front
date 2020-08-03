@@ -32,13 +32,10 @@ export default class NewsCardList {
 
     let currentIndex = startIndex;
     const maxIndex = this.cardArray.length - 1;
-    console.log('got MaxIndex as:', maxIndex)
     button.addEventListener('click', ()=>{
-      console.log('calling to render stuff')
       currentIndex += increment;
       const renderToIndex = currentIndex + increment;
       if (renderToIndex > maxIndex){
-        console.log('remove button');
         this.button.classList.add('invisible');
       }
       this.renderResults(currentIndex, renderToIndex - 1, maxIndex);

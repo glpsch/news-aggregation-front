@@ -66,7 +66,6 @@ import NewsCardList from "./js/components/NewsCardList";
 
   // LOG OUT
   authBtnLogOut.addEventListener("click", function () {
-    console.log("removing token from local storage");
     localStorage.removeItem("token");
     searchCleanUp();
     if (event.target.parentNode.classList.contains("header_theme_black")) {
@@ -117,7 +116,6 @@ import NewsCardList from "./js/components/NewsCardList";
     .checkStatus()
     .then((user) => {
       ///
-      console.log("check status has completed");
       console.log({ user });
 
       header.render({
@@ -126,13 +124,13 @@ import NewsCardList from "./js/components/NewsCardList";
       });
     })
     .catch(() => {
-      console.log("check status failed");
       localStorage.removeItem("token");
       // if (window.location.pathname !== "/") {
       //   window.location.pathname = "/";
       // }
       if (window.location.href !== mainUrl) {
-        window.location.href = mainUrl;
+        // window.location.href = mainUrl;
+        console.log('window.location.href !== mainUrl', window.location.href)
       }
     });
 
@@ -179,7 +177,6 @@ import NewsCardList from "./js/components/NewsCardList";
         mainApi
           .signup(regEmailInput.value, regPasswordInput.value, regNameInput.value)
           .then((res) => {
-            console.log("reg is ok");
             console.log(res, "res");
 
             popup.close();
@@ -250,7 +247,7 @@ import NewsCardList from "./js/components/NewsCardList";
     let userRequest = Promise.resolve();
     if (localStorage.token) {
       userRequest = mainApi.checkStatus().catch(() => {
-        console.log("no user as status has failed");
+        // console.log("no user as status has failed");
         return false;
       });
     }
@@ -258,8 +255,6 @@ import NewsCardList from "./js/components/NewsCardList";
     showLoader();
     userRequest
       .then((user) => {
-        console.log("user - search check");
-        console.log({ user });
         return newsApi.getNews(searchUrl).then((data) => {
           return {
             user,
@@ -272,19 +267,14 @@ import NewsCardList from "./js/components/NewsCardList";
         const user = userAndData.user;
         let loggedInState;
         ////newsAPI
-        console.log("user:", { user });
+        // console.log("user:", { user });
         if (user) {
           loggedInState = true;
         } else {
           loggedInState = false;
         }
 
-        console.log("articles", data.articles);
-        console.log("keyword", keyword);
-        //////////////
-        // onload
-        // //////////
-
+        console.log("articles", data.articles);   
         let arrayLength = data.articles.length;
         if (arrayLength == 0) {
           searchResultsNone.classList.add("search-results_enabled_flex");

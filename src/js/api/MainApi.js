@@ -1,5 +1,3 @@
-import onError from "../utils/onError";
-
 export default class MainApi {
   constructor(server) {
     this.server = server;
@@ -57,7 +55,6 @@ export default class MainApi {
       })
 
       .then((data) => {
-        console.log("local storage: setting token:", JSON.stringify({ data }));
         localStorage.setItem("token", data.token);
         return data;
       });

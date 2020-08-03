@@ -54,7 +54,6 @@ import NewsCardList from "../js/components/NewsCardList";
       keywords_left: byPolularity.length - top_3.length,
     };
   }
-  console.log("articles page");
 
   // LOG OUT
   authBtnLogOut.addEventListener("click", function () {
@@ -96,12 +95,11 @@ import NewsCardList from "../js/components/NewsCardList";
   function setArticleCounter() {
     return mainApi.getArticles()
     .then((cards) => {
-      console.log('data', cards.data);
+      // console.log('data', cards.data);
       setArticlesCount(cards.data.length);
-      console.log('length', cards.data.length);
       const top3 = calculateKeywords(cards.data);
       setKeywords(top3);
-      console.log({ top3 });
+      // console.log({ top3 });
     })
     .catch((error) => {
       console.log(error);
@@ -131,7 +129,6 @@ import NewsCardList from "../js/components/NewsCardList";
       setUserName(user.name);
     })
     .catch(() => {
-      console.log("check status failed");
       window.location.pathname = mainUrl;
     });
 
@@ -144,7 +141,7 @@ import NewsCardList from "../js/components/NewsCardList";
       setArticlesCount(cards.data.length);
       const top3 = calculateKeywords(cards.data);
       setKeywords(top3);
-      console.log({ top3 });
+      // console.log({ top3 });
       const loggedInState = true;
 
       const receivedCards = cards.data.map(function (articleData) {

@@ -2,8 +2,6 @@
 // renderIcon — отвечает за отрисовку иконки карточки. У этой иконки три состояния:
 // иконка незалогиненного пользователя, активная иконка залогиненного, неактивная иконка залогиненного.
 
-import { throws } from "assert";
-
 export default class Card {
   constructor(
     keyword,
@@ -30,7 +28,7 @@ export default class Card {
     this.loggedInState = loggedInState;
     this.API = API;
     this.id = id;
-    this.postDeleteCallback = postDeleteCallback || function(){};
+    this.postDeleteCallback = postDeleteCallback || function () {};
   }
 
   create() {
@@ -48,10 +46,14 @@ export default class Card {
     newCard.querySelector(".card__bookmark").addEventListener("click", (e) => {
       e.stopPropagation();
       e.preventDefault();
-      this.bookmark(e).then((bookmarkId) => {
-        console.log({ bookmarkId, target: e.target });
-        e.target.setAttribute("bookmark_id", bookmarkId);
-      });
+      if (!event.target.classList.contains("card__bookmark_unlogged"))
+        this.bookmark(e)
+          .then((bookmarkId) => {
+            e.target.setAttribute("bookmark_id", bookmarkId);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
     });
 
     return newCard;
@@ -66,7 +68,6 @@ export default class Card {
   }
 
   bookmark(event) {
-    console.log("BOOKMARK", event.target);
     if (!event.target.classList.contains("card__bookmark_unlogged")) {
       event.target.classList.toggle("card__bookmark_bookmarked");
 
@@ -93,13 +94,11 @@ export default class Card {
             console.error("Article is NOT saved:", { e });
           });
       } else {
-        console.log("remove article");
         const bookmarkId = event.target.getAttribute("bookmark_id");
-        console.log("bookmark id to remove:", { bookmarkId });
-        // return Promise.resolve("");
 
         return this.API.removeArticle(bookmarkId)
           .then(() => {
+            console.log("Article is deleted");
             return "";
           })
           .catch((e) => {
@@ -135,17 +134,16 @@ export default class Card {
   remove(event) {
     if (window.confirm("Вы действительно хотите удалить эту статью?")) {
       let a = event.composedPath();
-      console.log("composedPath", a);
       ///
       this.API.removeArticle(this.id)
-      .then(()=>{
-        let toDelete = a[3];
-        event.target.parentElement.parentElement.parentElement.parentElement.removeChild(toDelete);
-        this.postDeleteCallback();
-      })
-      .catch((e) => {
-        console.error("Article is NOT deleted:", { e });
-      });
+        .then(() => {
+          let toDelete = a[3];
+          event.target.parentElement.parentElement.parentElement.parentElement.removeChild(toDelete);
+          this.postDeleteCallback();
+        })
+        .catch((e) => {
+          console.error("Article is NOT deleted:", { e });
+        });
     }
   }
 }

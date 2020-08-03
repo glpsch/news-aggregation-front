@@ -1,8 +1,4 @@
-import onError from "../utils/onError";
-
 export default class NewsApi {
-  // constructor() {
-  // }
 
   getNews(url) {
     this.url = url;

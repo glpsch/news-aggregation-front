@@ -1,6 +1,5 @@
 export default class Header {
   constructor() {
-    // this.loggedInState = loggedInState;
     this.loggedInState = false;
   }
 

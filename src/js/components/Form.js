@@ -12,11 +12,8 @@ export default class Form {
 checkInputValidity(element) {
   this.element = element;
   const errorElement = this.form.querySelector(`#error-${this.element.id}`);
-  console.log('error element:', {errorElement, element})
+  // console.log('error element:', {errorElement, element})
   if (!this.element.checkValidity()) {
-    console.log('faied to check validity')
-    // console.log('should show element error', errorElement)
-
       if(!this.element.value){
         errorElement.textContent = 'Это обязательное поле';
       }
