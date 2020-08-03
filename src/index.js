@@ -8,6 +8,7 @@ import MainApi from "./js/api/MainApi";
 import NewsApi from "./js/api/NewsApi";
 import Form from "./js/components/Form";
 import onError from "./js/utils/onError";
+import formatDate from "./js/utils/formatDate";
 import Header from "./js/components/Header";
 import NewsCard from "./js/components/NewsCard";
 import NewsCardList from "./js/components/NewsCardList";
@@ -242,6 +243,7 @@ import NewsCardList from "./js/components/NewsCardList";
 
         searchResultsOK.classList.add("search-results_enabled");
 
+
         const receivedCards = data.articles.map(function (articleData) {
           return new NewsCard(
             cardTemplate,
@@ -249,7 +251,7 @@ import NewsCardList from "./js/components/NewsCardList";
             articleData.description,
             articleData.urlToImage,
             articleData.source.name,
-            articleData.publishedAt
+            formatDate(articleData.publishedAt)
           ).create();
         });
         const newsCardList = new NewsCardList(list, receivedCards, NewsCard);
@@ -257,7 +259,7 @@ import NewsCardList from "./js/components/NewsCardList";
         let currentIndex = 0;
         const increment = 3;
         // -1
-        newsCardList.renderResults(currentIndex, 2, arrayLength);
+        newsCardList.renderResults(currentIndex, 2, arrayLength -1);
         if (arrayLength > 3) {
           currentIndex = currentIndex + increment;
           moreBtn = document.querySelector(".search-results_successful-more");

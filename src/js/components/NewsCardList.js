@@ -22,7 +22,8 @@ export default class NewsCardList {
       if (!this.cardArray[currentIndex]){
         console.warn('requested to render an element outside of range');
        //TODO fix later
-        this.container.appendChild( this.cardArray[max])
+       if (max > 2)
+       { this.container.appendChild( this.cardArray[max])}
         return;
       }
       this.container.appendChild( this.cardArray[currentIndex])
@@ -40,7 +41,7 @@ export default class NewsCardList {
       console.log('calling to render stuff')
       currentIndex += increment;
       const renderToIndex = currentIndex + increment;
-      if (renderToIndex >= maxIndex){
+      if (renderToIndex > maxIndex){
         console.log('remove button');
         this.button.classList.add('invisible');
       }
