@@ -92,25 +92,6 @@ export default class Card {
     }
   }
 
-  //   like(event) {
-  //     event.target.classList.toggle('card__like-icon_liked');
-
-  //     if (event.target.classList.contains('card__like-icon_liked')) {
-  //         this.api.addLike(this.cardId)
-  //             .then((res) => {
-  //                 event.target.parentElement.querySelector('.card__like-count').textContent = res.likes.length;
-  //             })
-  //             .catch(onError);
-  //     }
-  //     else {
-  //         this.api.removeLike(this.cardId)
-  //             .then((res) => {
-  //                 event.target.parentElement.querySelector('.card__like-count').textContent = res.likes.length;
-  //             })
-  //             .catch(onError);
-  //     }
-  // }
-
   // remove(event) {
 
   //     if (window.confirm("Вы действительно хотите удалить эту карточку?")) {

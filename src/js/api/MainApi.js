@@ -5,8 +5,6 @@ export default class MainApi {
     this.server = server;
   }
 
-  // signup регистрирует нового пользователя;
-  // signin аутентифицирует пользователя на основе почты и пароля;
   // getUserData возвращает информацию о пользователе;
   // getArticles забирает все статьи;
   // createArticle создаёт статью;
@@ -83,7 +81,6 @@ export default class MainApi {
     });
   }
 
-  //////////////
   createArticle(articleData) {
     this.articleData = articleData;
 
@@ -100,5 +97,24 @@ export default class MainApi {
       }
       return Promise.reject(`error: ${res.status}`);
     });
+  }
+
+  //////////////
+  getArticles() {
+    return fetch(this.server + 'articles', {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+        // "Content-Type": "application/json",
+      }
+  })
+      .then((res) => {
+          if (res.ok) {
+              return res.json();
+          }
+          return Promise.reject(`error: ${res.status}`);
+      })
+      .then((articles) => {
+          return articles;
+      });
   }
 }
