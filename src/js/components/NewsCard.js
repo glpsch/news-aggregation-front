@@ -13,7 +13,6 @@ export default class Card {
     cardLink /* , bookmarkStatus */
   ) {
     this.template = template;
-
     this.cardTitle = cardTitle;
     this.cardDescription = cardDescription;
     this.cardImage = cardImage;
@@ -30,9 +29,7 @@ export default class Card {
     newCard.querySelector(".card__text").textContent = this.cardDescription;
     newCard.querySelector(".card__source").textContent = this.cardSource;
     newCard.querySelector(".card__date").textContent = this.publishedAt;
-
-   newCard.querySelector(".link").href = this.cardLink;
-
+    newCard.querySelector(".card__link").href = this.cardLink;
 
     // if ((this.likes || []).find(e => e._id == this.userId)) {
     //     newCard.querySelector('.card__like-icon').classList.add('card__like-icon_liked');
@@ -45,7 +42,17 @@ export default class Card {
     return newCard;
   }
 
-  renderIcon() {}
+  renderIcon() {
+    let loggedInState = false;
+
+    const bookmarks = document.querySelectorAll(".card__bookmark");
+
+    if ((loggedInState = false)) {
+      bookmarks.forEach(function (element) {
+        element.classList.add("card__bookmark_unlogged");
+      });
+    }
+  }
 
   //   like(event) {
   //     event.target.classList.toggle('card__like-icon_liked');

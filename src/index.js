@@ -51,7 +51,7 @@ import NewsCardList from "./js/components/NewsCardList";
   function searchCleanUp() {
     searchResultsNone.classList.remove("search-results_enabled_flex");
     searchResultsOK.classList.remove("search-results_enabled");
-    moreBtn.classList.add('invisible');
+    moreBtn.classList.add("invisible");
   }
 
   // Listeners
@@ -228,8 +228,27 @@ import NewsCardList from "./js/components/NewsCardList";
     if (!keyword) {
       // TODO выводится ошибка «Нужно ввести ключевое слово»
       console.log("Нужно ввести ключевое слово");
-    } else {
-      newsApi.getNews(searchUrl).then((data) => {
+      return;
+    }
+
+    mainApi
+      .checkStatus()
+      .then((user) => {
+        console.log("user - search check");
+        console.log({ user });
+        return newsApi.getNews(searchUrl).then((data) => {
+          return {
+            user,
+            data,
+          };
+        });
+      })
+      .then((userAndData) => {
+        const data = userAndData.data;
+        const user = userAndData.user;
+
+        ////newsAPI
+        console.log('user:', {user});
         console.log("articles", data.articles);
         console.log("keyword", keyword);
         //////////////
@@ -258,7 +277,7 @@ import NewsCardList from "./js/components/NewsCardList";
         const newsCardList = new NewsCardList(list, receivedCards, NewsCard);
         let currentIndex = 0;
         const increment = 3;
-        newsCardList.renderResults(currentIndex, 2, arrayLength -1);
+        newsCardList.renderResults(currentIndex, 2, arrayLength - 1);
 
         if (arrayLength > 3) {
           // currentIndex = currentIndex + increment;
@@ -269,6 +288,7 @@ import NewsCardList from "./js/components/NewsCardList";
           newsCardList.setMoreBtn(moreBtn, increment, currentIndex);
         }
       });
-    }
   });
+  ///////////////////////////////////////////////////
+  ///////////////////////////////////////////////////
 })();
