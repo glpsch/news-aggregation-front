@@ -22,6 +22,12 @@
 @import url(../blocks/card/__bookmark/_loggedin-articlespage/card__bookmark_loggedin-articlespage.css);
 @import url(../blocks/card/_articlescard/card_articlescard.css);
 
+@import url(../blocks/search-results/search-results.css);
+/* @import url(../blocks/search-results/_nothing-found/search-results_nothing-found.css);
+@import url(../blocks/search-results/_nothing-found-img/search-results_nothing-found-img.css);
+@import url(../blocks/search-results/_nothing-found-text/search-results_nothing-found-text.css);
+@import url(../blocks/search-results/_nothing-found-title/search-results_nothing-found-title.css); */
+
 
 @font-face {
   src: url('../src/fonts/robotoslab-regular.woff') format('woff');

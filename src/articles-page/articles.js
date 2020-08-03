@@ -69,6 +69,8 @@ import NewsCardList from "../js/components/NewsCardList";
     document.querySelector(".backdrop").classList.toggle("backdrop_active");
   });
   ///////////////////////////////////////////////////////////////////////////
+  const searchResultsNone = document.querySelector(".search-results_nothing-found");
+
 
   // onload: check + redirect
   mainApi
@@ -130,6 +132,9 @@ import NewsCardList from "../js/components/NewsCardList";
   mainApi.getArticles().then((cards) => {
     console.log(cards.data);
     setArticlesCount(cards.data.length);
+    console.log('cards.data.length', cards.data.length);
+// if (cards.data.length == 0)
+//  {   searchResultsNone.classList.add("search-results_enabled_flex");}
     const top3 = calculateKeywords(cards.data);
     setKeywords(top3);
     console.log({top3});
