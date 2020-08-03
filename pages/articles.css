@@ -27,7 +27,11 @@
   src: url('../src/fonts/robotoslab-regular.woff') format('woff');
   font-family: 'Roboto Slab';
 }
-
+@font-face {
+  src: url('../src/fonts/RobotoSlab-Bold-webfont.woff') format('woff');
+  font-family: 'RobotoSlab for logo';
+  /* font-weight: bold; */
+}
 @font-face {
   src: url('../src/fonts/roboto-regular.woff') format('woff');
   font-family: 'Roboto';

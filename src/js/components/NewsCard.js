@@ -97,6 +97,7 @@ export default class Card {
     let savedCard = this.template.cloneNode(true);
 
     savedCard.querySelector(".card__image").style.backgroundImage = "url(" + this.cardImage + ")";
+    savedCard.querySelector(".card__bookmark-category").textContent = this.keyword;
     savedCard.querySelector(".card__title").textContent = this.cardTitle;
     savedCard.querySelector(".card__text").textContent = this.cardDescription;
     savedCard.querySelector(".card__source").textContent = this.cardSource;
