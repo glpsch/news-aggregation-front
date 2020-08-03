@@ -120,8 +120,9 @@
       <section class="about">
         <div>
           <picture>
-            <source srcset="<%=require('../src/images/av.png').default%>" media="(min-width: 800px)">
-            <img src="<%=require('../src/images/av_s.png').default%>" alt="Фото автора" class="about__photo" />
+            <!-- <source srcset="<%=require('../src/images/av.png').default%>" media="(min-width: 800px)"> -->
+            <!-- <img src="<%=require('../src/images/av_s.png').default%>" alt="Фото автора" class="about__photo" /> -->
+            <img src="<%=require('../src/images/0-2.png').default%>" alt="Фото автора" class="about__photo" />
           </picture>
         </div>
         <div class="about__content">
@@ -174,8 +175,6 @@
               <span class="popup__input-error" id="error-reg-name"></span>
             </div>
 
-            <!-- no input for error here -->
-
             <span class="popup__input-error popup__input-error_main" id="error-main">Такой пользователь уже есть</span>
             <button type="submit" class="button popup__button button_main reg__submit">Зарегистрироваться</button>
           </form>
@@ -202,11 +201,9 @@
               <span class="popup__input-error" id="error-login-password"></span>
             </div>
 
-            <!-- no input for error here -->
-
             <span class="popup__input-error popup__input-error_main" id="error-main"></span>
             <button type="submit" class="button popup__button button_main login__submit">Войти</button>
-            <!-- <button type="submit" class="button popup__button popup__button_inactive" disabled>Войти</button> -->
+
           </form>
           <div class="popup__link">
             или <a href="#" class="link popup__reg-link">Зарегистрироваться</a>

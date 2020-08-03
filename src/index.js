@@ -27,6 +27,25 @@ import NewsCardList from "./js/components/NewsCardList";
   const mobileMenuBtn = document.querySelector(".header__mobile-menu");
   const popupRegContent = document.querySelector(".popup_registration__content");
   const popupSuccessContent = document.querySelector(".popup_success__content");
+  //Const - search
+  const searchResultsNone = document.querySelector(".search-results_nothing-found");
+  const searchResultsOK = document.querySelector(".search-results_successful");
+  const cardTemplate = document.querySelector("#news-card-template").content.querySelector(".card");
+  const list = document.querySelector(".search-results_successful-cards");
+  const searchForm = document.querySelector(".search__bar");
+  let moreBtn = document.querySelector(".search-results_successful-more");
+  const searchInput = document.querySelector(".search__input");
+
+  // const apiURL = 'https://newsapi.org/v2/';
+  let proxiUrl = "https://praktikum.tk/news/v2/";
+  const apiKey = "f3d87446c54c4e3b9fe47f4c2993c14f";
+  const newsUrl =
+    `${proxiUrl}everything?pageSize=100&` +
+    `apiKey=${apiKey}&` +
+    "sortBy=popularity&" +
+    `from=${calculatingDate.weekAgo()}&` +
+    `to=${calculatingDate.currentDate()}&` +
+    "language=ru";
 
   // Class instances
   const popup = new Popup(template);
@@ -54,6 +73,13 @@ import NewsCardList from "./js/components/NewsCardList";
     moreBtn.classList.add("invisible");
   }
 
+  function showLoader() {
+    document.querySelector(".search-results_loading").style.display = "flex";
+  }
+
+  function hideLoader() {
+    document.querySelector(".search-results_loading").style.display = "none";
+  }
   // Listeners
   // LOGIN popup
   if (authBtnLogIn) {
@@ -91,10 +117,7 @@ import NewsCardList from "./js/components/NewsCardList";
   // Popup redirect: SUCCESS-LOGIN / REG-LOGIN
   if (template) {
     template.addEventListener("click", function (event) {
-      if (
-        event.target.classList.contains("success-link") ||
-        event.target.classList.contains("popup__reg-login")
-      ) {
+      if (event.target.classList.contains("success-link") || event.target.classList.contains("popup__reg-login")) {
         popup.close();
         setPopup(popupLoginContent);
       }
@@ -128,12 +151,12 @@ import NewsCardList from "./js/components/NewsCardList";
       // if (window.location.pathname !== "/") {
       //   window.location.pathname = "/";
       // }
-      if (window.location.pathname === '/') {
+      if (window.location.pathname === "/") {
         return;
       }
       if (window.location.pathname !== mainUrlPathName) {
         window.location.pathname = mainUrlPathName;
-        console.log('window.location.href !== mainUrl', window.location.href)
+        console.log("window.location.href !== mainUrl", window.location.href);
       }
     });
 
@@ -199,37 +222,9 @@ import NewsCardList from "./js/components/NewsCardList";
   /// NEWS
   ///////////////////////////////////////////////
 
-  // const apiURL = 'https://newsapi.org/v2/';
-  let proxiUrl = "https://praktikum.tk/news/v2/";
-  const apiKey = "f3d87446c54c4e3b9fe47f4c2993c14f";
-
-  const newsUrl =
-    `${proxiUrl}everything?pageSize=100&` +
-    `apiKey=${apiKey}&` +
-    "sortBy=popularity&" +
-    `from=${calculatingDate.weekAgo()}&` +
-    `to=${calculatingDate.currentDate()}&` +
-    // "from=2020-07-26&" +
-    // "to=2020-08-02&" +
-    "language=ru";
-
-  //Const - search
-  const searchResultsNone = document.querySelector(".search-results_nothing-found");
-  const searchResultsOK = document.querySelector(".search-results_successful");
-  const cardTemplate = document.querySelector("#news-card-template").content.querySelector(".card");
-  const list = document.querySelector(".search-results_successful-cards");
-  const searchForm = document.querySelector(".search__bar");
-  let moreBtn = document.querySelector(".search-results_successful-more");
-
-  function showLoader() {
-    document.querySelector(".search-results_loading").style.display = 'flex';
-  }
-
-  function hideLoader() {
-    document.querySelector(".search-results_loading").style.display = 'none';
-  }
   ///on page reload
   searchCleanUp();
+  searchInput.setCustomValidity("Нужно ввести ключевое слово");
 
   // SEARCH
   searchForm.addEventListener("submit", function (event) {
@@ -238,11 +233,11 @@ import NewsCardList from "./js/components/NewsCardList";
     // remove children
     list.querySelectorAll("*").forEach((n) => n.remove());
 
-    const keyword = document.querySelector(".search__input").value;
+    const keyword = searchInput.value;
     const searchUrl = newsUrl + `&q=${keyword}`;
 
     if (!keyword) {
-      // TODO выводится ошибка «Нужно ввести ключевое слово»
+      //
       console.log("Нужно ввести ключевое слово");
       return;
     }
@@ -285,7 +280,7 @@ import NewsCardList from "./js/components/NewsCardList";
         }
 
         searchResultsOK.classList.add("search-results_enabled");
-        /////////////
+        ///
         let id = "some id";
         const receivedCards = data.articles.map(function (articleData) {
           return new NewsCard(
@@ -308,20 +303,16 @@ import NewsCardList from "./js/components/NewsCardList";
         newsCardList.renderResults(currentIndex, 2, arrayLength - 1);
 
         if (arrayLength > 3) {
-          // currentIndex = currentIndex + increment;
           moreBtn = document.querySelector(".search-results_successful-more");
           let clone = moreBtn.cloneNode(true);
           moreBtn.parentNode.replaceChild(clone, moreBtn);
           moreBtn = document.querySelector(".search-results_successful-more");
           newsCardList.setMoreBtn(moreBtn, increment, currentIndex);
         }
-        // return newsCardList;
       })
       .finally(function () {
         hideLoader();
-    });
-
+      });
   });
-  ///////////////////////////////////////////////////
-  ///////////////////////////////////////////////////
+  ////////
 })();
