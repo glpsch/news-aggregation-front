@@ -10,7 +10,7 @@ export default class Card {
     cardImage,
     cardSource,
     publishedAt,
-    cardLink /* , bookmarkStatus */
+    cardLink /* , loggedInState */
   ) {
     this.template = template;
     this.cardTitle = cardTitle;
@@ -31,9 +31,7 @@ export default class Card {
     newCard.querySelector(".card__date").textContent = this.publishedAt;
     newCard.querySelector(".card__link").href = this.cardLink;
 
-    // if ((this.likes || []).find(e => e._id == this.userId)) {
-    //     newCard.querySelector('.card__like-icon').classList.add('card__like-icon_liked');
-    // }
+    this.renderIcon();
 
     // newCard
     //     .querySelector('.card__bookmark')
@@ -45,14 +43,58 @@ export default class Card {
   renderIcon() {
     let loggedInState = false;
 
-    const bookmarks = document.querySelectorAll(".card__bookmark");
+    const bookmark = document.querySelector(".card__bookmark");
 
-    if ((loggedInState = false)) {
-      bookmarks.forEach(function (element) {
-        element.classList.add("card__bookmark_unlogged");
-      });
-    }
+    if (loggedInState = false) {
+      bookmark.classList.add("card__bookmark_unlogged");
+      }
+
   }
+
+
+  //   bookmark(event) {
+  //     event.target.classList.toggle('card__bookmark_bookmarked');
+
+  //     if (event.target.classList.contains('card__bookmark_bookmarked')) {
+  //         this.api.createArticle(this.cardId)
+
+  //         // {
+  //         //   keyword = ,
+  //         //   title = this.cardTitle,
+  //         //   text = this.cardDescription,
+  //         //   date = this.publishedAt,
+  //         //   source = this.cardSource,
+  //         //   link = this.cardLink,
+  //         //   image = this.cardImage,
+  //         // }
+
+  //             .then((res) => {
+  //               console.log('Article is saved', res)
+  //                 // event.target.parentElement.querySelector('.card__like-count').textContent = res.likes.length;
+  //             })
+  //             .catch(e);
+  //     }
+  //     else {
+  //         this.api.removeCard(this.cardId)
+  //             .then((res) => {
+  //               console.log('Article is removed')
+  //                 // event.target.parentElement.querySelector('.card__like-count').textContent = res.likes.length;
+  //             })
+  //             .catch(e);
+  //     }
+  // }
+
+
+
+
+
+
+
+
+
+
+
+
 
   //   like(event) {
   //     event.target.classList.toggle('card__like-icon_liked');

@@ -238,14 +238,14 @@ import NewsCardList from "./js/components/NewsCardList";
         console.log({ user });
         return newsApi.getNews(searchUrl).then((data) => {
           return {
-            user,
+           user,
             data,
           };
         });
       })
       .then((userAndData) => {
         const data = userAndData.data;
-        const user = userAndData.user;
+        const user = (userAndData.user);
 
         ////newsAPI
         console.log('user:', {user});
@@ -265,6 +265,7 @@ import NewsCardList from "./js/components/NewsCardList";
         searchResultsOK.classList.add("search-results_enabled");
         const receivedCards = data.articles.map(function (articleData) {
           return new NewsCard(
+            // keyword,
             cardTemplate,
             articleData.title,
             articleData.description,

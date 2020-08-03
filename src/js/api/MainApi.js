@@ -27,14 +27,13 @@ export default class MainApi {
         email: this.email,
         password: this.password,
       }),
-    })
-    .then(async(res) => {
+    }).then(async (res) => {
       const data = await res.json();
       if (res.ok) {
         return data;
       }
-      return Promise.reject({message: data.message});
-    })
+      return Promise.reject({ message: data.message });
+    });
   }
 
   signin(email, password) {
@@ -44,42 +43,62 @@ export default class MainApi {
     return fetch(this.server + "signin", {
       method: "POST",
       headers: {
-          'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email: this.email,
         password: this.password,
       }),
     })
-      .then(async(res) => {
+      .then(async (res) => {
         const data = await res.json();
         if (res.ok) {
           return data;
         }
-        return Promise.reject({message: data.message});
+        return Promise.reject({ message: data.message });
       })
 
       .then((data) => {
-        console.log('local storage: setting token:', JSON.stringify( {data} ) );
+        console.log("local storage: setting token:", JSON.stringify({ data }));
         localStorage.setItem("token", data.token);
         return data;
-      })
+      });
+  }
 
-    }
+  checkStatus() {
+    console.log(
+      "checking status of token:",
+      JSON.stringify({ token: localStorage.getItem("token") })
+    );
+    return fetch(this.server + "users/me", {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject();
+    });
+  }
 
-      checkStatus() {
-        console.log('checking status of token:', JSON.stringify({token: localStorage.getItem('token')}));
-        return fetch(this.server + "users/me", {
-          method: 'GET',
-          headers: {
-            authorization: `Bearer ${localStorage.getItem('token')}`
-        }})
-        .then((res) => {
-          if (res.ok) {
-              return res.json();
-          }
-          return Promise.reject();
-      })
-}
+  //////////////
+  createArticle(articleData) {
+    this.articleData = articleData;
 
+    return fetch(this.server + "articles/", {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({ name: this.title, link: this.link }),
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(`error: ${res.status}`);
+    });
+  }
 }
