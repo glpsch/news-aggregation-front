@@ -56,12 +56,13 @@ import NewsCardList from "./js/components/NewsCardList";
 
   // Listeners
   // LOGIN popup
-  if (authBtnLogIn)
-{  authBtnLogIn.addEventListener("click", function () {
-    if (!popup.isOpen) {
-      setPopup(popupLoginContent);
-    }
-  });}
+  if (authBtnLogIn) {
+    authBtnLogIn.addEventListener("click", function () {
+      if (!popup.isOpen) {
+        setPopup(popupLoginContent);
+      }
+    });
+  }
 
   // LOG OUT
   authBtnLogOut.addEventListener("click", function () {
@@ -79,25 +80,27 @@ import NewsCardList from "./js/components/NewsCardList";
   });
 
   // REG popup
-  if (template)
-{  template.addEventListener("click", function (event) {
-    if (event.target.classList.contains("popup__reg-link")) {
-      popup.close();
-      setPopup(popupRegContent);
-    }
-  });}
+  if (template) {
+    template.addEventListener("click", function (event) {
+      if (event.target.classList.contains("popup__reg-link")) {
+        popup.close();
+        setPopup(popupRegContent);
+      }
+    });
+  }
 
   // Popup redirect: SUCCESS-LOGIN / REG-LOGIN
-  if (template)
-{  template.addEventListener("click", function (event) {
-    if (
-      event.target.classList.contains("success-link") ||
-      event.target.classList.contains("popup__reg-login")
-    ) {
-      popup.close();
-      setPopup(popupLoginContent);
-    }
-  });}
+  if (template) {
+    template.addEventListener("click", function (event) {
+      if (
+        event.target.classList.contains("success-link") ||
+        event.target.classList.contains("popup__reg-login")
+      ) {
+        popup.close();
+        setPopup(popupLoginContent);
+      }
+    });
+  }
 
   //// mobile
   mobileMenuBtn.addEventListener("click", function () {
@@ -128,68 +131,69 @@ import NewsCardList from "./js/components/NewsCardList";
       // if (window.location.pathname !== "/") {
       //   window.location.pathname = "/";
       // }
-
-      // if (window.location.pathname !== mainUrl) {
-      //   window.location.pathname = mainUrl;
-      // }
+      if (window.location.pathname !== mainUrl) {
+        window.location.pathname = mainUrl;
+      }
     });
 
   // LOGIN
-  if (template)
-{  template.addEventListener("click", function (event) {
-    if (event.target.classList.contains("login__submit")) {
-      event.preventDefault();
+  if (template) {
+    template.addEventListener("click", function (event) {
+      if (event.target.classList.contains("login__submit")) {
+        event.preventDefault();
 
-      const loginEmailInput = template.querySelector("#login-email");
-      const loginPasswordInput = template.querySelector("#login-password");
+        const loginEmailInput = template.querySelector("#login-email");
+        const loginPasswordInput = template.querySelector("#login-password");
 
-      mainApi
-        .signin(loginEmailInput.value, loginPasswordInput.value)
-        .then((data) => {
-          ///
-          console.log("login is ok");
+        mainApi
+          .signin(loginEmailInput.value, loginPasswordInput.value)
+          .then((data) => {
+            ///
+            console.log("login is ok");
 
-          header.render({
-            isLoggedIn: true,
-            userName: data.user.name,
+            header.render({
+              isLoggedIn: true,
+              userName: data.user.name,
+            });
+            searchCleanUp();
+            popup.close();
+          })
+          .catch((e) => {
+            console.error("login is NOT ok:", { e });
+            onError(e);
           });
-          searchCleanUp();
-          popup.close();
-        })
-        .catch((e) => {
-          console.error("login is NOT ok:", { e });
-          onError(e);
-        });
-    }
-  });}
+      }
+    });
+  }
 
   // REGISTRATION
-  if (template)
-{  template.addEventListener("click", function (event) {
-    if (event.target.classList.contains("reg__submit")) {
-      event.preventDefault();
+  if (template) {
+    template.addEventListener("click", function (event) {
+      if (event.target.classList.contains("reg__submit")) {
+        event.preventDefault();
 
-      const regEmailInput = template.querySelector("#reg-email");
-      const regPasswordInput = template.querySelector("#reg-password");
-      const regNameInput = template.querySelector("#reg-name");
-      ////
-      mainApi
-        .signup(regEmailInput.value, regPasswordInput.value, regNameInput.value)
-        .then((res) => {
-          console.log("reg is ok");
-          console.log(res, "res");
+        const regEmailInput = template.querySelector("#reg-email");
+        const regPasswordInput = template.querySelector("#reg-password");
+        const regNameInput = template.querySelector("#reg-name");
+        ////
+        mainApi
+          .signup(regEmailInput.value, regPasswordInput.value, regNameInput.value)
+          .then((res) => {
+            console.log("reg is ok");
+            console.log(res, "res");
 
-          popup.close();
-          popup.setContent(popupSuccessContent);
-          popup.open();
-          popup.isOpen = true;
-        })
-        .catch((e) => {
-          console.error("reg is NOT ok:", e);
-          onError(e);
-        });
-    }
-  });}
+            popup.close();
+            popup.setContent(popupSuccessContent);
+            popup.open();
+            popup.isOpen = true;
+          })
+          .catch((e) => {
+            console.error("reg is NOT ok:", e);
+            onError(e);
+          });
+      }
+    });
+  }
 
   ///////////////////////////////////////////////
   /// NEWS
@@ -237,43 +241,41 @@ import NewsCardList from "./js/components/NewsCardList";
     }
 
     let userRequest = Promise.resolve();
-    if (localStorage.token){
-      userRequest = mainApi
-      .checkStatus()
-      .catch(()=>{
-        console.log('no user as status has failed');
+    if (localStorage.token) {
+      userRequest = mainApi.checkStatus().catch(() => {
+        console.log("no user as status has failed");
         return false;
-      })
+      });
     }
 
-    userRequest.then((user) => {
+    userRequest
+      .then((user) => {
         console.log("user - search check");
         console.log({ user });
         return newsApi.getNews(searchUrl).then((data) => {
           return {
-           user,
+            user,
             data,
           };
         });
       })
       .then((userAndData) => {
         const data = userAndData.data;
-        const user = (userAndData.user);
+        const user = userAndData.user;
         let loggedInState;
         ////newsAPI
-        console.log('user:', {user});
-if (user) {
-  loggedInState = true;
-} else {
-  loggedInState = false;
-}
+        console.log("user:", { user });
+        if (user) {
+          loggedInState = true;
+        } else {
+          loggedInState = false;
+        }
 
         console.log("articles", data.articles);
         console.log("keyword", keyword);
         //////////////
         // onload
         // //////////
-
 
         let arrayLength = data.articles.length;
         if (arrayLength == 0) {
@@ -283,7 +285,7 @@ if (user) {
 
         searchResultsOK.classList.add("search-results_enabled");
         /////////////
-        let id = 'some id';
+        let id = "some id";
         const receivedCards = data.articles.map(function (articleData) {
           return new NewsCard(
             keyword,
@@ -312,7 +314,8 @@ if (user) {
           moreBtn = document.querySelector(".search-results_successful-more");
           newsCardList.setMoreBtn(moreBtn, increment, currentIndex);
         }
-      });
+      })
+      
   });
   ///////////////////////////////////////////////////
   ///////////////////////////////////////////////////

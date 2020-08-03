@@ -38,18 +38,16 @@ export default class Card {
     newCard.querySelector(".card__source").textContent = this.cardSource;
     newCard.querySelector(".card__date").textContent = this.publishedAt;
     newCard.querySelector(".card__link").href = this.cardLink;
-    // newCard.querySelector(".card__link").href = "#";
 
     this.renderIcon(newCard);
 
     newCard.querySelector(".card__bookmark").addEventListener("click", (e) => {
       e.stopPropagation();
       e.preventDefault();
-      this.bookmark(e)
-        .then((bookmarkId)=>{
-          console.log({bookmarkId, target: e.target})
-          e.target.setAttribute('bookmark_id', bookmarkId);
-        });
+      this.bookmark(e).then((bookmarkId) => {
+        console.log({ bookmarkId, target: e.target });
+        e.target.setAttribute("bookmark_id", bookmarkId);
+      });
     });
 
     return newCard;
@@ -65,7 +63,6 @@ export default class Card {
 
   bookmark(event) {
     console.log("BOOKMARK", event.target);
-    // event.stopPropagation();
     if (!event.target.classList.contains("card__bookmark_unlogged")) {
       event.target.classList.toggle("card__bookmark_bookmarked");
 
@@ -93,16 +90,19 @@ export default class Card {
           });
       } else {
         console.log("remove article");
-        const bookmarkId = event.target.getAttribute('bookmark_id');
-        console.log('bookmark id to remove:', {bookmarkId})
+        const bookmarkId = event.target.getAttribute("bookmark_id");
+        console.log("bookmark id to remove:", { bookmarkId });
+        // return Promise.resolve("");
 
-        return Promise.resolve('');
-        // this.api.removeCard(this.cardId)
-        //     .then((res) => {
-        //       console.log('Article is removed')
-        //         // event.target.parentElement.querySelector('.card__like-count').textContent = res.likes.length;
-        //     })
-        //     .catch();
+        return this.API.removeArticle(bookmarkId)
+          .then(() => {
+            return "";
+          })
+          .catch((e) => {
+            console.error("Article is NOT deleted:", { e });
+          });
+
+
       }
     }
   }
@@ -117,13 +117,15 @@ export default class Card {
     savedCard.querySelector(".card__source").textContent = this.cardSource;
     savedCard.querySelector(".card__date").textContent = this.publishedAt;
     savedCard.querySelector(".card__link").href = this.cardLink;
-
+    ///
     savedCard.id = this.id;
-    // newCard.querySelector(".card__link").href = "#";
 
-    // this.renderIcon(savedCard);
-
-    savedCard.querySelector(".card__bookmark").addEventListener("click", this.remove.bind(this));
+    savedCard.querySelector(".card__bookmark").addEventListener("click", (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      this.remove(e);
+      console.log("Article is deleted");
+    });
 
     return savedCard;
   }
