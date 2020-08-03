@@ -129,7 +129,8 @@ import NewsCardList from "../js/components/NewsCardList";
   }
 
   // initial cards
-  mainApi.getArticles().then((cards) => {
+  mainApi.getArticles()
+  .then((cards) => {
     console.log(cards.data);
     setArticlesCount(cards.data.length);
     console.log('cards.data.length', cards.data.length);
@@ -161,6 +162,11 @@ import NewsCardList from "../js/components/NewsCardList";
     });
     const newsCardList = new NewsCardList(savedList, receivedCards, NewsCard);
     newsCardList.renderSaved();
+  })
+  .catch((error)=>{
+    searchResultsNone.classList.add("search-results_enabled_flex");
+    const caption = document.querySelector(".articles-caption");
+    caption.classList.add('invisible')
   });
 
   //
