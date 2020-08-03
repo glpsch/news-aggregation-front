@@ -9,8 +9,8 @@
   opacity: 1;
   z-index: 50;
 }
-.card__bookmark:hover {
-  opacity: 1;
+.card__bookmark:hover .card__bookmark-flag {
+  background-image: url(../../../src/images/bookmark_hover.svg);
 }
 
 

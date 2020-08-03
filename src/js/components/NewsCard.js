@@ -31,72 +31,60 @@ export default class Card {
     newCard.querySelector(".card__text").textContent = this.cardDescription;
     newCard.querySelector(".card__source").textContent = this.cardSource;
     newCard.querySelector(".card__date").textContent = this.publishedAt;
-    newCard.querySelector(".card__link").href = this.cardLink;
+    // newCard.querySelector(".card__link").href = this.cardLink;
+    newCard.querySelector(".card__link").href = "";
 
     this.renderIcon(newCard);
 
-    // newCard
-    //     .querySelector('.card__bookmark')
-    //     .addEventListener('click', this.bookmark.bind(this));
+    newCard.querySelector(".card__bookmark").addEventListener("click", this.bookmark.bind(this));
 
     return newCard;
   }
 
   renderIcon(newCard) {
     // let loggedInState = false;
-    console.log('called render icon')
+
     const bookmark = newCard.querySelector(".card__bookmark");
 
     if (this.loggedInState === false) {
       bookmark.classList.add("card__bookmark_unlogged");
     }
-
   }
 
+  bookmark(event) {
+    console.log("BOOKMARK", event.target);
+    if (!event.target.classList.contains("card__bookmark_unlogged")) {
+      event.target.classList.toggle("card__bookmark_bookmarked");
+    }
 
-    bookmark(event) {
-      event.target.classList.toggle('card__bookmark_bookmarked');
+    // if (event.target.classList.contains('card__bookmark_bookmarked')) {
+    //     this.api.createArticle(this.cardId)
 
-      if (event.target.classList.contains('card__bookmark_bookmarked')) {
-          this.api.createArticle(this.cardId)
+    //     // {
+    //     //   keyword = ,
+    //     //   title = this.cardTitle,
+    //     //   text = this.cardDescription,
+    //     //   date = this.publishedAt,
+    //     //   source = this.cardSource,
+    //     //   link = this.cardLink,
+    //     //   image = this.cardImage,
+    //     // }
 
-          // {
-          //   keyword = ,
-          //   title = this.cardTitle,
-          //   text = this.cardDescription,
-          //   date = this.publishedAt,
-          //   source = this.cardSource,
-          //   link = this.cardLink,
-          //   image = this.cardImage,
-          // }
-
-              .then((res) => {
-                console.log('Article is saved', res)
-                  // event.target.parentElement.querySelector('.card__like-count').textContent = res.likes.length;
-              })
-              .catch(e);
-      }
-      else {
-          this.api.removeCard(this.cardId)
-              .then((res) => {
-                console.log('Article is removed')
-                  // event.target.parentElement.querySelector('.card__like-count').textContent = res.likes.length;
-              })
-              .catch(e);
-      }
+    //         .then((res) => {
+    //           console.log('Article is saved', res)
+    //             // event.target.parentElement.querySelector('.card__like-count').textContent = res.likes.length;
+    //         })
+    //         .catch(e);
+    // }
+    // else {
+    //     this.api.removeCard(this.cardId)
+    //         .then((res) => {
+    //           console.log('Article is removed')
+    //             // event.target.parentElement.querySelector('.card__like-count').textContent = res.likes.length;
+    //         })
+    //         .catch(e);
+    // }
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
   //   like(event) {
   //     event.target.classList.toggle('card__like-icon_liked');

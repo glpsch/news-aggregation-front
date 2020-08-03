@@ -7,6 +7,7 @@
 
 @import url(./__bookmark-flag/card__bookmark-flag.css);
 @import url(./__bookmark-flag/_saved/card__bookmark-flag_saved.css);
+
 @import url(./__content/card__content.css);
 @import url(./__date/card__date.css);
 @import url(./__text/card__text.css);
@@ -16,7 +17,7 @@
 @import url(./__link/card__link.css);
 /* //todo rename, upd placeholders// */
 @import url(./_articlescard/card_articlescard.css);
-
+@import url(./__bookmark/_bookmarked/card__bookmark_bookmarked.css);
 
 .card {
     max-width: 400px;
