@@ -282,6 +282,8 @@ if (user) {
         }
 
         searchResultsOK.classList.add("search-results_enabled");
+        /////////////
+        let id = 'some id';
         const receivedCards = data.articles.map(function (articleData) {
           return new NewsCard(
             keyword,
@@ -293,7 +295,8 @@ if (user) {
             formatDate(articleData.publishedAt),
             articleData.url,
             loggedInState,
-            mainApi
+            mainApi,
+            id
           ).create();
         });
         const newsCardList = new NewsCardList(list, receivedCards, NewsCard);

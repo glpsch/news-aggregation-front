@@ -86,8 +86,8 @@ import NewsCardList from "../js/components/NewsCardList";
         articleData.date,
         articleData.link,
         loggedInState,
-        mainApi
-        // articleData._id
+        mainApi,
+        articleData._id
       ).createSaved();
     });
     const newsCardList = new NewsCardList(savedList, receivedCards, NewsCard);

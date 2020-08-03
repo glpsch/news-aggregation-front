@@ -104,7 +104,6 @@ export default class MainApi {
     return fetch(this.server + 'articles', {
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
-        // "Content-Type": "application/json",
       }
   })
       .then((res) => {
@@ -117,4 +116,22 @@ export default class MainApi {
           return articles;
       });
   }
+
+  removeArticle(cardId) {
+    this.cardId = cardId;
+
+    return fetch(this.server  + 'articles/' + this.cardId, {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+            'Content-Type': 'application/json'
+        },
+        method: "DELETE"
+    })
+    .then((res) => {
+      if (res.ok) {
+          return res.json();
+      }
+      return Promise.reject(`error: ${res.status}`);
+  })
+}
 }

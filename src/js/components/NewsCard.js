@@ -13,7 +13,8 @@ export default class Card {
     publishedAt,
     cardLink,
     loggedInState,
-    API
+    API,
+    id
   ) {
     this.keyword = keyword;
     this.template = template;
@@ -25,6 +26,7 @@ export default class Card {
     this.cardLink = cardLink;
     this.loggedInState = loggedInState;
     this.API = API;
+    this.id = id;
   }
 
   create() {
@@ -103,29 +105,30 @@ export default class Card {
     savedCard.querySelector(".card__source").textContent = this.cardSource;
     savedCard.querySelector(".card__date").textContent = this.publishedAt;
     savedCard.querySelector(".card__link").href = this.cardLink;
+
+    savedCard.id = this.id;
     // newCard.querySelector(".card__link").href = "#";
 
     // this.renderIcon(savedCard);
 
-    // savedCard.querySelector(".card__bookmark").addEventListener("click", this.bookmark.bind(this));
+    savedCard.querySelector(".card__bookmark").addEventListener("click", this.remove.bind(this));
 
     return savedCard;
   }
 
+  remove(event) {
 
+      if (window.confirm("Вы действительно хотите удалить эту статью?")) {
 
-
-
-  // remove(event) {
-
-  //     if (window.confirm("Вы действительно хотите удалить эту карточку?")) {
-
-  //         let a = event.composedPath();
-  //         let toDelete = a[2];
-  //         event.target.parentElement.parentElement.parentElement.removeChild(toDelete);
-  //         ///
-  //         this.api.removeCard(this.cardId)
-  //             .catch(onError);
-  //     }
-  // }
+          let a = event.composedPath();
+          console.log('composedPath', a)
+          let toDelete = a[3];
+          event.target.parentElement.parentElement.parentElement.parentElement.removeChild(toDelete);
+          ///
+          this.API.removeArticle(this.id)
+          .catch((e) => {
+            console.error("Article is NOT deleted:", { e });
+            });
+      }
+  }
 }
