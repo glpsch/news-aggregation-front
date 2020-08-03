@@ -9,6 +9,8 @@ import NewsApi from "./js/api/NewsApi";
 import Form from "./js/components/Form";
 import onError from "./js/utils/onError";
 import formatDate from "./js/utils/formatDate";
+import calculatingDate from "./js/utils/calculatingDate";
+
 import Header from "./js/components/Header";
 import NewsCard from "./js/components/NewsCard";
 import NewsCardList from "./js/components/NewsCardList";
@@ -197,9 +199,10 @@ import NewsCardList from "./js/components/NewsCardList";
     `${proxiUrl}everything?pageSize=100&` +
     `apiKey=${apiKey}&` +
     "sortBy=popularity&" +
-    //TODO set dates
-    "from=2020-07-26&" +
-    "to=2020-08-02&" +
+    `from=${calculatingDate.weekAgo()}&` +
+    `to=${calculatingDate.currentDate()}&` +
+    // "from=2020-07-26&" +
+    // "to=2020-08-02&" +
     "language=ru";
 
   //Const - search
@@ -261,7 +264,7 @@ import NewsCardList from "./js/components/NewsCardList";
         // -1
         newsCardList.renderResults(currentIndex, 2, arrayLength -1);
         if (arrayLength > 3) {
-          currentIndex = currentIndex + increment;
+          // currentIndex = currentIndex + increment;
           moreBtn = document.querySelector(".search-results_successful-more");
           let clone = moreBtn.cloneNode(true);
           moreBtn.parentNode.replaceChild(clone, moreBtn);
