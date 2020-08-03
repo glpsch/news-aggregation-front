@@ -93,9 +93,10 @@ import NewsCardList from "../js/components/NewsCardList";
   }
   function setArticlesCount(number) {
     const articlesTitle = document.querySelector(".articles-caption__main_data");
-    articlesTitle.textContent = `, у вас ${number} сохранённых статей`;
+    // articlesTitle.textContent = `, у вас ${number} сохранённых статей`;
+    articlesTitle.textContent = number;
   }
-  setArticlesCount(666);
+  // setArticlesCount(666);
   // /// set keywords
 
   ////////////////////////////////////////////////////////////////////////////
@@ -107,6 +108,7 @@ import NewsCardList from "../js/components/NewsCardList";
   // initial cards
   mainApi.getArticles().then((cards) => {
     console.log(cards.data);
+    setArticlesCount(cards.data.length);
     const top3 = calculateKeywords(cards.data);
     console.log({top3})
     //??

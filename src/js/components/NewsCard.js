@@ -134,10 +134,16 @@ export default class Card {
     if (window.confirm("Вы действительно хотите удалить эту статью?")) {
       let a = event.composedPath();
       console.log("composedPath", a);
-      let toDelete = a[3];
-      event.target.parentElement.parentElement.parentElement.parentElement.removeChild(toDelete);
       ///
-      this.API.removeArticle(this.id).catch((e) => {
+      this.API.removeArticle(this.id)
+      .then(()=>{
+        let toDelete = a[3];
+        event.target.parentElement.parentElement.parentElement.parentElement.removeChild(toDelete);
+        let domNumber = (parseInt(document.querySelector(".articles-caption__main_data").textContent,10) - 1) || 0;
+        document.querySelector(".articles-caption__main_data").textContent = domNumber;
+
+      })
+      .catch((e) => {
         console.error("Article is NOT deleted:", { e });
       });
     }
