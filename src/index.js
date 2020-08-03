@@ -17,7 +17,7 @@ import NewsCardList from "./js/components/NewsCardList";
 
 (function () {
   // TODO change after deployment to "https://news-exploring.ga/"
-  const mainUrl = "https://glpsch.github.io/news-aggregation-front/";
+  const mainUrlPathName = "/news-aggregation-front/";
   const serverUrl = "https://api.news-exploring.ga/";
   //Const - popups
   const template = document.querySelector(".popup-template");
@@ -69,7 +69,7 @@ import NewsCardList from "./js/components/NewsCardList";
     localStorage.removeItem("token");
     searchCleanUp();
     if (event.target.parentNode.classList.contains("header_theme_black")) {
-      window.location = mainUrl;
+      window.location.pathname = mainUrlPathName;
     } else {
       header.render({
         isLoggedIn: false,
@@ -128,8 +128,11 @@ import NewsCardList from "./js/components/NewsCardList";
       // if (window.location.pathname !== "/") {
       //   window.location.pathname = "/";
       // }
-      if (window.location.href !== mainUrl) {
-        // window.location.href = mainUrl;
+      if (window.location.pathname === '/') {
+        return;
+      }
+      if (window.location.pathname !== mainUrlPathName) {
+        window.location.pathname = mainUrlPathName;
         console.log('window.location.href !== mainUrl', window.location.href)
       }
     });
@@ -274,7 +277,7 @@ import NewsCardList from "./js/components/NewsCardList";
           loggedInState = false;
         }
 
-        console.log("articles", data.articles);   
+        console.log("articles", data.articles);
         let arrayLength = data.articles.length;
         if (arrayLength == 0) {
           searchResultsNone.classList.add("search-results_enabled_flex");
