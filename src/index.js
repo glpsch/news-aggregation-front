@@ -56,11 +56,12 @@ import NewsCardList from "./js/components/NewsCardList";
 
   // Listeners
   // LOGIN popup
-  authBtnLogIn.addEventListener("click", function () {
+  if (authBtnLogIn)
+{  authBtnLogIn.addEventListener("click", function () {
     if (!popup.isOpen) {
       setPopup(popupLoginContent);
     }
-  });
+  });}
 
   // LOG OUT
   authBtnLogOut.addEventListener("click", function () {
@@ -78,15 +79,17 @@ import NewsCardList from "./js/components/NewsCardList";
   });
 
   // REG popup
-  template.addEventListener("click", function (event) {
+  if (template)
+{  template.addEventListener("click", function (event) {
     if (event.target.classList.contains("popup__reg-link")) {
       popup.close();
       setPopup(popupRegContent);
     }
-  });
+  });}
 
   // Popup redirect: SUCCESS-LOGIN / REG-LOGIN
-  template.addEventListener("click", function (event) {
+  if (template)
+{  template.addEventListener("click", function (event) {
     if (
       event.target.classList.contains("success-link") ||
       event.target.classList.contains("popup__reg-login")
@@ -94,7 +97,7 @@ import NewsCardList from "./js/components/NewsCardList";
       popup.close();
       setPopup(popupLoginContent);
     }
-  });
+  });}
 
   //// mobile
   mobileMenuBtn.addEventListener("click", function () {
@@ -132,7 +135,8 @@ import NewsCardList from "./js/components/NewsCardList";
     });
 
   // LOGIN
-  template.addEventListener("click", function (event) {
+  if (template)
+{  template.addEventListener("click", function (event) {
     if (event.target.classList.contains("login__submit")) {
       event.preventDefault();
 
@@ -157,10 +161,11 @@ import NewsCardList from "./js/components/NewsCardList";
           onError(e);
         });
     }
-  });
+  });}
 
   // REGISTRATION
-  template.addEventListener("click", function (event) {
+  if (template)
+{  template.addEventListener("click", function (event) {
     if (event.target.classList.contains("reg__submit")) {
       event.preventDefault();
 
@@ -184,7 +189,7 @@ import NewsCardList from "./js/components/NewsCardList";
           onError(e);
         });
     }
-  });
+  });}
 
   ///////////////////////////////////////////////
   /// NEWS

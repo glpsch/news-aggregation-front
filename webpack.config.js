@@ -8,7 +8,8 @@ const isDev = process.env.NODE_ENV === 'development';
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: { main: './src/index.js',
+  secondary: './src/articles-page/articles.js' },
   output: {
       path: path.resolve(__dirname, 'dist'),
       filename: '[name].[hash].js'
@@ -70,12 +71,16 @@ module.exports = {
           canPrint: true
       }),
       new HtmlWebpackPlugin({
+          inject: true,
           template: './pages/index.html',
-          filename: 'index.html'
+          filename: 'index.html',
+          chunks: ['main'],
       }),
       new HtmlWebpackPlugin({
+        inject: true,
         template: './pages/articles.html',
-        filename: 'articles.html'
+        filename: 'articles.html',
+        chunks: ['secondary'],
     }),
       new WebpackMd5Hash(),
       new webpack.DefinePlugin({
