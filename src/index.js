@@ -19,7 +19,6 @@ import NewsCardList from "./js/components/NewsCardList";
   // TODO change after deployment to "https://news-exploring.ga/"
   const mainUrl = "https://glpsch.github.io/news-aggregation-front/";
   const serverUrl = "https://api.news-exploring.ga/";
-
   //Const - popups
   const template = document.querySelector(".popup-template");
   const popupLoginContent = document.querySelector(".popup_login__content");
@@ -245,8 +244,6 @@ import NewsCardList from "./js/components/NewsCardList";
         }
 
         searchResultsOK.classList.add("search-results_enabled");
-
-
         const receivedCards = data.articles.map(function (articleData) {
           return new NewsCard(
             cardTemplate,
@@ -254,15 +251,15 @@ import NewsCardList from "./js/components/NewsCardList";
             articleData.description,
             articleData.urlToImage,
             articleData.source.name,
-            formatDate(articleData.publishedAt)
+            formatDate(articleData.publishedAt),
+            articleData.url
           ).create();
         });
         const newsCardList = new NewsCardList(list, receivedCards, NewsCard);
-
         let currentIndex = 0;
         const increment = 3;
-        // -1
         newsCardList.renderResults(currentIndex, 2, arrayLength -1);
+
         if (arrayLength > 3) {
           // currentIndex = currentIndex + increment;
           moreBtn = document.querySelector(".search-results_successful-more");

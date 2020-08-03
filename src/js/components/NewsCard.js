@@ -1,47 +1,54 @@
-
-
 // Класс карточки новости. Методы:
 // renderIcon — отвечает за отрисовку иконки карточки. У этой иконки три состояния:
 // иконка незалогиненного пользователя, активная иконка залогиненного, неактивная иконка залогиненного.
 
 export default class Card {
-    constructor(template, cardTitle, cardDescription, cardImage,
-      cardSource, publishedAt, /* cardLink, bookmarkStatus */ ) {
+  constructor(
+    template,
+    cardTitle,
+    cardDescription,
+    cardImage,
+    cardSource,
+    publishedAt,
+    cardLink /* , bookmarkStatus */
+  ) {
+    this.template = template;
 
-        this.template = template;
+    this.cardTitle = cardTitle;
+    this.cardDescription = cardDescription;
+    this.cardImage = cardImage;
+    this.cardSource = cardSource;
+    this.publishedAt = publishedAt;
+    this.cardLink = cardLink;
+  }
 
-        this.cardTitle = cardTitle;
-        this.cardDescription = cardDescription;
-        this.cardImage = cardImage;
-        this.cardSource = cardSource;
-        this.publishedAt = publishedAt;
-    }
+  create() {
+    let newCard = this.template.cloneNode(true);
 
-    create() {
-        let newCard = this.template.cloneNode(true);
+    newCard.querySelector(".card__image").style.backgroundImage = "url(" + this.cardImage + ")";
+    newCard.querySelector(".card__title").textContent = this.cardTitle;
+    newCard.querySelector(".card__text").textContent = this.cardDescription;
+    newCard.querySelector(".card__source").textContent = this.cardSource;
+    newCard.querySelector(".card__date").textContent = this.publishedAt;
 
-        newCard.querySelector('.card__image').style.backgroundImage = 'url(' + this.cardImage + ')';
-        newCard.querySelector('.card__title').textContent = this.cardTitle;
-        newCard.querySelector('.card__text').textContent = this.cardDescription;
-        newCard.querySelector('.card__source').textContent = this.cardSource;
-        newCard.querySelector('.card__date').textContent = this.publishedAt;
-
-        // if ((this.likes || []).find(e => e._id == this.userId)) {
-        //     newCard.querySelector('.card__like-icon').classList.add('card__like-icon_liked');
-        // }
-
-        // newCard
-        //     .querySelector('.card__bookmark')
-        //     .addEventListener('click', this.bookmark.bind(this));
-
-        return newCard;
-    }
+   newCard.querySelector(".link").href = this.cardLink;
 
 
+    // if ((this.likes || []).find(e => e._id == this.userId)) {
+    //     newCard.querySelector('.card__like-icon').classList.add('card__like-icon_liked');
+    // }
+
+    // newCard
+    //     .querySelector('.card__bookmark')
+    //     .addEventListener('click', this.bookmark.bind(this));
+
+    return newCard;
+  }
+
+  renderIcon() {}
 
   //   like(event) {
   //     event.target.classList.toggle('card__like-icon_liked');
-
 
   //     if (event.target.classList.contains('card__like-icon_liked')) {
   //         this.api.addLike(this.cardId)
@@ -59,7 +66,6 @@ export default class Card {
   //     }
   // }
 
-
   // remove(event) {
 
   //     if (window.confirm("Вы действительно хотите удалить эту карточку?")) {
@@ -72,9 +78,4 @@ export default class Card {
   //             .catch(onError);
   //     }
   // }
-
-
-
 }
-
-
