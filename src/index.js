@@ -131,9 +131,9 @@ import NewsCardList from "./js/components/NewsCardList";
       // if (window.location.pathname !== "/") {
       //   window.location.pathname = "/";
       // }
-      if (window.location.pathname !== mainUrl) {
-        window.location.pathname = mainUrl;
-      }
+      // if (window.location.pathname !== mainUrl) {
+      //   window.location.pathname = mainUrl;
+      // }
     });
 
   // LOGIN
@@ -315,7 +315,7 @@ import NewsCardList from "./js/components/NewsCardList";
           newsCardList.setMoreBtn(moreBtn, increment, currentIndex);
         }
       })
-      
+
   });
   ///////////////////////////////////////////////////
   ///////////////////////////////////////////////////
