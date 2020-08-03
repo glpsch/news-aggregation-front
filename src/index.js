@@ -131,8 +131,8 @@ import NewsCardList from "./js/components/NewsCardList";
       // if (window.location.pathname !== "/") {
       //   window.location.pathname = "/";
       // }
-      if (window.location !== mainUrl) {
-        window.location = mainUrl;
+      if (window.location.href !== mainUrl) {
+        window.location.href = mainUrl;
       }
     });
 
