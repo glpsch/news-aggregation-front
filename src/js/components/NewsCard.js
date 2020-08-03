@@ -43,8 +43,13 @@ export default class Card {
     this.renderIcon(newCard);
 
     newCard.querySelector(".card__bookmark").addEventListener("click", (e) => {
-      this.bookmark(e);
       e.stopPropagation();
+      e.preventDefault();
+      this.bookmark(e)
+        .then((bookmarkId)=>{
+          console.log({bookmarkId, target: e.target})
+          e.target.setAttribute('bookmark_id', bookmarkId);
+        });
     });
 
     return newCard;
@@ -76,10 +81,11 @@ export default class Card {
         };
         console.log("cardObject", cardObject);
 
-        this.API.createArticle(cardObject)
+        return this.API.createArticle(cardObject)
 
           .then((res) => {
             console.log("Article is saved", res);
+            return res.data._id;
             // event.target.parentElement.querySelector('.card__like-count').textContent = res.likes.length;
           })
           .catch((e) => {
@@ -87,7 +93,10 @@ export default class Card {
           });
       } else {
         console.log("remove article");
+        const bookmarkId = event.target.getAttribute('bookmark_id');
+        console.log('bookmark id to remove:', {bookmarkId})
 
+        return Promise.resolve('');
         // this.api.removeCard(this.cardId)
         //     .then((res) => {
         //       console.log('Article is removed')
