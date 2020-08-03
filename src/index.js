@@ -221,6 +221,13 @@ import NewsCardList from "./js/components/NewsCardList";
   const searchForm = document.querySelector(".search__bar");
   let moreBtn = document.querySelector(".search-results_successful-more");
 
+  function showLoader() {
+    document.querySelector(".search-results_loading").style.display = 'flex';
+  }
+
+  function hideLoader() {
+    document.querySelector(".search-results_loading").style.display = 'none';
+  }
   ///on page reload
   searchCleanUp();
 
@@ -248,6 +255,7 @@ import NewsCardList from "./js/components/NewsCardList";
       });
     }
 
+    showLoader();
     userRequest
       .then((user) => {
         console.log("user - search check");
@@ -314,7 +322,11 @@ import NewsCardList from "./js/components/NewsCardList";
           moreBtn = document.querySelector(".search-results_successful-more");
           newsCardList.setMoreBtn(moreBtn, increment, currentIndex);
         }
+        // return newsCardList;
       })
+      .finally(function () {
+        hideLoader();
+    });
 
   });
   ///////////////////////////////////////////////////
