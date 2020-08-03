@@ -66,7 +66,7 @@ import NewsCardList from "./js/components/NewsCardList";
   authBtnLogOut.addEventListener("click", function () {
     console.log("removing token from local storage");
     localStorage.removeItem("token");
-
+    searchCleanUp();
     if (event.target.parentNode.classList.contains("header_theme_black")) {
       window.location = mainUrl;
     } else {
@@ -149,7 +149,7 @@ import NewsCardList from "./js/components/NewsCardList";
             isLoggedIn: true,
             userName: data.user.name,
           });
-
+          searchCleanUp();
           popup.close();
         })
         .catch((e) => {
@@ -254,16 +254,22 @@ import NewsCardList from "./js/components/NewsCardList";
       .then((userAndData) => {
         const data = userAndData.data;
         const user = (userAndData.user);
-
+        let loggedInState;
         ////newsAPI
         console.log('user:', {user});
+if (user) {
+  loggedInState = true;
+} else {
+  loggedInState = false;
+}
+
         console.log("articles", data.articles);
         console.log("keyword", keyword);
         //////////////
         // onload
         // //////////
 
-        console.log("got atriclets, setting up buttons:", data.articles);
+
         let arrayLength = data.articles.length;
         if (arrayLength == 0) {
           searchResultsNone.classList.add("search-results_enabled_flex");
@@ -280,7 +286,8 @@ import NewsCardList from "./js/components/NewsCardList";
             articleData.urlToImage,
             articleData.source.name,
             formatDate(articleData.publishedAt),
-            articleData.url
+            articleData.url,
+            loggedInState
           ).create();
         });
         const newsCardList = new NewsCardList(list, receivedCards, NewsCard);

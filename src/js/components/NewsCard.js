@@ -10,7 +10,8 @@ export default class Card {
     cardImage,
     cardSource,
     publishedAt,
-    cardLink /* , loggedInState */
+    cardLink,
+    loggedInState
   ) {
     this.template = template;
     this.cardTitle = cardTitle;
@@ -19,6 +20,7 @@ export default class Card {
     this.cardSource = cardSource;
     this.publishedAt = publishedAt;
     this.cardLink = cardLink;
+    this.loggedInState = loggedInState;
   }
 
   create() {
@@ -41,14 +43,13 @@ export default class Card {
   }
 
   renderIcon(newCard) {
-    let loggedInState = false;
-
+    // let loggedInState = false;
     console.log('called render icon')
     const bookmark = newCard.querySelector(".card__bookmark");
 
-    if (loggedInState === false) {
+    if (this.loggedInState === false) {
       bookmark.classList.add("card__bookmark_unlogged");
-      }
+    }
 
   }
 
