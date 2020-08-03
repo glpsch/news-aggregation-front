@@ -279,7 +279,7 @@ if (user) {
         searchResultsOK.classList.add("search-results_enabled");
         const receivedCards = data.articles.map(function (articleData) {
           return new NewsCard(
-            // keyword,
+            keyword,
             cardTemplate,
             articleData.title,
             articleData.description,
@@ -287,7 +287,8 @@ if (user) {
             articleData.source.name,
             formatDate(articleData.publishedAt),
             articleData.url,
-            loggedInState
+            loggedInState,
+            mainApi
           ).create();
         });
         const newsCardList = new NewsCardList(list, receivedCards, NewsCard);

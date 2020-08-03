@@ -93,7 +93,7 @@ export default class MainApi {
         "Content-Type": "application/json",
       },
       method: "POST",
-      body: JSON.stringify({ name: this.title, link: this.link }),
+      body: JSON.stringify(articleData),
     }).then((res) => {
       if (res.ok) {
         return res.json();
