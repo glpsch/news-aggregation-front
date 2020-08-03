@@ -79,7 +79,7 @@ import NewsCardList from "../js/components/NewsCardList";
         userName: user.name,
       });
       ////// TODO
-      // setUserName(user.name);
+      setUserName(user.name);
     })
     .catch(() => {
       console.log("check status failed");
@@ -87,15 +87,15 @@ import NewsCardList from "../js/components/NewsCardList";
     });
 
   /// set title
-  // function setUserName(name) {
-  //   const articlesTitle = document.querySelector(".articles-caption__main_name");
-  //   articlesTitle.textContent = name;
-  // }
-  // function setArticlesCount(number) {
-  //   const articlesTitle = document.querySelector(".articles-caption__main_data");
-  //   articlesTitle.textContent = `, у вас ${number} сохранённых статей`;
-  // }
-  // setArticlesCount(666);
+  function setUserName(name) {
+    const articlesTitle = document.querySelector(".articles-caption__main_name");
+    articlesTitle.textContent = name;
+  }
+  function setArticlesCount(number) {
+    const articlesTitle = document.querySelector(".articles-caption__main_data");
+    articlesTitle.textContent = `, у вас ${number} сохранённых статей`;
+  }
+  setArticlesCount(666);
   // /// set keywords
 
   ////////////////////////////////////////////////////////////////////////////
