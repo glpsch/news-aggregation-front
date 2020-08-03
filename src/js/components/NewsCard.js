@@ -31,7 +31,7 @@ export default class Card {
     newCard.querySelector(".card__date").textContent = this.publishedAt;
     newCard.querySelector(".card__link").href = this.cardLink;
 
-    this.renderIcon();
+    this.renderIcon(newCard);
 
     // newCard
     //     .querySelector('.card__bookmark')
@@ -40,49 +40,50 @@ export default class Card {
     return newCard;
   }
 
-  renderIcon() {
+  renderIcon(newCard) {
     let loggedInState = false;
 
-    const bookmark = document.querySelector(".card__bookmark");
+    console.log('called render icon')
+    const bookmark = newCard.querySelector(".card__bookmark");
 
-    if (loggedInState = false) {
+    if (loggedInState === false) {
       bookmark.classList.add("card__bookmark_unlogged");
       }
 
   }
 
 
-  //   bookmark(event) {
-  //     event.target.classList.toggle('card__bookmark_bookmarked');
+    bookmark(event) {
+      event.target.classList.toggle('card__bookmark_bookmarked');
 
-  //     if (event.target.classList.contains('card__bookmark_bookmarked')) {
-  //         this.api.createArticle(this.cardId)
+      if (event.target.classList.contains('card__bookmark_bookmarked')) {
+          this.api.createArticle(this.cardId)
 
-  //         // {
-  //         //   keyword = ,
-  //         //   title = this.cardTitle,
-  //         //   text = this.cardDescription,
-  //         //   date = this.publishedAt,
-  //         //   source = this.cardSource,
-  //         //   link = this.cardLink,
-  //         //   image = this.cardImage,
-  //         // }
+          // {
+          //   keyword = ,
+          //   title = this.cardTitle,
+          //   text = this.cardDescription,
+          //   date = this.publishedAt,
+          //   source = this.cardSource,
+          //   link = this.cardLink,
+          //   image = this.cardImage,
+          // }
 
-  //             .then((res) => {
-  //               console.log('Article is saved', res)
-  //                 // event.target.parentElement.querySelector('.card__like-count').textContent = res.likes.length;
-  //             })
-  //             .catch(e);
-  //     }
-  //     else {
-  //         this.api.removeCard(this.cardId)
-  //             .then((res) => {
-  //               console.log('Article is removed')
-  //                 // event.target.parentElement.querySelector('.card__like-count').textContent = res.likes.length;
-  //             })
-  //             .catch(e);
-  //     }
-  // }
+              .then((res) => {
+                console.log('Article is saved', res)
+                  // event.target.parentElement.querySelector('.card__like-count').textContent = res.likes.length;
+              })
+              .catch(e);
+      }
+      else {
+          this.api.removeCard(this.cardId)
+              .then((res) => {
+                console.log('Article is removed')
+                  // event.target.parentElement.querySelector('.card__like-count').textContent = res.likes.length;
+              })
+              .catch(e);
+      }
+  }
 
 
 

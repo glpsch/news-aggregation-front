@@ -231,9 +231,17 @@ import NewsCardList from "./js/components/NewsCardList";
       return;
     }
 
-    mainApi
+    let userRequest = Promise.resolve();
+    if (localStorage.token){
+      userRequest = mainApi
       .checkStatus()
-      .then((user) => {
+      .catch(()=>{
+        console.log('no user as status has failed');
+        return false;
+      })
+    }
+
+    userRequest.then((user) => {
         console.log("user - search check");
         console.log({ user });
         return newsApi.getNews(searchUrl).then((data) => {
