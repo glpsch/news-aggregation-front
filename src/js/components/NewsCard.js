@@ -42,7 +42,10 @@ export default class Card {
 
     this.renderIcon(newCard);
 
-    newCard.querySelector(".card__bookmark").addEventListener("click", this.bookmark.bind(this));
+    newCard.querySelector(".card__bookmark").addEventListener("click", (e) => {
+      this.bookmark(e);
+      e.stopPropagation();
+    });
 
     return newCard;
   }
@@ -57,6 +60,7 @@ export default class Card {
 
   bookmark(event) {
     console.log("BOOKMARK", event.target);
+    // event.stopPropagation();
     if (!event.target.classList.contains("card__bookmark_unlogged")) {
       event.target.classList.toggle("card__bookmark_bookmarked");
 
@@ -80,7 +84,7 @@ export default class Card {
           })
           .catch((e) => {
             console.error("Article is NOT saved:", { e });
-            });
+          });
       } else {
         console.log("remove article");
 
@@ -93,7 +97,6 @@ export default class Card {
       }
     }
   }
-
 
   createSaved() {
     let savedCard = this.template.cloneNode(true);
@@ -117,18 +120,15 @@ export default class Card {
   }
 
   remove(event) {
-
-      if (window.confirm("Вы действительно хотите удалить эту статью?")) {
-
-          let a = event.composedPath();
-          console.log('composedPath', a)
-          let toDelete = a[3];
-          event.target.parentElement.parentElement.parentElement.parentElement.removeChild(toDelete);
-          ///
-          this.API.removeArticle(this.id)
-          .catch((e) => {
-            console.error("Article is NOT deleted:", { e });
-            });
-      }
+    if (window.confirm("Вы действительно хотите удалить эту статью?")) {
+      let a = event.composedPath();
+      console.log("composedPath", a);
+      let toDelete = a[3];
+      event.target.parentElement.parentElement.parentElement.parentElement.removeChild(toDelete);
+      ///
+      this.API.removeArticle(this.id).catch((e) => {
+        console.error("Article is NOT deleted:", { e });
+      });
+    }
   }
 }
