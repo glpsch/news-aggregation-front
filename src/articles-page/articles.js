@@ -11,6 +11,36 @@ import NewsCard from "../js/components/NewsCard";
 import NewsCardList from "../js/components/NewsCardList";
 
 (function () {
+
+  function calculateKeywords(articles){
+    let byKeywords = {};
+    (articles || []).forEach((article)=>{
+      const keyword = article.keyword;
+      if (!byKeywords[keyword]){
+        byKeywords[keyword] = 1;
+      } else {
+        byKeywords[keyword]++;
+      }
+    });
+    const byPolularity = Object.keys(byKeywords)
+      .map((keyword)=>{
+        return {
+          keyword, occurences: byKeywords[keyword]
+        };
+      })
+      .sort((a, b)=>{
+        return a.occurences - b.occurences;
+      })
+      .sort((a, b)=>{
+        return a.keyword.localeCompare(b.keyword, undefined, {numeric: true});
+      });
+
+      const top_3 = byPolularity.slice(0,3).map((rec)=> rec.keyword);
+    return {
+      top_3,
+      keywords_left: byPolularity.length - top_3.length
+    }
+  }
   console.log("articles page");
 
   // TODO change after deployment to "https://news-exploring.ga/"
@@ -72,6 +102,8 @@ import NewsCardList from "../js/components/NewsCardList";
   // initial cards
   mainApi.getArticles().then((cards) => {
     console.log(cards.data);
+    const top3 = calculateKeywords(cards.data);
+    console.log({top3})
     //??
     const loggedInState = true;
 
