@@ -94,14 +94,10 @@ import NewsCardList from "./js/components/NewsCardList";
   authBtnLogOut.addEventListener("click", function () {
     localStorage.removeItem("token");
     searchCleanUp();
-    if (event.target.parentNode.classList.contains("header_theme_black")) {
-      window.location.pathname = mainUrlPathName;
-    } else {
       header.render({
         isLoggedIn: false,
         userName: "any",
       });
-    }
   });
 
   // REG popup

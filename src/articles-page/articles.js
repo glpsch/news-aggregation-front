@@ -3,14 +3,13 @@
 import "../../pages/articles.css";
 
 import MainApi from "../js/api/MainApi";
-// import onError from "../js/utils/onError";
 import Header from "../js/components/Header";
 import NewsCard from "../js/components/NewsCard";
 import NewsCardList from "../js/components/NewsCardList";
 
 (function () {
   // TODO change after deployment to "https://news-exploring.ga/"
-  const mainUrl = "https://glpsch.github.io/news-aggregation-front/";
+  const mainUrlPathName = "/news-aggregation-front/";
   const serverUrl = "https://api.news-exploring.ga/";
   const authBtnLogOut = document.querySelector(".header__button_logged-in");
   const mobileMenuBtn = document.querySelector(".header__mobile-menu");
@@ -60,7 +59,7 @@ import NewsCardList from "../js/components/NewsCardList";
     console.log("removing token from local storage");
     localStorage.removeItem("token");
     if (event.target.parentNode.classList.contains("header_theme_black")) {
-      window.location = mainUrl;
+      window.location.pathname = mainUrlPathName;
     }
   });
   //// mobile
@@ -111,10 +110,8 @@ import NewsCardList from "../js/components/NewsCardList";
     setArticlesCount(0);
     searchResultsNone.classList.add("search-results_enabled_flex");
     // TODO
-    // const caption = document.querySelector(".articles-caption");
-    // caption.classList.add("articles-caption_nothing");
-    // const cardSection = document.querySelector(".articles-cards");
-    // cardSection.classList.add("articles-cards_nothing");
+    // document.querySelector(".articles-caption").classList.add("articles-caption_nothing");
+    // document.querySelector(".articles-cards").classList.add("articles-cards_nothing");
   }
   ///////////////////////////////////////////////////////////////////////////
   // onload: check user + redirect
