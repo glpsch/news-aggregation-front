@@ -126,7 +126,7 @@ import NewsCardList from "../js/components/NewsCardList";
       setUserName(user.name);
     })
     .catch(() => {
-      window.location.pathname = mainUrl;
+      window.location.pathname = mainUrlPathName;
     });
 
   //////////////////////
