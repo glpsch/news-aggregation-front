@@ -224,7 +224,7 @@ import NewsCardList from "./js/components/NewsCardList";
 
   ///on page reload
   searchCleanUp();
-  searchInput.setCustomValidity("Нужно ввести ключевое слово");
+
 
   // SEARCH
   searchForm.addEventListener("submit", function (event) {
@@ -237,9 +237,8 @@ import NewsCardList from "./js/components/NewsCardList";
     const searchUrl = newsUrl + `&q=${keyword}`;
 
     if (!keyword) {
-      //
+      // searchInput.setCustomValidity("Нужно ввести ключевое слово");
       console.log("Нужно ввести ключевое слово");
-      return;
     }
 
     let userRequest = Promise.resolve();
