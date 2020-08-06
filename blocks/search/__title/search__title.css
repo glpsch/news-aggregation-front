@@ -1,0 +1,35 @@
+.search__title {
+  max-width: 608px;
+  max-height: 128px;
+  padding-top: 160px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 64px;
+
+}
+
+
+@media screen and (max-width: 960px) {
+  .search__title {
+    max-width: 380px;
+    font-size: 48px;
+    line-height: 110%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search__title {
+    max-width: 380px;
+    font-size: 36px;
+    line-height: 110%;
+  }
+}
+
+
+/* mobile */
+@media screen and (max-width: 530px) {
+  .search__title {
+    padding: 86px 0 0 0;
+  }
+}

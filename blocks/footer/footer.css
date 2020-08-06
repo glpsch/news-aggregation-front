@@ -1,0 +1,62 @@
+@import url(./__copyright/footer__copyright.css);
+@import url(./__links/footer__links.css);
+@import url(./__link/footer__link.css);
+@import url(./__social-icon/footer__social-icon.css);
+@import url(./__social-icons/footer__social-icons.css);
+
+.footer {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 104px;
+  max-width: 1440px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #B6BCBF;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+
+@media screen and (max-width: 980px) {
+  .footer {
+    padding: 0 80px;
+
+  }
+}
+
+
+@media screen and (max-width: 860px) {
+  .footer {
+    padding: 0 60px;
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .footer {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .footer {
+    display: block;
+    padding: 0 40px 60px;
+  }
+}
+
+
+
+@media screen and (max-width: 400px) {
+  .footer {
+    padding: 0 16px 60px;
+  }
+}

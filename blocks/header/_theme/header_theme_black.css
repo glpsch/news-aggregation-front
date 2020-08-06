@@ -1,0 +1,28 @@
+.header_theme_black {
+    color: #1A1B22;
+    font-weight: 500;
+}
+
+.header_theme_black a {
+  border-color:  #1A1B22;
+
+}
+
+.header_theme_black .button {
+  border-color:  #1A1B22;
+}
+
+.header__button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transition-duration: 1.2s;
+}
+
+.header__button:active {
+  background: rgba(0, 0, 0, 0.3);
+  transition-duration: 0.5s;
+}
+
+.header_theme_black .link_underlined:after {
+  background:  #1A1B22;
+}
+

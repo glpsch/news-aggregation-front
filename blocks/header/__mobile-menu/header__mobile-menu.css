@@ -1,0 +1,34 @@
+.header__mobile-menu {
+  display: none;
+}
+
+@media screen and (max-width: 530px) {
+  .header__mobile-menu {
+    display: block;
+    z-index: 11;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url(../../../src/images/menu.svg);
+    position: absolute;
+    right: 30px;
+    top: 16px;
+  }
+
+  .header__mobile-menu:hover {
+    opacity: 0.7;
+    transition: opacity 0.7s;
+  }
+
+
+  .header__mobile-menu:active {
+    opacity: 0;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .header__mobile-menu {
+    right: 16px;
+  }
+}

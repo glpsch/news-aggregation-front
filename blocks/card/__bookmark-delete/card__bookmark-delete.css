@@ -1,0 +1,18 @@
+.card__bookmark-delete {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin-top: 4px;
+  margin-left: 6px;
+
+  background-image: url(../../../src/images/trash.svg);
+  background-size: contain;
+
+  pointer-events: none;
+}
+
+
+
+
+
+

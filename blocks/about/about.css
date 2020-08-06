@@ -1,0 +1,56 @@
+@import url(./__content/about__content.css);
+@import url(./__photo/about__photo.css);
+@import url(./__text/about__text.css);
+@import url(./__title/about__title.css);
+
+.about {
+  margin: 0;
+  padding: 0 104px;
+  /* max-height: 624px; */
+  display: flex;
+  /* align-items: center; */
+}
+
+@media screen and (max-width: 900px) {
+  .about {
+    margin-bottom: 60px;
+  }
+}
+
+
+@media screen and (max-width: 860px) {
+  .about {
+    padding: 0 60px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 0 40px;
+
+
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .about {
+    padding: 0 30px;
+  }
+}
+
+
+@media screen and (max-width: 530px) {
+  .about {
+    flex-direction: column;
+    padding: 0 40px;
+
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .about {
+    padding: 0 16px;
+    margin-bottom: 80px;
+  }
+}

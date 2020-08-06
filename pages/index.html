@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="GalinaPsch">
+  <meta name="description" content="News aggregation">
+  <link rel="icon" type="image/svg" href="../src/images/favicon.svg" />
+  <title>News Explorer</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
+
+</head>
+
+<body class="body">
+  <div class="page">
+    <header class="header">
+      <div class="header__content">
+        <span class="logo">NewsExplorer</span>
+        <nav class="header__mobile-menu"></nav>
+        <div class="backdrop"></div>
+        <nav class="header__links header__links_unlogged">
+          <a href="https://glpsch.github.io/news-aggregation-front/" class="link header__link link_underlined">Главная</a>
+          <a href="https://glpsch.github.io/news-aggregation-front/articles" class="link header__link header__link_articles">Сохранённые статьи</a>
+
+          <button class="button header__button header__button_unlogged"><span class="header__button-content"></span>
+          </button>
+
+          <button class="button header__button header__button_logged-in invisible"><span class="header__button-content"></span>
+            <img src="<%=require('../src/images/logout.svg').default%>" alt="Выйти из профайла">
+          </button>
+
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="search">
+        <div>
+          <h1 class="title search__title">Что в мире творится?</h1>
+          <h2 class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
+          </h2>
+          <form class="search__bar">
+            <input type="text" required class="input search__input" placeholder="Введите тему новости" >
+            <button  type="submit" class="button search__button button_main">
+              <span>Искать</span>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="search-results">
+        <div class="search-results_nothing-found">
+          <div class="search-results_nothing-found-img">
+            <img src="<%=require('../src/images/not-found.svg').default%>" alt=":(">
+          </div>
+          <h3 class="title search-results_nothing-found-title">Ничего не найдено
+          </h3>
+          <p class="search-results_nothing-found-text">К сожалению, по вашему запросу
+            ничего не найдено.
+          </p>
+        </div>
+
+        <div class="search-results_loading">
+          <div>
+            <img src="<%=require('../src/images/loading.png').default%>" alt="Загрузка"
+              class="search-results_loading-img">
+          </div>
+          <p class="search-results_loading-text">
+            Идет поиск новостей...
+          </p>
+        </div>
+
+        <div class="search-results_successful">
+          <h3 class="title search-results_successful-title">Результаты поиска
+          </h3>
+
+          <div class="search-results_successful-cards ">
+
+            <template id="news-card-template">
+            <div class="card card_articlescard">
+              <a href="#" class="card__link" target="_blank">
+              <div class="card__image"></div>
+                   <div class="card__bookmark-section">
+                <div class="card__bookmark ">
+                  <div class="card__bookmark-flag"></div>
+                </div>
+                <div class="card__bookmark-alert">
+                  <span>Войдите, чтобы сохранять статьи</span>
+                </div>
+              </div>
+              <div class="card__content">
+                <div class="card__content-wrap">
+                  <span class="card__date">
+                  </span>
+                  <h3 class="title card__title">
+                  </h3>
+                  <p class="card__text">
+                  </p>
+                </div>
+                <span class="card__source">
+                </span>
+              </div>
+            </a>
+            </div>
+          </template>
+
+
+            <!-- <div class="card__placeholder"></div>
+            <div class="card__placeholder"></div> -->
+
+
+          </div>
+          <button class="button search-results_successful-more invisible">
+            <span>Показать еще</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="about">
+        <div>
+          <picture>
+            <!-- <source srcset="<%=require('../src/images/av.png').default%>" media="(min-width: 800px)"> -->
+            <!-- <img src="<%=require('../src/images/av_s.png').default%>" alt="Фото автора" class="about__photo" /> -->
+            <img src="<%=require('../src/images/0-2.png').default%>" alt="Фото автора" class="about__photo" />
+          </picture>
+        </div>
+        <div class="about__content">
+          <h2 class="title about__title">Об авторе</h2>
+          <p class="about__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы
+            занимаетесь, какими технологиями разработки владеете.
+            <span class="br"> Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем
+              можете помочь потенциальным заказчикам. </span></p>
+        </div>
+      </section>
+    </main>
+
+    <section class="footer">
+      <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
+      <ul class="footer__links">
+        <li><a href="https://glpsch.github.io/news-aggregation-front/" class="link footer__link">Главная</a></li>
+        <li><a href="https://praktikum.yandex.ru/" target="_blank" class="link footer__link">Яндекс.Практикум</a></li>
+        <li class="footer__social-icons">
+          <a href="https://github.com/glpsch" class="link" target="_blank">
+            <img src="<%=require('../src/images/gh.svg').default%>" alt="Github" class="footer__social-icon">
+          </a>
+          <a href="https://www.facebook.com/overpassover" class="link" target="_blank">
+            <img src="<%=require('../src/images/fb.svg').default%>" alt="Facebook" class="footer__social-icon">
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="popups">
+
+      <div class="popup popup_registration">
+        <div class="popup__container popup_registration__content">
+          <img src="<%=require('../src/images/close.svg').default%>" alt="Закрыть" class="popup__close">
+          <h3 class="popup__title">Регистрация</h3>
+          <form class="popup__form" novalidate>
+            <div class="popup__input-container">
+              <span class="popup__input-title">Email</span>
+              <input type="email" required class="input popup__input" pattern="^(?:[\w-]+\.?)+@(?:[\w-]+\.?)+[\w-]\.[a-z]{2,}$" placeholder="Введите email" id="reg-email">
+              <span class="popup__input-error" id="error-reg-email"></span>
+            </div>
+            <div class="popup__input-container">
+              <span class="popup__input-title">Пароль</span>
+              <input type="password" required minlength="6" class="input popup__input" placeholder="Введите пароль" id="reg-password">
+              <span class="popup__input-error" id="error-reg-password"></span>
+            </div>
+            <div class="popup__input-container">
+              <span class="popup__input-title">Имя</span>
+              <input type="text" required minlength="2" maxlength="30" class="input popup__input"
+                placeholder="Введите своё имя" id="reg-name">
+              <span class="popup__input-error" id="error-reg-name"></span>
+            </div>
+
+            <span class="popup__input-error popup__input-error_main" id="error-main">Такой пользователь уже есть</span>
+            <button type="submit" class="button popup__button button_main reg__submit">Зарегистрироваться</button>
+          </form>
+          <div class="popup__link">
+            или <a href="#" class="link popup__reg-login">Войти</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="popup popup_login">
+        <div class="popup__container popup_login__content">
+
+          <img src="<%=require('../src/images/close.svg').default%>" alt="Закрыть" class="popup__close">
+          <h3 class="popup__title">Вход</h3>
+          <form class="popup__form" novalidate>
+            <div class="popup__input-container">
+              <span class="popup__input-title">Email</span>
+              <input type="email" required class="input popup__input" pattern="^(?:[\w-]+\.?)+@(?:[\w-]+\.?)+[\w-]\.[a-z]{2,}$" placeholder="Введите email" id="login-email">
+              <span class="popup__input-error " id="error-login-email"></span>
+            </div>
+            <div class="popup__input-container">
+              <span class="popup__input-title">Пароль</span>
+              <input type="password" required minlength="6" class="input popup__input" placeholder="Введите пароль" id="login-password">
+              <span class="popup__input-error" id="error-login-password"></span>
+            </div>
+
+            <span class="popup__input-error popup__input-error_main" id="error-main"></span>
+            <button type="submit" class="button popup__button button_main login__submit">Войти</button>
+
+          </form>
+          <div class="popup__link">
+            или <a href="#" class="link popup__reg-link">Зарегистрироваться</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="popup popup_success">
+        <div class="popup__container popup_success__content">
+          <img src="<%=require('../src/images/close.svg').default%>" alt="Закрыть" class="popup__close">
+          <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
+          <div class="popup__link popup_success-link">
+            <a href="#" class="link success-link">Выполнить вход</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="popup popup-template">
+      </div>
+
+    </section>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+
+.popup__button {
+  max-width: 360px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 64px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+
+/* TODO MOVE */
+.popup__button_inactive {
+  background-color: #E6E8EB;
+  color: #B6BCBF;
+}
+
+
+@media screen and (max-width: 530px) {
+  .popup__button {
+    height: 56px;
+  }
+}

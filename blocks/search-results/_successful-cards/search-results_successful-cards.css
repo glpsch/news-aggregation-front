@@ -1,0 +1,29 @@
+.search-results_successful-cards {
+    display: flex;
+    padding-bottom: 64px;
+
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 860px) {
+  .search-results_successful-cards {
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search-results_successful-cards {
+    padding-bottom: 22px;
+  }
+}
+
+
+/* mobile */
+@media screen and (max-width: 530px) {
+  .search-results_successful-cards {
+    flex-direction: column;
+    padding-bottom: 16px;
+  }
+}
+

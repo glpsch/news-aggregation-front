@@ -1,0 +1,40 @@
+.header__content {
+  position: relative;
+  margin: 0;
+  padding: 0 104px;
+  color: #FFFFFF;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
+
+
+  @media screen and (max-width: 910px) {
+    .header__content {
+      padding: 0 80px;
+    }
+  }
+
+  @media screen and (max-width: 860px) {
+    .header__content {
+      padding: 0 60px;
+      height: 70px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .header__content {
+      padding: 0 30px;
+      height: 66px;
+    }
+  }
+
+/* mobile */
+  @media screen and (max-width: 530px) {
+    .header__content {
+      padding: 0;
+      height: 56px;
+    }
+
+  }

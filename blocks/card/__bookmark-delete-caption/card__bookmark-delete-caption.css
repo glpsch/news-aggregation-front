@@ -1,0 +1,48 @@
+.card__bookmark-delete-caption {
+  position: absolute;
+  width: 159px;
+  height: 40px;
+  right: 69px;
+  top: 24px;
+  background: #FFFFFF;
+  border-radius: 8px;
+
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #000000;
+
+  display: none;
+  z-index: 10;
+}
+
+
+@media screen and (max-width: 860px) {
+.card__bookmark-delete-caption  {
+    right: 53px;
+    top: 8px;
+
+    width: 77px;
+    padding: 0 10px;
+
+
+  }
+}
+
+
+@media screen and (max-width: 530px) {
+.card__bookmark-delete-caption  {
+    right: 69px;
+    top: 24px;
+
+    width: 90px;
+
+
+  }
+}

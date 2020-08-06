@@ -1,0 +1,52 @@
+.card__bookmark-alert {
+  position: absolute;
+  max-width: 182px;
+  padding: 0 10px;
+  height: 40px;
+  right: 69px;
+  top: 24px;
+  background: #FFFFFF;
+  border-radius: 8px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #000000;
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .card__bookmark-alert  {
+    width: 90px;
+  }
+}
+
+
+@media screen and (max-width: 860px) {
+  .card__bookmark-alert  {
+    right: 53px;
+    top: 8px;
+
+    width: 77px;
+    padding: 0 10px;
+
+    font-weight: normal;
+  }
+}
+
+
+@media screen and (max-width: 530px) {
+  .card__bookmark-alert  {
+    right: 69px;
+    top: 24px;
+
+    width: 90px;
+
+    font-weight: bold;
+  }
+}

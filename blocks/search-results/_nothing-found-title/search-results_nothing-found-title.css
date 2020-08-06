@@ -1,0 +1,10 @@
+.search-results_nothing-found-title {
+  margin: 29px 0 0;
+  font-size: 26px;
+  line-height: 30px;
+  text-align: center;
+  color: #1A1B22;
+
+  font-weight: 600;
+  font-family: 'Roboto Slab';
+}

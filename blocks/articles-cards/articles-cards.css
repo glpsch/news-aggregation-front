@@ -1,0 +1,61 @@
+@import url(./_nothing/articles-cards_nothing.css);
+
+.articles-cards {
+  margin: 0;
+  padding: 62px 104px  62px;
+  background: #F5F6F7;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  box-sizing: border-box;
+
+  /* min-height: calc(100vh - (294px + 120px + 59px + 270px)); */
+}
+
+/* todo - no saved articles */
+
+
+@media screen and (max-width: 910px) {
+  .articles-cards {
+    padding: 40px 80px 62px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .articles-cards {
+    padding: 40px 60px 62px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .articles-cards {
+    padding: 32px 40px 62px;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .articles-cards {
+    padding: 32px 30px 40px;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 530px) {
+  .articles-cards{
+    padding: 24px 62px 38px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .articles-cards {
+    padding: 16px 40px 38px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .articles-cards {
+    padding: 16px 16px 32px;
+  }
+}

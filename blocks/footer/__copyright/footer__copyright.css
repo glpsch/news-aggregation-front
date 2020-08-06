@@ -1,0 +1,33 @@
+.footer__copyright {
+  letter-spacing: normal;
+}
+
+
+
+@media screen and (max-width: 860px) {
+  .footer__copyright {
+    letter-spacing: -0.5px;
+
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .footer__copyright {
+    position: absolute;
+    bottom: 8px;
+    left: 40px;
+    letter-spacing: normal;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .footer__copyright {
+    left: 16px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .footer__copyright {
+    letter-spacing: -0.8px;
+  }
+}

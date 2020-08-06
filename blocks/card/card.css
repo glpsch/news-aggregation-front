@@ -1,0 +1,64 @@
+@import url(./__title/card__title.css);
+@import url(./__image/card__image.css);
+@import url(./__bookmark-section/card__bookmark-section.css);
+@import url(./__bookmark/card__bookmark.css);
+@import url(./__bookmark/_unlogged/card__bookmark_unlogged.css);
+@import url(./__bookmark-alert/card__bookmark-alert.css);
+
+@import url(./__bookmark-flag/card__bookmark-flag.css);
+@import url(./__bookmark-flag/_saved/card__bookmark-flag_saved.css);
+
+@import url(./__content/card__content.css);
+@import url(./__date/card__date.css);
+@import url(./__text/card__text.css);
+@import url(./__source/card__source.css);
+@import url(./__content-wrap/card__content-wrap.css);
+@import url(./__placeholder/card__placeholder.css);
+@import url(./__link/card__link.css);
+/* //todo rename, upd placeholders// */
+@import url(./_articlescard/card_articlescard.css);
+@import url(./__bookmark/_bookmarked/card__bookmark_bookmarked.css);
+
+.card {
+    max-width: 400px;
+    max-height: 576px;
+    position: relative;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.card:last-of-type {
+  margin: 0;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .card {
+    max-width: 224px;
+    margin-right: 8px;
+  }
+}
+
+
+/* mobile */
+@media screen and (max-width: 530px) {
+  .card {
+    /* align-self: center; */
+    max-width: 400px;
+    /* max-width: 380px; */
+    margin: 0;
+    padding: 0;
+    margin-bottom: 16px;
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  .card {
+    margin-bottom: 9px;
+  }
+}

@@ -1,0 +1,4 @@
+.card__bookmark_bookmarked .card__bookmark-flag{
+  z-index:80;
+  background-image: url(../../../../src/images/bookmark_saved.svg);
+}

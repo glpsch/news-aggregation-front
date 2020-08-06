@@ -1,0 +1,40 @@
+.search-results_successful-more {
+  background: #FFFFFF;
+  border-radius: 80px;
+  width: 288px;
+  /* min-width: 240px; */
+  height: 64px;
+  margin: 0 auto;
+  border: none;
+
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+
+}
+
+.search-results_successful-more:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.search-results_successful-more:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .search-results_successful-more {
+    width: 240px;
+    height: 56px;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 530px) {
+  .search-results_successful-more {
+  width: 100%;
+  max-width: 400px;
+  }
+
+}

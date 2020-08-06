@@ -1,0 +1,26 @@
+.articles-caption__main {
+  max-width: 530px;
+  font-family: Roboto Slab;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+
+  margin: 28px 0 30px;
+}
+
+
+@media screen and (max-width: 860px) {
+  .articles-caption__main {
+    font-size: 36px;
+    line-height: 38px;
+    margin: 20px 0 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .articles-caption__main {
+    font-size: 30px;
+    line-height: 34px;
+    margin: 18px 0 18px;
+  }
+}

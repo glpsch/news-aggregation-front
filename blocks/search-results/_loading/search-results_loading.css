@@ -1,0 +1,13 @@
+/* @import url(../_loading-img/search-results_loading-img.css);
+@import url(../_loading-text/search-results_loading-text.css); */
+
+.search-results_loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 282px;
+  position: relative;
+
+  display: none;
+
+}

@@ -1,0 +1,46 @@
+.card__title {
+  margin: 12px 0 16px;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  color: #1A1B22;
+}
+
+@media screen and (max-width: 1100px) {
+  .card__title {
+    font-size: 24px;
+    line-height: 26px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .card__title {
+    font-size: 22px;
+    line-height: 24px;
+    margin: 10px 0 14px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .card__title {
+    margin: 8px 0 10px;
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .card__title {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+
+
+@media screen and (max-width: 530px) {
+  .card__title {
+    font-size: 22px;
+    line-height: 26px;
+  }
+}

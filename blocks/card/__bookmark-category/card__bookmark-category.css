@@ -1,0 +1,41 @@
+.card__bookmark-category {
+
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  left: 24px;
+  top: 24px;
+  background: #FFFFFF;
+  border-radius: 8px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #000000;
+}
+
+
+@media screen and (max-width: 860px) {
+.card__bookmark-category {
+    left: 8px;
+    top: 8px;
+
+    width: 77px;
+    padding: 0 10px;
+  }
+}
+
+
+@media screen and (max-width: 530px) {
+.card__bookmark-category {
+    left: 24px;
+    top: 24px;
+
+    width: 90px;
+  }
+}

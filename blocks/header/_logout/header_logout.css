@@ -1,0 +1,10 @@
+.header_logout {
+  display: flex;
+  align-items: center;
+}
+
+.header_logout img {
+  margin-left: 10px;
+}
+
+/* todo resize on hover */

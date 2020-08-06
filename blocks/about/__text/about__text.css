@@ -1,0 +1,30 @@
+.about__text {
+  margin: 24px 0;
+  padding: 0;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1A1B22;
+}
+
+@media screen and (max-width: 700px) {
+  .about__text {
+    font-size: 16px;
+    line-height: 20px;
+    max-width: 380px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .about__text {
+    max-width: 450px;
+
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .about__text {
+    margin: 16px 0;
+
+  }
+}

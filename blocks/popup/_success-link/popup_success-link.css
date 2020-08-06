@@ -1,0 +1,10 @@
+.popup_success-link {
+  justify-content: flex-start;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.popup_success-link a {
+  padding: 0;
+  margin: 0;
+}

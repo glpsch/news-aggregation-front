@@ -1,0 +1,22 @@
+@import url(./_loading/search-results_loading.css);
+@import url(./_loading-img/search-results_loading-img.css);
+@import url(./_loading-text/search-results_loading-text.css);
+@import url(./_nothing-found/search-results_nothing-found.css);
+@import url(./_nothing-found/search-results_nothing-found_saved.css);
+@import url(./_nothing-found-img/search-results_nothing-found-img.css);
+@import url(./_nothing-found-img/search-results_nothing-found-img_saved.css);
+@import url(./_nothing-found-text/search-results_nothing-found-text.css);
+@import url(./_nothing-found-title/search-results_nothing-found-title.css);
+@import url(./_successful/search-results_successful.css);
+@import url(./_successful-cards/search-results_successful-cards.css);
+@import url(./_successful-more/search-results_successful-more.css);
+@import url(./_successful-title/search-results_successful-title.css);
+@import url(./_enabled/search-results_enabled.css);
+@import url(./_enabled/search-results_enabled_flex.css);
+
+.search-results {
+  /* max-width: 1600px;
+   */
+   max-width: 1440px;
+  background-color: #F5F6F7;
+}

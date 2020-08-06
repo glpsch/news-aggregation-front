@@ -1,0 +1,26 @@
+.footer__social-icons {
+  display: inline-block;
+  zoom:1;
+  *display:inline;
+}
+
+
+@media screen and (max-width: 700px) {
+  .footer__social-icons {
+    /* padding: 20px 0 0; */
+    /* margin-left: 100px; */
+    /* display: flex;
+    justify-content: space-between; */
+
+    margin-left: calc(100vw - 420px);
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .footer__social-icons  {
+  position: absolute;
+  right: 18px;
+  top: 22px;
+  }
+}
