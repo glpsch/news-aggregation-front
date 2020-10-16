@@ -1,11 +1,16 @@
-# news-aggregation-front
+# News exploring
+
+### https://news-exploring.ga/
+This is the final project of Yandex Practicum course.
+It allows you to browse through the latest news and to save favourite articles on your personal account page.
+
+
+_________________________________________________________________________________
 
 Фронтенд дипломного проекта Яндекс Практикума.
-Результатом работы будет сервис, в котором можно найти новости по запросу и сохранить в личном кабинете.
+Результатом работы является сервис, с помощью которого можно найти новости по запросу и сохранить в личном кабинете.
 
-Текущая версия: v0.1.1
+Текущая версия: v1.0.0
 
-https://glpsch.github.io/news-aggregation-front/
-
-Готовый фронтенд (в процессе) будет доступен по адресу: https://news-exploring.ga/
-К серверу можно обратиться по публичному IP-адресу 84.201.137.207 или через https://api.news-exploring.ga/
+Готовый сайт доступен по адресу: https://news-exploring.ga/
+К серверу можно обратиться по публичному IP-адресу 84.201.165.195 или через https://api.news-exploring.ga/
