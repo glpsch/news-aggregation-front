@@ -16,8 +16,9 @@ import NewsCard from "./js/components/NewsCard";
 import NewsCardList from "./js/components/NewsCardList";
 
 (function () {
-  // TODO change after deployment to "https://news-exploring.ga/"
-  const mainUrlPathName = "/news-aggregation-front/";
+  // for gitPages:
+  // const mainUrlPathName = "/news-aggregation-front/";
+  const mainUrlPathName = "https://news-exploring.ga/";
   const serverUrl = "https://api.news-exploring.ga/";
   //Const - popups
   const template = document.querySelector(".popup-template");
@@ -37,7 +38,7 @@ import NewsCardList from "./js/components/NewsCardList";
   const searchInput = document.querySelector(".search__input");
 
   // const apiURL = 'https://newsapi.org/v2/';
-  let proxiUrl = "https://praktikum.tk/news/v2/";
+  let proxiUrl = "https://nomoreparties.co/news/v2/";
   const apiKey = "f3d87446c54c4e3b9fe47f4c2993c14f";
   const newsUrl =
     `${proxiUrl}everything?pageSize=100&` +
