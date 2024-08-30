@@ -1,9 +1,8 @@
 # News exploring
 ### https://glpsch.github.io/news-aggregation-front/
-https://news-exploring.ga/ (no access at the moment)
 
-This is the final project of Yandex Practicum course.
-It allows you to browse through the latest news and to save favourite articles on your personal account page.
+This is the final project of Yandex Practicum course. Currently in Russian, but the translation is in progress.
+A web portal that allows you to browse through the latest news and to save favourite articles on your personal account page.
 
 
 _________________________________________________________________________________
