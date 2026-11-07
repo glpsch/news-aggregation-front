@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/glpsch/news-aggregation-front/",
   "devDependencies": {
-    "@babel/cli": "8.0.1",
+    "@babel/cli": "8.1.0",
     "@babel/core": "8.0.1",
     "@babel/preset-env": "8.0.2",
     "autoprefixer": "10.4.16",
